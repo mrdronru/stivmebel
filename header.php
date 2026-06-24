@@ -122,7 +122,7 @@ $current = isset($page) ? $page : '';
   </ul>
 
   <div class="nav-socials">
-    <a href="<?php echo SOCIAL_TG; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Telegram">
+    <a href="<?php echo SOCIAL_TG; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Telegram" onclick="ymGoal('click_telegram')">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21.9 4.5L18.5 19.3c-.25 1.1-.9 1.38-1.82.86L12 16.9l-2.25 2.17c-.25.25-.46.46-.94.46l.34-4.77 8.7-7.86c.38-.34-.08-.52-.58-.18L5.9 13.94 1.74 12.6c-.9-.28-.92-.9.19-1.33L20.64 3.17c.75-.28 1.4.17 1.26 1.33z" fill="currentColor"/></svg>
     </a>
     <a href="<?php echo SOCIAL_VK; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="ВКонтакте">
@@ -131,7 +131,7 @@ $current = isset($page) ? $page : '';
     <a href="<?php echo SOCIAL_MAX; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Max">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3C7.03 3 3 6.81 3 11.5c0 2.7 1.3 5.1 3.3 6.7l-.8 3.3 3.5-1.5c1 .3 2 .5 3 .5 4.97 0 9-3.81 9-8.5S16.97 3 12 3z" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
     </a>
-    <a href="<?php echo SITE_PHONE_HREF; ?>" class="nav-social-btn" aria-label="Позвонить нам">
+    <a href="<?php echo SITE_PHONE_HREF; ?>" class="nav-social-btn" aria-label="Позвонить нам" onclick="ymGoal('click_phone')">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
@@ -158,7 +158,7 @@ $current = isset($page) ? $page : '';
     <?php endforeach; ?>
   </ul>
   <div class="nav-drawer-socials">
-    <a href="<?php echo SOCIAL_TG; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Telegram" style="width:2.5rem;height:2.5rem;">
+    <a href="<?php echo SOCIAL_TG; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Telegram" style="width:2.5rem;height:2.5rem;" onclick="ymGoal('click_telegram')">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M21.9 4.5L18.5 19.3c-.25 1.1-.9 1.38-1.82.86L12 16.9l-2.25 2.17c-.25.25-.46.46-.94.46l.34-4.77 8.7-7.86c.38-.34-.08-.52-.58-.18L5.9 13.94 1.74 12.6c-.9-.28-.92-.9.19-1.33L20.64 3.17c.75-.28 1.4.17 1.26 1.33z" fill="currentColor"/></svg>
     </a>
     <a href="<?php echo SOCIAL_VK; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="ВКонтакте" style="width:2.5rem;height:2.5rem;">
@@ -167,7 +167,7 @@ $current = isset($page) ? $page : '';
     <a href="<?php echo SOCIAL_MAX; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Max" style="width:2.5rem;height:2.5rem;">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3C7.03 3 3 6.81 3 11.5c0 2.7 1.3 5.1 3.3 6.7l-.8 3.3 3.5-1.5c1 .3 2 .5 3 .5 4.97 0 9-3.81 9-8.5S16.97 3 12 3z" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></svg>
     </a>
-    <a href="<?php echo SITE_PHONE_HREF; ?>" class="nav-social-btn" aria-label="Позвонить нам" style="width:2.5rem;height:2.5rem;">
+    <a href="<?php echo SITE_PHONE_HREF; ?>" class="nav-social-btn" aria-label="Позвонить нам" style="width:2.5rem;height:2.5rem;" onclick="ymGoal('click_phone')">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>

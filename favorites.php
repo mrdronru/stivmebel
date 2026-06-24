@@ -102,7 +102,7 @@ include 'header.php';
       </div>
       <div class="modal-success-title">Заявка отправлена</div>
       <p class="modal-success-text">Мы получили ваши фото и контакт.<br>Перезвоним в течение двух часов в рабочее время.</p>
-      <a href="<?php echo SITE_PHONE_HREF; ?>" class="btn-primary" style="display:inline-block;margin-top:2rem;"><?php echo SITE_PHONE; ?></a>
+      <a href="<?php echo SITE_PHONE_HREF; ?>" class="btn-primary" onclick="ymGoal(\'click_phone\')" style="display:inline-block;margin-top:2rem;"><?php echo SITE_PHONE; ?></a>
     </div>
   </div>
 </div>

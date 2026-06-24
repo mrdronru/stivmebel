@@ -160,6 +160,7 @@ if (fname) {
       const r = await fetch('send.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,phone,type,comment,source:'main'}) });
       if (!r.ok) throw new Error();
       document.getElementById('contactForm').style.display = 'none';
+      if (typeof ymGoal === 'function') ymGoal('form_submit');
       const s = document.getElementById('formSuccess');
       s.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
     } catch(e) { btn.textContent = 'Ошибка — попробуйте ещё раз'; btn.disabled = false; }

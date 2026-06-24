@@ -243,7 +243,13 @@ include 'header.php';
       <h2 class="section-title">Нам доверяют<br><em>клиенты</em></h2>
     </div>
     <div class="reviews-badge-wrap">
-      <iframe src="https://yandex.ru/sprav/widget/rating-badge/152572712181?type=rating" width="150" height="50" frameborder="0" style="border:none;" loading="lazy"></iframe>
+      <a href="https://yandex.ru/maps/org/stiv_interyery/152572712181/reviews/" target="_blank" rel="noopener" class="reviews-badge">
+        <div class="reviews-badge-rating">
+          <span class="reviews-badge-num">4.4</span>
+          <span class="reviews-badge-stars">★★★★<span class="reviews-badge-star-half">★</span></span>
+        </div>
+        <div class="reviews-badge-meta">6 отзывов · Яндекс Карты</div>
+      </a>
     </div>
   </div>
   <div class="reviews-grid reveal" style="transition-delay: 0.15s;">
@@ -305,7 +311,7 @@ include 'header.php';
     <h2 class="section-title">Обсудим ваш <em>проект?</em></h2>
     <p class="contact-desc">Оставьте контакт — мы перезвоним в течение двух часов в рабочее время и ответим на все вопросы. Ни к чему не обязывает.</p>
     <div class="contact-detail">
-      <a href="<?php echo SITE_PHONE_HREF; ?>" class="contact-line">
+      <a href="<?php echo SITE_PHONE_HREF; ?>" class="contact-line" onclick="ymGoal('click_phone')">
         <div class="contact-line-icon">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 10.5L11 10C10.7 10 10.4 10.1 10.2 10.3L8.8 11.7C6.8 10.7 5.3 9.2 4.3 7.2L5.7 5.8C5.9 5.6 6 5.3 6 5L5.5 2.5C5.2 2.2 4.9 2 4.5 2H2.5C2 2 1.5 2.5 1.5 3C1.5 9.3 6.7 14.5 13 14.5C13.5 14.5 14 14 14 13.5V11.5C14 11.1 13.8 10.8 13.5 10.5Z" stroke="#B8975A" stroke-width="1" stroke-linecap="round"/></svg>
         </div>
@@ -329,7 +335,7 @@ include 'header.php';
         </div>
         Мы в ВК
       </a>
-      <a href="<?php echo SOCIAL_TG_CHANNEL; ?>" class="contact-line" target="_blank" rel="noopener">
+      <a href="<?php echo SOCIAL_TG_CHANNEL; ?>" class="contact-line" target="_blank" rel="noopener" onclick="ymGoal('click_telegram')">
         <div class="contact-line-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21.9 4.5L18.5 19.3c-.25 1.1-.9 1.38-1.82.86L12 16.9l-2.25 2.17c-.25.25-.46.46-.94.46l.34-4.77 8.7-7.86c.38-.34-.08-.52-.58-.18L5.9 13.94 1.74 12.6c-.9-.28-.92-.9.19-1.33L20.64 3.17c.75-.28 1.4.17 1.26 1.33z" fill="#B8975A"/></svg>
         </div>
@@ -376,7 +382,7 @@ include 'header.php';
       </div>
       <div class="form-success-title">Заявка принята</div>
       <p class="form-success-text">Мы перезвоним вам в течение двух часов.<br>Если удобно — можете позвонить нам сами.</p>
-      <a href="<?php echo SITE_PHONE_HREF; ?>" class="btn-primary" style="display:inline-block;margin-top:2rem;"><?php echo SITE_PHONE; ?></a>
+      <a href="<?php echo SITE_PHONE_HREF; ?>" class="btn-primary" style="display:inline-block;margin-top:2rem;" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
     </div>
   </div>
 </section>

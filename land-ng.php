@@ -164,7 +164,7 @@ include 'header.php';
       <button class="l-cta-btn" onclick="openContactPopup()">Записаться</button>
       <a href="tel:<?php echo SITE_PHONE_HREF; ?>"
          class="l-cta-phone"
-         onclick="if(typeof ym!=='undefined') ym(<?php echo YANDEX_METRIKA_ID; ?>,'reachGoal','phone_click')"><?php echo SITE_PHONE; ?></a>
+         onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
     </div>
   </section>
 
@@ -470,7 +470,7 @@ include 'header.php';
 
     function trackQuiz(goal) {
       if (typeof ym !== 'undefined') {
-        ym(<?php echo YANDEX_METRIKA_ID; ?>, 'reachGoal', 'quiz_' + goal);
+        ymGoal('quiz_' + goal);
       }
     }
   })();
