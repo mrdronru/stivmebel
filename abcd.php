@@ -2,7 +2,7 @@
 require_once __DIR__ . '/config.php';
 $page        = 'abc';
 $title       = 'Азбука мебельщика';
-$description = 'Простым языком о сложных терминах: ЛДСП, МДФ, Blum, Hettich, компакт-плита, HPL, фурнитура и всё что вы слышите от мебельщиков.';
+$description = 'Что такое ЛДСП, МДФ, Blum, синхропора — объясняем просто, чтобы вы понимали, за что платите.';
 $extra_css   = ['abcstyle.css'];
 include 'header.php';
 
