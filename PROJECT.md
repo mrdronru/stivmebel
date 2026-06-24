@@ -198,8 +198,8 @@ modalSelectedImgs           — превью выбранных фото
 **Telegram Bot API через curl.**
 
 ```
-Bot token: 8841878796:AAF8AHAExnp4m9MlTWHWDCbmMqqAHRzqtIU
-Chat ID:   412606793  (@mrdronru — Alexandr Dranitskiy, владелец)
+Bot token: см. BotFather
+Chat ID:   см. BotFather (@mrdronru — Alexandr Dranitskiy, владелец)
 ```
 
 Принимает JSON: `name`, `phone`, `type`, `comment`, `photos[]`, `source`.
