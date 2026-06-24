@@ -1,0 +1,35 @@
+# config.php содержит токен Telegram-бота и другие настройки — не должен
+# отдаваться напрямую по HTTP ни при каких обстоятельствах.
+# build.php запускается только из CLI (php build.php) — обращение к нему
+# через браузер не нужно и не предполагается.
+# send.php сюда не включён — он обязан быть доступен из браузера, его вызывают
+# формы сайта через fetch().
+<FilesMatch "^(config)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Кастомная страница 404
+ErrorDocument 404 /404.php
+
+# ── Чистые URL (без расширений) ──
+RewriteEngine On
+
+# Убираем .php из URL: /gallery → /gallery.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)$ $1.php [L]
+
+# Убираем .html из URL в подпапках: /abc/alvic → /abc/alvic.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+/[^/]+)$ $1.html [L]
+
+# Редирект 301: abc.php → abcd (со старого адреса на новый чистый)
+RewriteCond %{REQUEST_URI} ^/abc\.php$
+RewriteRule ^ /abcd [R=301,L]
+
+# Редирект 301: gallery.php → catalog
+RewriteCond %{REQUEST_URI} ^/gallery\.php$
+RewriteRule ^ /catalog [R=301,L]

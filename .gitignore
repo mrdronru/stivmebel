@@ -1,0 +1,11 @@
+abc/*.html
+abc/*.json
+bbooks/
+gallery/
+video/*.mp4
+video/*.jpg
+sitemap*.xml
+*.log
+.env
+config.php
+send.php

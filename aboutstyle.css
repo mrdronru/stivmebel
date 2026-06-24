@@ -1,0 +1,437 @@
+/* ── ABOUT: только специфичные стили страницы ── */
+
+/* ── Hero ── */
+.about-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 4rem; /* высота fixed nav */
+}
+.about-hero-left {
+  padding: 3rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* контент от верха, не по центру */
+}
+.about-eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+.about-hero-title {
+  font-family: var(--serif);
+  font-size: var(--fs-hero);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+.about-hero-title em { font-style: italic; color: var(--gold); }
+.about-hero-lead {
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink-60);
+  max-width: 380px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+/* .hero-actions — анимация уже в style.css */
+
+/* Right: точно как .hero-right на index — height:100vh, position:relative, overflow:hidden */
+/* Кружок центрируем flex'ом внутри */
+.about-hero-right {
+  height: 100vh;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 1.2s 0.3s forwards;
+}
+
+/* ── Видео в круге ── */
+
+/* Outer: flex-колонка, круг + бейдж в потоке */
+.video-circle-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  /* padding компенсирует inset:-12px кольца — оно не выходит за колонку */
+  padding: 16px;
+}
+
+/* Wrap: строго квадратный — ring всегда круглый.
+   Размер подобран так чтобы вписываться в 100vh правой колонки с запасом */
+.video-circle-wrap {
+  position: relative;
+  width: min(400px, 68%);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+.video-circle {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--ink-10);
+  box-shadow: 0 24px 64px rgba(26,24,20,0.12);
+}
+.video-circle video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-circle-play {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(26,24,20,0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 2;
+}
+.video-circle-play:hover { background: rgba(26,24,20,0.15); }
+.video-circle-play.hidden { opacity: 0; pointer-events: none; }
+.play-icon-circle {
+  width: 4.5rem; height: 4.5rem;
+  border: 2px solid rgba(250,249,246,0.9);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--warm-white);
+  transition: transform 0.3s;
+}
+.video-circle-play:hover .play-icon-circle { transform: scale(1.08); }
+
+/* Ring: inset от строго квадратного wrap — всегда окружность */
+.video-circle-ring {
+  position: absolute; inset: -12px;
+  border-radius: 50%;
+  border: 1px solid rgba(184,151,90,0.3);
+  pointer-events: none;
+  animation: spin 20s linear infinite;
+  will-change: transform;
+}
+.video-circle-ring::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-top: -4px;
+}
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Бейдж: в потоке под кружком */
+.video-badge {
+  background: var(--warm-white);
+  border: 1px solid var(--ink-10);
+  border-left: 2px solid var(--gold);
+  padding: 0.8rem 1.2rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.video-badge-name {
+  font-family: var(--serif);
+  font-size: var(--fs-md);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.video-badge-role {
+  font-size: var(--fs-xs);
+  font-weight: 300;
+  color: var(--ink-60);
+  letter-spacing: 0.08em;
+  margin-top: 0.2rem;
+}
+
+/* ── Секции ── */
+.about-section { padding: 6rem 4rem; }
+.about-section.dark { background: var(--ink); color: var(--warm-white); }
+.about-section.cream { background: var(--cream); }
+.about-section-inner { max-width: 1100px; margin: 0 auto; }
+
+/* Почему мы */
+.why-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; }
+.why-left { position: sticky; top: 7rem; }
+.why-left .section-title { color: var(--warm-white); }
+.why-label { color: var(--gold-light); }
+.why-left p {
+  font-size: var(--fs-xs);
+  color: rgba(250,249,246,0.55);
+  line-height: 1.8;
+  max-width: 260px;
+  margin-top: 1.5rem;
+}
+.why-items { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 3rem; }
+.why-item-line { width: 2rem; height: 2px; background: var(--gold); margin-bottom: 1rem; }
+.why-item-title {
+  font-family: var(--serif);
+  font-size: var(--fs-md);
+  font-weight: 400;
+  color: var(--warm-white);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.why-item-text {
+  font-size: var(--fs-xs);
+  font-weight: 300;
+  color: rgba(250,249,246,0.55);
+  line-height: 1.75;
+}
+
+/* Таймлайн */
+.process-title-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: end;
+}
+.process-lead { font-size: var(--fs-sm); color: var(--ink-60); line-height: 1.85; align-self: end; }
+.timeline { position: relative; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1.4rem; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--ink-10);
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  align-items: start;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  width: 2.8rem; height: 2.8rem;
+  border: 1px solid var(--ink-10);
+  background: var(--cream);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  color: var(--gold);
+  position: relative; z-index: 1;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.timeline-item:hover .timeline-dot { background: var(--gold); color: var(--warm-white); border-color: var(--gold); }
+.timeline-content { padding-top: 0.4rem; }
+.timeline-title { font-family: var(--serif); font-size: var(--fs-md); font-weight: 400; color: var(--ink); margin-bottom: 0.3rem; }
+.timeline-text { font-size: var(--fs-xs); color: var(--ink-60); line-height: 1.75; }
+
+/* CTA */
+.cta-block { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.cta-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.4;
+  padding-left: 2rem;
+  border-left: 2px solid var(--gold);
+}
+.cta-right p { font-size: var(--fs-sm); color: var(--ink-60); line-height: 1.85; margin-bottom: 2rem; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* Результаты */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ink-10);
+  border: 1px solid var(--ink-10);
+  margin-top: 4rem;
+}
+.result-item { background: var(--cream); padding: 2.5rem 2rem; text-align: center; }
+.result-num {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.result-label { font-size: var(--fs-xs); font-weight: 300; color: var(--ink-60); line-height: 1.5; }
+
+/* ── ОТЗЫВЫ ── */
+.testimonials-strip {
+  display: flex;
+  gap: 1.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.testimonials-strip::-webkit-scrollbar { height: 6px; }
+.testimonials-strip::-webkit-scrollbar-thumb { background: var(--ink-10); }
+.testimonial-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 220px;
+  height: 280px;
+  overflow: hidden;
+  cursor: pointer;
+  scroll-snap-align: start;
+  background: var(--cream);
+}
+.testimonial-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.testimonial-item:hover .testimonial-media { transform: scale(1.04); }
+.testimonial-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26,24,20,0.18);
+  color: var(--warm-white);
+  pointer-events: none;
+}
+.testimonial-play svg {
+  background: rgba(26,24,20,0.55);
+  border-radius: 50%;
+  padding: 0.9rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  box-sizing: content-box;
+}
+
+/* Лайтбокс отзывов */
+.testimonial-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,24,20,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 200;
+  padding: 4rem;
+}
+.testimonial-lightbox.open { opacity: 1; pointer-events: all; }
+.testimonial-lightbox-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 90vw;
+}
+.testimonial-lightbox-media-wrap {
+  max-width: 80vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonial-lightbox-img,
+.testimonial-lightbox-video {
+  max-width: 80vw;
+  max-height: 85vh;
+  object-fit: contain;
+  display: none;
+}
+.testimonial-lightbox .lightbox-close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: rgba(250,249,246,0.6);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.testimonial-lightbox .lightbox-close:hover { color: var(--warm-white); }
+.testimonial-lightbox-nav {
+  background: rgba(250,249,246,0.08);
+  border: 1px solid rgba(250,249,246,0.15);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--warm-white);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+.testimonial-lightbox-nav:hover { background: rgba(250,249,246,0.2); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  /* Hero — точно как index */
+  .about-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 0; /* у hero-left свой padding-top */
+  }
+  .about-hero-left { padding: 4.5rem 1.5rem 1.5rem; }
+
+  /* Right: на мобиле высота по содержимому, не фиксированная */
+  .about-hero-right {
+    height: auto;
+    overflow: visible; /* снимаем обрезку */
+    padding: 3rem 1.5rem; /* воздух сверху и снизу */
+  }
+
+  .video-circle-wrap { width: min(240px, 60vw); }
+  .video-circle-outer { gap: 1rem; padding: 8px; }
+
+  /* Секции */
+  .about-section { padding: 4rem 1.5rem; }
+
+  /* Почему мы */
+  .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .why-left { position: static; }
+  .why-left p { max-width: 100%; }
+  .why-items { grid-template-columns: 1fr; gap: 1.8rem; }
+
+  /* Цифры */
+  .results-grid { grid-template-columns: 1fr; }
+
+  /* Таймлайн */
+  .process-title-block { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+  .timeline::before { left: 1.3rem; }
+  .timeline-item { gap: 1rem; }
+
+  /* CTA */
+  .cta-block { grid-template-columns: 1fr; gap: 2rem; }
+  .cta-quote { font-size: 1.3rem; }
+  .cta-actions { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .cta-actions .btn-primary,
+  .cta-actions .btn-secondary { width: 100%; text-align: center; box-sizing: border-box; }
+
+  /* Отзывы */
+  .testimonials-strip { gap: 1rem; }
+  .testimonial-item { width: 160px; height: 210px; }
+  .testimonial-lightbox { padding: 1.5rem; }
+  .testimonial-lightbox-inner { flex-direction: column; gap: 1rem; max-width: 100%; }
+  .testimonial-lightbox-media-wrap { max-width: 92vw; max-height: 60vh; }
+  .testimonial-lightbox-img,
+  .testimonial-lightbox-video { max-width: 92vw; max-height: 60vh; }
+  .testimonial-lightbox-nav { position: static; width: 2.6rem; height: 2.6rem; }
+  .testimonial-lightbox .lightbox-close { top: -2.8rem; }
+}

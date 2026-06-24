@@ -1,0 +1,268 @@
+/* ── PRICE: только специфичные стили страницы ── */
+
+/* ── Hero ── */
+.price-hero {
+  padding: 9rem 4rem 4rem;
+  text-align: center;
+  background: var(--cream);
+}
+.price-hero p.section-label { display: flex; justify-content: center; }
+.price-hero h1 {
+  font-family: var(--serif);
+  font-size: var(--fs-hero);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--ink);
+  max-width: 760px;
+  margin: 0 auto;
+}
+.price-hero h1 em { font-style: italic; color: var(--gold); }
+.price-hero-lead {
+  font-size: var(--fs-sm);
+  color: var(--ink-60);
+  max-width: 560px;
+  margin: 1.2rem auto 0;
+  line-height: 1.8;
+}
+
+/* ── Intro: текст + фото ── */
+#price-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  padding: 6rem 4rem;
+}
+.price-intro-text { min-width: 0; }
+.price-intro-text p {
+  font-size: var(--fs-sm);
+  color: var(--ink-60);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+.price-intro-budget-label {
+  font-family: var(--serif);
+  font-size: var(--fs-md);
+  color: var(--ink);
+  margin-bottom: 1rem !important;
+}
+.price-intro-cta-text { color: var(--ink) !important; }
+
+.price-rows { margin: 0 0 1.5rem; }
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ink-10);
+}
+.price-row:first-child { border-top: 1px solid var(--ink-10); }
+.price-row-name {
+  font-family: var(--serif);
+  font-size: var(--fs-md);
+  color: var(--ink);
+}
+.price-row-desc {
+  display: block;
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  color: var(--ink-60);
+  margin-top: 0.3rem;
+}
+.price-row-value {
+  font-size: var(--fs-sm);
+  color: var(--gold);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.price-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  aspect-ratio: 4/3;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.price-photo-placeholder {
+  overflow: hidden;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+}
+.price-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.price-photos .price-photo-placeholder:nth-child(1) { grid-row: span 2; }
+
+/* ── FACTORS ── */
+#price-factors { background: var(--cream); padding: 6rem 4rem; }
+.factors-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+.factors-header .section-label { display: flex; justify-content: center; }
+.factors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.factor-item {
+  text-align: center;
+  background: var(--warm-white);
+  border: 1px solid var(--ink-10);
+  padding: 2.5rem 1.5rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.factor-item:hover {
+  box-shadow: 0 1.2rem 2.4rem rgba(26,24,20,0.08);
+  transform: translateY(-3px);
+}
+.factor-num {
+  font-family: var(--serif);
+  font-size: var(--fs-lg);
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+.factor-title {
+  font-size: var(--fs-md);
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.factor-text {
+  font-size: var(--fs-xs);
+  color: var(--ink-60);
+  line-height: 1.7;
+}
+
+/* ── FAQ ── */
+#price-faq { padding: 6rem 4rem; background: var(--warm-white); }
+.faq-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+.faq-header .section-label { display: flex; justify-content: center; }
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--ink-10);
+}
+.faq-item:first-child { border-top: 1px solid var(--ink-10); }
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--ink);
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+.faq-icon {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  position: relative;
+}
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--gold);
+  transition: transform 0.3s ease;
+}
+.faq-icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+.faq-icon::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+.faq-item.open .faq-icon::after { transform: translateX(-50%) scaleY(0); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.faq-answer p {
+  font-size: var(--fs-sm);
+  color: var(--ink-60);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  max-width: 680px;
+}
+.faq-answer p:last-child { margin-bottom: 0; padding-bottom: 1.5rem; }
+.faq-answer ul {
+  margin: 0 0 1rem;
+  padding-left: 1.3rem;
+  max-width: 680px;
+}
+.faq-answer ul:last-child { margin-bottom: 0; padding-bottom: 1.5rem; }
+.faq-answer li {
+  font-size: var(--fs-sm);
+  color: var(--ink-60);
+  line-height: 1.8;
+  margin-bottom: 0.4rem;
+}
+.faq-answer li::marker { color: var(--gold); }
+.faq-answer strong { color: var(--ink); font-weight: 500; }
+.faq-answer em { font-style: italic; }
+.faq-answer code {
+  background: var(--cream);
+  padding: 0.1rem 0.4rem;
+  font-size: 0.9em;
+  border-radius: 2px;
+}
+.faq-answer a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: var(--ink-30);
+}
+.faq-answer a:hover { text-decoration-color: var(--gold); }
+
+/* ── CTA ── */
+#price-cta {
+  padding: 6rem 4rem;
+  text-align: center;
+  background: var(--ink);
+}
+#price-cta .section-title { color: var(--warm-white); }
+#price-cta .section-title em { color: var(--gold-light); }
+.price-cta-text {
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  font-size: var(--fs-sm);
+  color: rgba(250,249,246,0.65);
+  line-height: 1.8;
+}
+.price-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+#price-cta .btn-secondary { color: var(--warm-white); border-color: rgba(250,249,246,0.3); }
+#price-cta .btn-secondary:hover { border-color: var(--warm-white); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .price-hero { padding: 7rem 1.5rem 3rem; }
+  #price-intro { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+  #price-faq, #price-cta, #price-factors { padding: 4rem 1.5rem; }
+  .factors-grid { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; }
+
+  .price-photos {
+    order: -1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    aspect-ratio: auto;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .price-photo-placeholder { aspect-ratio: 1/1; }
+  .price-photos .price-photo-placeholder:nth-child(1) { grid-row: span 1; }
+
+  .price-cta-actions { flex-direction: column; align-items: center; }
+}

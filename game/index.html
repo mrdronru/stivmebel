@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+  <html lang="ru">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="img/logo.png" />  
+  <meta name="description" content="Стив Интерьеры. Производство корпусной мебели на заказ в Москве и Московской области. Кухни, шкафы, гардеробные, кровати, столы и другая мебель под ключ. Учитываем все пожелания, большой опыт в разработке оптимальных решений, точность монтажа до 1мм, европейские комплектующие, бесплатный замер и консультация, контроль на всех этапах, персональный менеджер." />
+  <title>Стив Интерьеры</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">  
+</head>
+<body>
+  <div id="game_process"> 
+     <button id="full_screen"></button>
+   <div id="blocking_screen">
+      <img id="phone" src="img/phone.png" alt="Стив Интерьеры">
+      <p id="warning">Переверните, пожалуйста, устройство. <br>
+      Игра работает только в горизонтальном режиме. <br>
+      При необходимости активируйте режим автоповорота</p>
+      <button class="game_buttons" id="fix_mode_game">Играть </button> 
+    </div> 
+      <div id="pause">
+      <button class="game_buttons" id="continue_game">Продолжить </button> 
+    </div>
+      <div id="initial_screen">
+      <button id="info"></button>
+      <div class="buttons_block">
+        <button class="game_buttons" id="start_game">Начать игру</button>     
+      </div>
+    </div> 
+     <img id="company_logo" src="img/logo.png" alt="Стив Интерьеры">
+     
+    <div id="information_board">
+      <div id="close_info"></div>
+      <h2 class="info_title">Как играть</h2>
+      <p class="info_text">Ловите тарелки кнопками справа и слева от игрового поля, на компьютере можно использовать стрелки или мышку. Соберите как можно больше тарелок и получите сертификат на кешбэк. Сохраните сертификат с помощью кнопки "Скачать сертификат". Отправьте сертификат как коммментарий в нашу группу ВК или Телеграм. В ответ мы вам пришлем ваш личный код на получение кешбэка.</p>
+      <h2 class="info_title">Условия проведения акции</h2>
+      <p class="info_text">1) Акция действует до 1 сентября 2026 года. 2) Сумма кешбэка не может превышать 10% от стоимости заказанной мебели.</p>
+      <h2 class="info_title">Наши контакты</h2>
+      <p class="info_text">Сайт: <a href="https://stivmebel.ru/" target="_blank">stivmebel.ru</a>, Телеграм: <a href="https://t.me/stiv_interiors/582" target="_blank">@stiv_interiors</a></p>
+    </div>
+        <div id="preloader">
+          <div class="preloader_logo_block">
+            <img class="preloader_logo" src="img/logo.png" alt="Стив Интерьеры">
+            </div>
+           <div id="progress-bar">
+              <div id="bar"></div>
+          </div>     
+             <p class="preloader_text"> Загружается..</p>        
+      </div>
+    <div id="game_container"> 
+      <div id="wrapper">
+        <button id="sound"></button> 
+         <div id="controls">
+          <div id="left_down"></div>
+          <div id="right_down"></div>  
+          <div id="left_up"></div>
+          <div id="right_up"></div>
+        </div>
+      <div id="game">       
+        <div id="sheves_block">        
+           <img id="top_shelf" class="shelf right top" src="img/shelf.png" alt="Стив Интерьеры">
+           <img id="bottom_shelf" class="shelf right bottom" src="img/shelf.png" left  alt="Стив Интерьеры"> 
+           <img class="shelf left top" src="img/left_shelf.png" alt="Стив Интерьеры">
+           <img class="shelf left bottom" src="img/left_shelf.png" alt="Стив Интерьеры">  
+     </div> 
+      <img id="player" src="img/boy1.png" alt="Стив Интерьеры">
+       <div id="score">0</div> 
+       <div id="end"><span id="life">3</span></div> 
+      </div>     
+    </div>
+        <img id="company_title" src="img/title.png" alt="Стив Интерьеры">
+   </div> 
+       <div id= "buffer"></div>
+        <div id="note"> 
+         <img id="leader" src="img/leader.png" alt="Стив Интерьеры">  
+         <div id="result_block">
+          <img src="img/certificate.jpg">
+          <div id="result_block_inner"></div>
+         </div>
+         <div class="final_screen_buttons">
+          <button class="game_buttons" id="replay_game">Играть еще раз </button>
+          <button class="game_buttons" id="share_game">Скачать сертификат </button>       
+          </div>
+    </div>
+    <audio loop id="game_audio"> 
+      <source src="sound/music.mp3" type="audio/mpeg"> 
+      <source src="sound/music.ogg" type="audio/ogg" /> 
+    </audio> 
+      <script src="js/index.min.js"></script> 
+  </body>
+</html>

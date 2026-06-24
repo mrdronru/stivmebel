@@ -1,0 +1,352 @@
+/* ── ABC: стили страницы Азбука и статей терминов ── */
+
+/* ── abcd.php: список ── */
+
+.abc-header {
+  padding: 8rem 4rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+.abc-title {
+  font-family: var(--serif);
+  font-size: var(--fs-lg);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0.5rem 0 0;
+}
+.abc-title em { font-style: italic; color: var(--gold); }
+.abc-lead {
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.75;
+  margin-top: 1rem;
+  max-width: 400px;
+}
+
+/* Поиск */
+.abc-search-wrap {
+  position: relative;
+  align-self: end;
+}
+.abc-search {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-30);
+  padding: 0.75rem 2rem 0.75rem 0;
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink);
+  outline: none;
+  -webkit-appearance: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+.abc-search:focus { border-bottom-color: var(--gold); }
+.abc-search::placeholder { color: var(--ink-30); }
+.abc-search::-webkit-search-cancel-button { -webkit-appearance: none; }
+.abc-search-icon {
+  position: absolute;
+  right: 0; bottom: 0.85rem;
+  color: var(--ink-30);
+  pointer-events: none;
+}
+
+/* Алфавитная навигация */
+.abc-letters {
+  padding: 0 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.abc-letter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink-60);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+.abc-letter-btn:hover {
+  color: var(--ink);
+  border-color: var(--ink-10);
+  background: var(--cream);
+}
+
+/* Группа по букве */
+.abc-list { padding: 0 4rem 6rem; }
+.abc-group { margin-bottom: 3rem; }
+.abc-group-letter {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--ink-10);
+  line-height: 1;
+  margin-bottom: 1rem;
+  scroll-margin-top: 6rem;
+}
+.abc-group-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--ink-10);
+  border: 1px solid var(--ink-10);
+}
+
+/* Карточка термина */
+.abc-item {
+  background: var(--warm-white);
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: background 0.2s;
+  border-left: 2px solid transparent;
+}
+.abc-item:hover {
+  background: var(--cream);
+  border-left-color: var(--gold);
+}
+.abc-item-title {
+  font-family: var(--serif);
+  font-size: var(--fs-md);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.abc-item-short {
+  font-size: var(--fs-xs);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.6;
+}
+
+/* Пустой поиск */
+.abc-no-results {
+  padding: 2rem 4rem 4rem;
+  font-size: var(--fs-sm);
+  color: var(--ink-60);
+}
+.abc-no-results-link {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ── Страница статьи (abc/*.html) ── */
+
+.abc-article-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 9rem 2rem 6rem;
+}
+.abc-article-back {
+  margin-bottom: 3rem;
+  padding-top: 1.5rem;
+}
+.abc-article-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--ink-10);
+}
+.abc-article-letter {
+  font-family: var(--serif);
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--ink-10);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.abc-article-title {
+  font-family: var(--serif);
+  font-size: var(--fs-hero);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.abc-article-short {
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* Тело статьи */
+.abc-article-body h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 300;
+  color: var(--ink);
+  margin: 2.5rem 0 1rem;
+  line-height: 1.2;
+}
+.abc-article-body h3 {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  margin: 2rem 0 0.75rem;
+}
+.abc-article-body p {
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+.abc-article-body ul {
+  margin: 0 0 1.5rem 1.2rem;
+}
+.abc-article-body li {
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+}
+.abc-article-body strong { font-weight: 400; color: var(--ink); }
+.abc-article-body em { font-style: italic; }
+.abc-article-body code {
+  font-family: monospace;
+  font-size: 0.9em;
+  background: var(--cream);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+/* Таблицы в статье */
+.abc-table-wrap { overflow-x: auto; margin: 1.5rem 0 2rem; }
+.abc-article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-xs);
+}
+.abc-article-body th {
+  font-family: var(--sans);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--ink-60);
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--ink-10);
+  text-align: left;
+  white-space: nowrap;
+}
+.abc-article-body td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--ink-10);
+  color: var(--ink-60);
+  font-weight: 300;
+  line-height: 1.5;
+}
+.abc-article-body tr:last-child td { border-bottom: none; }
+.abc-article-body tr:hover td { background: var(--cream); }
+
+/* ── CTA-блок в конце статьи ── */
+.abc-article-cta {
+  margin-top: 4rem;
+  padding: 2.5rem 3rem;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.abc-cta-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--warm-white);
+  margin-bottom: 0.5rem;
+}
+.abc-cta-sub {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: rgba(250,249,246,0.5);
+  line-height: 1.65;
+}
+.abc-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.abc-article-cta .btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+}
+.abc-article-cta .btn-primary:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+.abc-article-cta .btn-secondary {
+  color: var(--warm-white);
+  border-color: rgba(250,249,246,0.4);
+}
+.abc-article-cta .btn-secondary:hover {
+  border-color: var(--warm-white);
+}
+
+/* Навигация пред/след */
+.abc-article-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ink-10);
+}
+.abc-nav-link {
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.abc-nav-link:hover { color: var(--ink); }
+.abc-nav-next { margin-left: auto; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .abc-header { padding: 6rem 1.5rem 2rem; grid-template-columns: 1fr; gap: 2rem; }
+  .abc-letters { padding: 0 1.5rem 1.5rem; }
+  .abc-list { padding: 0 1.5rem 4rem; }
+  .abc-group-items { grid-template-columns: 1fr; }
+  .abc-no-results { padding: 2rem 1.5rem; }
+  .abc-article-wrap { padding: 6rem 1.5rem 4rem; }
+  .abc-article-cta {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    align-items: stretch;
+  }
+  .abc-cta-actions .btn-primary,
+  .abc-cta-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}

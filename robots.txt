@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /send.php
+Disallow: /config.php
+Disallow: /build.php
+Disallow: /abc/*.md
+
+Sitemap: https://stivmebel.ru/sitemap.xml

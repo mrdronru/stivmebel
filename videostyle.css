@@ -1,0 +1,187 @@
+/* ── VIDEO: только специфичные стили страницы ── */
+
+/* Тёмный фон */
+body { background: #111; overflow: hidden; }
+
+/* Nav переопределения для тёмного фона */
+nav {
+  background: rgba(17,17,17,0.94);
+  border-bottom-color: rgba(250,249,246,0.08);
+}
+.nav-logo { color: var(--warm-white); }
+.nav-links a { color: rgba(250,249,246,0.5); }
+.nav-links a:hover,
+.nav-links a.nav-active { color: var(--warm-white); }
+.nav-social-btn { border-color: rgba(250,249,246,0.12); color: rgba(250,249,246,0.5); }
+.nav-social-btn:hover { border-color: var(--gold); color: var(--gold); }
+.nav-cta { color: var(--warm-white); border-color: rgba(250,249,246,0.25); }
+.nav-cta:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.nav-burger span { background: var(--warm-white); }
+.nav-drawer { background: #111; }
+.nav-drawer ul a { color: var(--warm-white); }
+
+/* Лента */
+.video-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  height: calc(100vh - 4.5rem);
+  margin-top: 4.5rem;
+  scroll-behavior: smooth;
+  gap: 0;
+}
+
+/* Элемент ленты: 100vh */
+.video-item {
+  position: relative;
+  width: 100%;
+  max-width: calc((100vh - 4.5rem) * 9 / 16);
+  height: calc(100vh - 4.5rem);
+  background: #000;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Обложка */
+.video-poster {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.video-poster.hidden { opacity: 0; pointer-events: none; }
+
+/* Плеер */
+.video-player {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Градиент */
+.video-gradient {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Мета */
+.video-meta {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1.5rem 2rem;
+  z-index: 4;
+  pointer-events: none;
+}
+.video-num {
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.4rem;
+}
+.video-title {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  color: var(--warm-white);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+.video-desc {
+  font-size: var(--fs-xs);
+  font-weight: 300;
+  color: rgba(250,249,246,0.65);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* Контролы */
+.video-controls {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  z-index: 5;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.ctrl-btn {
+  width: 2.4rem; height: 2.4rem;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(250,249,246,0.2);
+  color: var(--warm-white);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  border-radius: 2px;
+}
+.ctrl-btn:hover { background: rgba(184,151,90,0.5); border-color: var(--gold); }
+.ctrl-btn svg { pointer-events: none; }
+
+/* Кнопка play по центру */
+.video-play-btn {
+  position: absolute; inset: 0; z-index: 4;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: none; cursor: pointer;
+}
+.video-play-icon {
+  width: 4rem; height: 4rem;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(250,249,246,0.35);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--warm-white);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.video-item.playing .video-play-icon { opacity: 0; }
+.video-item:hover .video-play-icon { transform: scale(1.08); }
+
+/* Прогресс-бар */
+.video-progress {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 6px;
+  background: rgba(250,249,246,0.2);
+  z-index: 6;
+  cursor: pointer;
+}
+.video-progress::before {
+  content: '';
+  position: absolute;
+  inset: -8px 0;
+}
+.video-progress-bar {
+  height: 100%;
+  background: var(--gold);
+  width: 0%;
+  pointer-events: none;
+}
+
+/* Индикатор звука */
+.muted-badge {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  z-index: 5;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(250,249,246,0.2);
+  color: rgba(250,249,246,0.7);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+}
+.muted-badge.visible { display: flex; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .video-item { max-width: 100%; height: calc(100svh - 4rem); }
+  .video-feed { margin-top: 4rem; height: calc(100svh - 4rem); }
+}
