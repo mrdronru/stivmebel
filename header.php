@@ -50,7 +50,7 @@ $basePath = $basePath ?? '';
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:site_name" content="<?php echo SITE_NAME; ?>">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="<?php echo isset($robots) ? $robots : 'index, follow'; ?>">
   <link rel="canonical" href="<?php echo rtrim(SITE_URL, '/') . '/' . ltrim($canonical_path ?? strtok($_SERVER['REQUEST_URI'] ?? '/', '?'), '/'); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

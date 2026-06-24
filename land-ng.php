@@ -3,6 +3,7 @@ require_once __DIR__ . '/config.php';
 $page           = '';
 $title          = 'Мебель для новостройки в Нижегородском · Стив Интерьеры';
 $description    = 'Делаем кухни и шкафы на заказ для жителей ЖК Среда, Аквилон Бисайд и ЖК Профит. Знаем планировки этих домов. Замер бесплатно.';
+$robots         = 'noindex, follow';
 $extra_css      = ['land-ng.css'];
 $canonical_path = 'land-ng';
 include 'header.php';
