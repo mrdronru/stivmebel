@@ -5,8 +5,15 @@ $title          = 'Страница не найдена · Стив Интерь
 $description    = 'Страница не существует или была удалена. Вернитесь на главную.';
 $canonical_path = '404';
 
+// Вычисляем $basePath по глубине запрошенного URL.
+// /abc/ldsp → глубина 1 → '../'
+// /gallery, /404 и т.д. → глубина 0 → ''
+$uri_path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+$depth    = max(0, substr_count(trim($uri_path, '/'), '/'));
+$basePath = str_repeat('../', $depth);
+
 http_response_code(404);
-include 'header.php';
+include __DIR__ . '/header.php';
 ?>
 
 <main class="e404-wrap">
@@ -14,15 +21,15 @@ include 'header.php';
     <div class="e404-num">404</div>
     <h1 class="e404-title">Страница не найдена</h1>
     <p class="e404-sub">Возможно, адрес изменился или страница была удалена.<br>Но мебель мы всё равно сделаем.</p>
-    <a href="index.php" class="btn-primary e404-home">На главную</a>
+    <a href="<?php echo $basePath; ?>index.php" class="btn-primary e404-home">На главную</a>
 
     <div class="e404-nav">
-      <a href="gallery.php" class="e404-link">Каталог работ</a>
-      <a href="price.php" class="e404-link">Цены</a>
-      <a href="video.php" class="e404-link">Видео</a>
-      <a href="abc.php" class="e404-link">Азбука</a>
-      <a href="about.php" class="e404-link">О нас</a>
-      <a href="index.php#contact" class="e404-link">Контакты</a>
+      <a href="<?php echo $basePath; ?>catalog.php" class="e404-link">Каталог работ</a>
+      <a href="<?php echo $basePath; ?>price.php" class="e404-link">Цены</a>
+      <a href="<?php echo $basePath; ?>video.php" class="e404-link">Видео</a>
+      <a href="<?php echo $basePath; ?>abc.php" class="e404-link">Азбука</a>
+      <a href="<?php echo $basePath; ?>about.php" class="e404-link">О нас</a>
+      <a href="<?php echo $basePath; ?>index.php#contact" class="e404-link">Контакты</a>
     </div>
   </div>
 </main>
@@ -90,4 +97,4 @@ include 'header.php';
 .e404-link:hover { color: var(--gold); }
 </style>
 
-<?php include 'footer.php'; ?>
+<?php include __DIR__ . '/footer.php'; ?>
