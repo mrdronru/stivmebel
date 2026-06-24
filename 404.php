@@ -27,7 +27,7 @@ include __DIR__ . '/header.php';
       <a href="<?php echo $basePath; ?>catalog.php" class="e404-link">Каталог работ</a>
       <a href="<?php echo $basePath; ?>price.php" class="e404-link">Цены</a>
       <a href="<?php echo $basePath; ?>video.php" class="e404-link">Видео</a>
-      <a href="<?php echo $basePath; ?>abc.php" class="e404-link">Азбука</a>
+      <a href="<?php echo $basePath; ?>abcd.php" class="e404-link">Азбука</a>
       <a href="<?php echo $basePath; ?>about.php" class="e404-link">О нас</a>
       <a href="<?php echo $basePath; ?>index.php#contact" class="e404-link">Контакты</a>
     </div>

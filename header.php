@@ -97,7 +97,7 @@ $nav_links = [
   'gallery'   => ['href' => $basePath . 'catalog.php',       'label' => 'Каталог'],
   'video'     => ['href' => $basePath . 'video.php',         'label' => 'Видео'],
   'favorites' => ['href' => $basePath . 'favorites.php',     'label' => 'Мне понравилось', 'fav' => true],
-  'abc'       => ['href' => $basePath . 'abc.php',           'label' => 'Азбука'],
+  'abc'       => ['href' => $basePath . 'abcd.php',           'label' => 'Азбука'],
   'price'     => ['href' => $basePath . 'price.php',         'label' => 'Цены'],
   'contact'   => ['href' => $basePath . 'index.php#contact', 'label' => 'Контакты'],
 ];

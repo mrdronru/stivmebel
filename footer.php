@@ -118,7 +118,10 @@ function closePopupOnBg(e) {
 }
 document.addEventListener('keydown', function(e) {
   if (e.key !== 'Escape') return;
-  // Закрывать попап только если он реально открыт
+  // Квиз (лендинг) — приоритет
+  var quiz = document.getElementById('quizOverlay');
+  if (quiz && quiz.classList.contains('lq-overlay--open')) { if (typeof closeQuiz === 'function') closeQuiz(); return; }
+  // Обычный попап
   var popup = document.getElementById('contactPopup');
   if (popup && popup.style.display === 'flex') closeContactPopup();
 });
