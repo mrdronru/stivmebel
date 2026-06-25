@@ -327,7 +327,7 @@ include 'header.php';
       showStep(1);
       document.getElementById('quizOverlay').classList.add('lq-overlay--open');
       document.body.style.overflow = 'hidden';
-      trackQuiz('open');
+      if (typeof ymGoal === 'function') ymGoal('quiz_open');
     };
 
     window.closeQuiz = function() {
@@ -358,7 +358,7 @@ include 'header.php';
         siblings.forEach(function(b){ b.classList.remove('lq-option--selected'); });
         this.classList.add('lq-option--selected');
         // Трекинг шага 3+
-        if (current >= 3) trackQuiz('step_' + current);
+        if (current >= 3 && typeof ymGoal === 'function') ymGoal('quiz_step_' + current);
         // Пауза для визуального отклика, потом переход
         var self = this;
         setTimeout(function() { showStep(current + 1); }, 220);
@@ -451,7 +451,7 @@ include 'header.php';
       .then(function(r){ return r.json(); })
       .then(function(data) {
         if (data.ok) {
-          trackQuiz('complete');
+          if (typeof ymGoal === 'function') ymGoal('quiz_complete');
           showStep(7);
           document.getElementById('quizBack').style.display = 'none';
           document.getElementById('quizProgress').style.width = '100%';
@@ -468,11 +468,6 @@ include 'header.php';
 
     // Закрытие по Escape обрабатывается в footer.php (общий обработчик сайта)
 
-    function trackQuiz(goal) {
-      if (typeof ym !== 'undefined') {
-        ymGoal('quiz_' + goal);
-      }
-    }
   })();
   </script>
 

@@ -125,7 +125,7 @@ $current = isset($page) ? $page : '';
     <a href="<?php echo SOCIAL_TG; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Telegram" onclick="ymGoal('click_telegram')">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21.9 4.5L18.5 19.3c-.25 1.1-.9 1.38-1.82.86L12 16.9l-2.25 2.17c-.25.25-.46.46-.94.46l.34-4.77 8.7-7.86c.38-.34-.08-.52-.58-.18L5.9 13.94 1.74 12.6c-.9-.28-.92-.9.19-1.33L20.64 3.17c.75-.28 1.4.17 1.26 1.33z" fill="currentColor"/></svg>
     </a>
-    <a href="<?php echo SOCIAL_VK; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="ВКонтакте">
+    <a href="<?php echo SOCIAL_VK; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="ВКонтакте" onclick="ymGoal('click_vk')">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21.6 7.2c.14-.47 0-.82-.67-.82h-2.2c-.57 0-.83.3-.97.63 0 0-1.13 2.75-2.73 4.54-.52.52-.75.68-1.03.68-.14 0-.35-.16-.35-.63V7.2c0-.57-.16-.82-.64-.82H10c-.36 0-.57.27-.57.52 0 .55.82.68.9 2.22v3.35c0 .72-.13.85-.41.85-.75 0-2.58-2.76-3.66-5.92-.21-.62-.43-.87-1-.87H3.06c-.63 0-.76.3-.76.63 0 .59.76 3.5 3.52 7.35C7.7 17.5 10.2 18.9 12.5 18.9c1.37 0 1.54-.31 1.54-.84v-1.94c0-.63.13-.76.58-.76.33 0 .88.17 2.19 1.43 1.49 1.49 1.73 2.11 2.57 2.11h2.2c.63 0 .95-.31.77-.93-.2-.62-.93-1.52-1.9-2.59-.52-.62-1.3-1.29-1.54-1.62-.33-.42-.23-.61 0-.98 0 0 2.72-3.83 3-5.12z" fill="currentColor"/></svg>
     </a>
     <a href="<?php echo SOCIAL_MAX; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Max">
@@ -161,7 +161,7 @@ $current = isset($page) ? $page : '';
     <a href="<?php echo SOCIAL_TG; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Telegram" style="width:2.5rem;height:2.5rem;" onclick="ymGoal('click_telegram')">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M21.9 4.5L18.5 19.3c-.25 1.1-.9 1.38-1.82.86L12 16.9l-2.25 2.17c-.25.25-.46.46-.94.46l.34-4.77 8.7-7.86c.38-.34-.08-.52-.58-.18L5.9 13.94 1.74 12.6c-.9-.28-.92-.9.19-1.33L20.64 3.17c.75-.28 1.4.17 1.26 1.33z" fill="currentColor"/></svg>
     </a>
-    <a href="<?php echo SOCIAL_VK; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="ВКонтакте" style="width:2.5rem;height:2.5rem;">
+    <a href="<?php echo SOCIAL_VK; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="ВКонтакте" style="width:2.5rem;height:2.5rem;" onclick="ymGoal('click_vk')">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M21.6 7.2c.14-.47 0-.82-.67-.82h-2.2c-.57 0-.83.3-.97.63 0 0-1.13 2.75-2.73 4.54-.52.52-.75.68-1.03.68-.14 0-.35-.16-.35-.63V7.2c0-.57-.16-.82-.64-.82H10c-.36 0-.57.27-.57.52 0 .55.82.68.9 2.22v3.35c0 .72-.13.85-.41.85-.75 0-2.58-2.76-3.66-5.92-.21-.62-.43-.87-1-.87H3.06c-.63 0-.76.3-.76.63 0 .59.76 3.5 3.52 7.35C7.7 17.5 10.2 18.9 12.5 18.9c1.37 0 1.54-.31 1.54-.84v-1.94c0-.63.13-.76.58-.76.33 0 .88.17 2.19 1.43 1.49 1.49 1.73 2.11 2.57 2.11h2.2c.63 0 .95-.31.77-.93-.2-.62-.93-1.52-1.9-2.59-.52-.62-1.3-1.29-1.54-1.62-.33-.42-.23-.61 0-.98 0 0 2.72-3.83 3-5.12z" fill="currentColor"/></svg>
     </a>
     <a href="<?php echo SOCIAL_MAX; ?>" class="nav-social-btn" target="_blank" rel="noopener" aria-label="Max" style="width:2.5rem;height:2.5rem;">
