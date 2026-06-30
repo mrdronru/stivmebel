@@ -26,18 +26,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 30% center;
 }
 
 .l-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(26,24,20,0.55) 0%,
-    rgba(26,24,20,0.4) 50%,
-    rgba(26,24,20,0.75) 100%
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(26,24,20,0.72) 0%,
+      rgba(26,24,20,0.45) 55%,
+      rgba(26,24,20,0.2) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(26,24,20,0.3) 0%,
+      rgba(26,24,20,0.25) 40%,
+      rgba(26,24,20,0.82) 100%
+    );
 }
 
 .l-hero-content {
@@ -136,7 +143,7 @@
 
 .l-label {
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -204,7 +211,7 @@
 }
 
 .l-utp .l-label {
-  color: rgba(250,249,246,0.35);
+  color: rgba(250,249,246,0.5);
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -250,9 +257,9 @@
 
 .l-utp-text {
   font-family: var(--sans);
-  font-size: var(--fs-xs);
+  font-size: var(--fs-sm);
   font-weight: 300;
-  color: rgba(250,249,246,0.45);
+  color: rgba(250,249,246,0.65);
   line-height: 1.7;
 }
 
@@ -308,7 +315,7 @@
 }
 
 .l-process .l-label {
-  color: rgba(250,249,246,0.35);
+  color: rgba(250,249,246,0.5);
   margin-bottom: 3.5rem;
 }
 
@@ -349,7 +356,7 @@
   font-family: var(--sans);
   font-size: var(--fs-sm);
   font-weight: 300;
-  color: rgba(250,249,246,0.45);
+  color: rgba(250,249,246,0.65);
   line-height: 1.7;
 }
 
@@ -398,7 +405,7 @@
   font-family: var(--sans);
   font-size: var(--fs-sm);
   font-weight: 300;
-  color: rgba(250,249,246,0.55);
+  color: rgba(250,249,246,0.75);
   line-height: 1.7;
   max-width: 420px;
   margin: 0 auto 2.5rem;
@@ -427,7 +434,7 @@
   margin-top: 1.25rem;
   font-family: var(--sans);
   font-size: var(--fs-sm);
-  color: rgba(250,249,246,0.3);
+  color: rgba(250,249,246,0.7);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -779,4 +786,504 @@
   .lq-option:last-child:nth-child(odd) {
     grid-column: auto;
   }
+}
+
+/* ─── ШАПКА ЛЕНДИНГА ─────────────────────────────────────────────── */
+.ln-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 4rem;
+  background: rgba(26,24,20,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: padding 0.3s;
+}
+
+.ln-nav-logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--warm-white);
+  text-decoration: none;
+}
+.ln-nav-logo span {
+  color: var(--gold);
+}
+
+.ln-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ln-nav-phone {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: rgba(250,249,246,0.85);
+  text-decoration: none;
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+.ln-nav-phone:hover {
+  color: var(--gold);
+}
+
+.ln-nav-btn {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  border: none;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.ln-nav-btn:hover {
+  background: var(--gold-light);
+}
+
+@media (max-width: 900px) {
+  .ln-nav {
+    padding: 0.9rem 1.5rem;
+  }
+  .ln-nav-logo {
+    font-size: 1rem;
+  }
+  .ln-nav-phone {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--warm-white);
+  }
+  .ln-nav-btn {
+    display: none;
+  }
+}
+
+/* ─── БЛОК О СТАНИСЛАВЕ ──────────────────────────────────────────── */
+.l-about {
+  background: var(--warm-white);
+  padding: 7rem 5vw;
+}
+
+.l-about-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.l-about-video-wrap {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  max-height: 520px;
+  overflow: hidden;
+  background: var(--ink-10);
+}
+
+.l-about-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.l-about-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26,24,20,0.25);
+  border: none;
+  cursor: pointer;
+  color: var(--warm-white);
+  transition: background 0.2s;
+}
+.l-about-play:hover {
+  background: rgba(26,24,20,0.4);
+}
+.l-about-play svg circle {
+  transition: stroke 0.2s;
+}
+.l-about-play:hover svg circle {
+  stroke: var(--gold);
+}
+
+.l-about-text .l-label {
+  margin-bottom: 1.2rem;
+}
+
+.l-about-body {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.l-about-cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  border: none;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.l-about-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .l-about {
+    padding: 5rem 1.5rem;
+  }
+  .l-about-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .l-about-video-wrap {
+    max-height: 380px;
+    aspect-ratio: 9 / 14;
+  }
+}
+
+/* ─── ПОРТФОЛИО ──────────────────────────────────────────────────── */
+.l-portfolio {
+  background: var(--cream);
+  padding: 7rem 5vw;
+}
+
+.l-portfolio-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.l-portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 3px;
+  margin-bottom: 3rem;
+}
+
+.l-pf-item:nth-child(1) { grid-column: span 2; }
+.l-pf-item:nth-child(2) { grid-column: span 1; }
+.l-pf-item:nth-child(3) { grid-column: span 1; }
+.l-pf-item:nth-child(4) { grid-column: span 1; }
+.l-pf-item:nth-child(5) { grid-column: span 1; }
+
+.l-pf-img {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--ink-10);
+}
+
+.l-pf-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.l-pf-item:hover .l-pf-img img {
+  transform: scale(1.04);
+}
+
+.l-pf-cap,
+.l-pf-cap a {
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.55;
+  padding: 0.85rem 0.1rem 0;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .l-portfolio {
+    padding: 5rem 1.5rem;
+  }
+  .l-portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .l-pf-item:nth-child(1) { grid-column: span 2; }
+  .l-pf-item:nth-child(2) { grid-column: span 1; }
+  .l-pf-item:nth-child(3) { grid-column: span 1; }
+  .l-pf-item:nth-child(4) { grid-column: span 1; }
+  .l-pf-item:nth-child(5) { grid-column: span 1; }
+  .l-pf-img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .l-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .l-pf-item:nth-child(n) {
+    grid-column: span 1;
+  }
+}
+
+/* ─── Скрываем стандартный nav на лендинге ──────────────────────── */
+body:has(.ln-nav) #mainNav {
+  display: none !important;
+}
+
+body:has(.ln-nav) .l-wrap {
+  margin-top: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   LAND-CC — ЖК Сердце Столицы (дополнительные стили)
+   Префикс: lcc-
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Герой с видео ──────────────────────────────────────────────── */
+.lcc-hero {
+  background: var(--ink);
+}
+
+.lcc-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.lcc-overlay {
+  background:
+    linear-gradient(
+      to right,
+      rgba(26,24,20,0.6) 0%,
+      rgba(26,24,20,0.25) 55%,
+      rgba(26,24,20,0.1) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(26,24,20,0.15) 0%,
+      rgba(26,24,20,0.05) 40%,
+      rgba(26,24,20,0.65) 100%
+    );
+}
+
+.lcc-hero-content {
+  max-width: 560px;
+}
+
+.lcc-h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.lcc-lead {
+  margin-bottom: 1.75rem;
+}
+
+/* ─── Видео-попап ────────────────────────────────────────────────── */
+.lcc-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.92);
+  padding: 2rem;
+}
+.lcc-video-modal--open {
+  display: flex;
+}
+
+.lcc-video-modal-inner {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  max-height: 88vh;
+}
+
+.lcc-video-modal-inner video {
+  width: 100%;
+  height: 100%;
+  max-height: 88vh;
+  display: block;
+  background: #000;
+}
+
+.lcc-video-close {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--warm-white);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.lcc-video-close:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 600px) {
+  .lcc-video-modal {
+    padding: 1rem;
+  }
+  .lcc-video-close {
+    top: -2.5rem;
+  }
+}
+
+/* ─── Кейс-блок ─────────────────────────────────────────────────── */
+.lcc-case {
+  background: var(--cream);
+}
+
+.lcc-case-text {
+  max-width: 640px;
+  margin-top: 2rem;
+}
+
+.lcc-case-text p {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
+
+.lcc-case-quote {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.6;
+  font-style: italic;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ─── Фото-сетка проекта ─────────────────────────────────────────── */
+.lcc-portfolio {
+  background: var(--warm-white);
+}
+
+.lcc-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.lcc-photo-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.lcc-photo-item .l-pf-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.lcc-photo-item .l-pf-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lcc-photo-item .l-pf-cap {
+  padding-top: 0.6rem;
+}
+
+@media (max-width: 560px) {
+  .lcc-photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── История Марины ─────────────────────────────────────────────── */
+.lcc-story {
+  background: var(--ink);
+  padding: 7rem 5vw;
+}
+
+.lcc-story-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.lcc-story .l-label {
+  color: rgba(250,249,246,0.5);
+  margin-bottom: 2rem;
+}
+
+.lcc-blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1.5;
+  margin: 0 0 2.5rem;
+  border: none;
+  padding: 0;
+}
+
+.lcc-story-body {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: rgba(250,249,246,0.65);
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .lcc-story {
+    padding: 5rem 1.5rem;
+  }
+}
+
+.lcc-about-photo {
+  background: var(--warm-white);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.lcc-about-photo img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }

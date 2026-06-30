@@ -4,10 +4,20 @@ $page           = '';
 $title          = 'Мебель для новостройки в Нижегородском · Стив Интерьеры';
 $description    = 'Делаем кухни и шкафы на заказ для жителей ЖК Среда, Аквилон Бисайд и ЖК Профит. Знаем планировки этих домов. Замер бесплатно.';
 $robots         = 'noindex, follow';
-$extra_css      = ['land-ng.css'];
+$extra_css      = ['landing.css'];
 $canonical_path = 'land-ng';
+
 include 'header.php';
 ?>
+
+<!-- ── ШАПКА ЛЕНДИНГА (упрощённая) ── -->
+<header class="ln-nav" id="lnNav">
+  <a href="index.php" class="ln-nav-logo">Стив <span>Интерьеры</span></a>
+  <div class="ln-nav-right">
+    <a href="tel:<?php echo SITE_PHONE_HREF; ?>" class="ln-nav-phone" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
+    <button class="ln-nav-btn" onclick="openContactPopup()">Бесплатный замер</button>
+  </div>
+</header>
 
 <main class="l-wrap">
 
@@ -24,10 +34,7 @@ include 'header.php';
         <button class="l-hero-btn l-hero-btn--outline" onclick="openQuiz()">Рассчитать стоимость</button>
       </div>
     </div>
-    <div class="l-scroll-hint">
-      <span>листайте</span>
-      <svg width="12" height="20" viewBox="0 0 12 20" fill="none"><path d="M6 1v18M1 13l5 6 5-6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
+
   </section>
 
   <!-- ── ЗНАЕМ РАЙОН ── -->
@@ -40,6 +47,32 @@ include 'header.php';
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>ЖК Среда</span></div>
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>ЖК Аквилон Бисайд</span></div>
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>ЖК Профит</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── СТАНИСЛАВ ── -->
+  <section class="l-about">
+    <div class="l-about-inner">
+      <div class="l-about-video-wrap">
+        <video
+          class="l-about-video"
+          src="hello.mp4"
+          poster="images/hello-poster.jpg"
+          playsinline
+          preload="none"
+          id="aboutVideo"
+        ></video>
+        <button class="l-about-play" id="aboutPlayBtn" onclick="playAboutVideo()" aria-label="Воспроизвести видео">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="1.2"/><path d="M11 9.5l9 4.5-9 4.5V9.5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+      <div class="l-about-text">
+        <p class="l-label">Кто делает вашу мебель</p>
+        <h2 class="l-h2">Меня зовут<br><em>Станислав</em></h2>
+        <p class="l-about-body">Я делаю мебель с 2012 года. Кухни, шкафы, гардеробные и корпусная мебель на заказ — с замером, проектом и монтажом под ключ.</p>
+        <p class="l-about-body">Живу здесь, в Нижегородском районе. Приеду быстро, знаю планировки ваших домов, и отвечаю за результат лично — и как менеджер, и как мастер.</p>
+        <button class="l-about-cta" onclick="openContactPopup()">Бесплатный замер</button>
       </div>
     </div>
   </section>
@@ -63,8 +96,8 @@ include 'header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM12 12v.01M8 12v.01M16 12v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 3h6M10 3v4M14 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">Один исполнитель — от замера до сдачи</div>
-            <div class="l-utp-text">Нет цепочки посредников. Тот, кто приехал на замер, — тот же, кто делает проект и контролирует монтаж.</div>
+            <div class="l-utp-title">Никакого испорченного телефона</div>
+            <div class="l-utp-text">Вы общаетесь напрямую с нашей командой. Станислав лично контролирует каждый этап и за всё отвечает лично.</div>
           </div>
         </div>
         <div class="l-utp-item">
@@ -81,7 +114,7 @@ include 'header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">Замер бесплатно — в день обращения</div>
+            <div class="l-utp-title">Замер бесплатно — в удобное время</div>
             <div class="l-utp-text">Приедем в удобное время, снимем точные размеры. Без предоплаты и без обязательств с вашей стороны.</div>
           </div>
         </div>
@@ -91,34 +124,52 @@ include 'header.php';
           </div>
           <div class="l-utp-body">
             <div class="l-utp-title">Выезжаем по всей Москве и МО</div>
-            <div class="l-utp-text">Работаем в любом районе — не только рядом. Нижегородский, Текстильщики, Выхино, другие — всё доступно.</div>
+            <div class="l-utp-text">Работаем в любом районе — не только рядом. Нижегородский, Рязанский, Текстильщики, Выхино, другие — всё доступно.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── ТРИ РАБОТЫ ── -->
-  <section class="l-works">
-    <div class="l-works-inner">
-      <div class="l-work l-work--wide">
-        <div class="l-work-img">
-          <img src="images/k01.jpg" alt="Кухня на заказ" loading="lazy">
+  <!-- ── ПОРТФОЛИО ── -->
+  <section class="l-portfolio">
+    <div class="l-portfolio-inner">
+      <p class="l-label" style="text-align:center; margin-bottom:3rem;">Наши работы</p>
+      <div class="l-portfolio-grid">
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0002-kitchen.jpg" alt="Кухня в неудобной планировке" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Кухня в неудобной планировке: вписали так, что не осталось ни сантиметра впустую</p>
+        </div>
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0073-hallway.jpg" alt="Шкаф в прихожую" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Шкаф в прихожую: максимум вместимости при минимуме площади</p>
+        </div>
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0091-kitchen.jpg" alt="Угловая кухня с витринным шкафом" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Угловая кухня с витринным шкафом: классика, которая не надоедает</p>
+        </div>
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0109-kitchen.jpg" alt="Кухня по дизайн-проекту" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Кухня по дизайн-проекту: воплотили точно по чертежам дизайнера</p>
+        </div>
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0147-other.jpg" alt="ТВ-тумба со скрытой проводкой" loading="lazy">
+          </div>
+          <p class="l-pf-cap">ТВ-тумба со скрытой проводкой: никаких проводов, всё внутри</p>
         </div>
       </div>
-      <div class="l-work">
-        <div class="l-work-img">
-          <img src="images/k04.jpg" alt="Шкаф-купе на заказ" loading="lazy">
-        </div>
+      <div class="l-works-cta">
+        <a href="catalog.php" class="btn-secondary" target="_blank" rel="noopener">Все работы в галерее</a>
       </div>
-      <div class="l-work">
-        <div class="l-work-img">
-          <img src="images/k06.jpg" alt="Гардеробная на заказ" loading="lazy">
-        </div>
-      </div>
-    </div>
-    <div class="l-works-cta">
-      <a href="catalog.php" class="btn-secondary">Все работы в галерее</a>
     </div>
   </section>
 
@@ -161,7 +212,7 @@ include 'header.php';
     <div class="l-cta-content">
       <h2 class="l-cta-title">Запишитесь на<br>бесплатный замер</h2>
       <p class="l-cta-sub">Приедем, посмотрим пространство, привезём образцы. Цена — до начала работ, в договоре.</p>
-      <button class="l-cta-btn" onclick="openContactPopup()">Записаться</button>
+      <button class="l-cta-btn" onclick="openContactPopup()">Бесплатный замер</button>
       <a href="tel:<?php echo SITE_PHONE_HREF; ?>"
          class="l-cta-phone"
          onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
@@ -174,131 +225,117 @@ include 'header.php';
       <button class="lq-close" onclick="closeQuiz()" aria-label="Закрыть">&times;</button>
 
       <!-- Прогресс-бар -->
-      <div class="lq-progress">
-        <div class="lq-progress-bar" id="quizProgress"></div>
+      <div class="lq-progress"><div class="lq-progress-bar" id="quizProgress"></div></div>
+
+      <!-- Шаг 1: Что нужно -->
+      <div class="lq-step" data-step="1">
+        <p class="lq-step-label">Шаг 1 из 6</p>
+        <p class="lq-question">Что вам нужно сделать?</p>
+        <div class="lq-options">
+          <button class="lq-option" data-key="type" data-val="Кухня">Кухня</button>
+          <button class="lq-option" data-key="type" data-val="Шкаф-купе">Шкаф-купе</button>
+          <button class="lq-option" data-key="type" data-val="Гардеробная">Гардеробная</button>
+          <button class="lq-option" data-key="type" data-val="Несколько предметов">Несколько предметов</button>
+        </div>
       </div>
 
-      <div class="lq-body" id="quizBody">
+      <!-- Шаг 2: Метраж -->
+      <div class="lq-step" data-step="2" style="display:none">
+        <p class="lq-step-label">Шаг 2 из 6</p>
+        <p class="lq-question">Какой метраж помещения?</p>
+        <div class="lq-options">
+          <button class="lq-option" data-key="area" data-val="До 8 м²">До 8 м²</button>
+          <button class="lq-option" data-key="area" data-val="8–12 м²">8–12 м²</button>
+          <button class="lq-option" data-key="area" data-val="12–18 м²">12–18 м²</button>
+          <button class="lq-option" data-key="area" data-val="Больше 18 м²">Больше 18 м²</button>
+        </div>
+      </div>
 
-        <!-- ШАГ 1: Что нужно -->
-        <div class="lq-step" data-step="1">
-          <p class="lq-step-label">Шаг 1 из 6</p>
-          <h3 class="lq-question">Что вам нужно сделать?</h3>
-          <div class="lq-options">
-            <button class="lq-option" data-key="type" data-val="Кухня">Кухня</button>
-            <button class="lq-option" data-key="type" data-val="Шкаф-купе">Шкаф-купе</button>
-            <button class="lq-option" data-key="type" data-val="Гардеробная">Гардеробная</button>
-            <button class="lq-option" data-key="type" data-val="Несколько предметов">Несколько предметов</button>
+      <!-- Шаг 3: Стиль -->
+      <div class="lq-step" data-step="3" style="display:none">
+        <p class="lq-step-label">Шаг 3 из 6</p>
+        <p class="lq-question">Какой стиль вам ближе?</p>
+        <div class="lq-options">
+          <button class="lq-option" data-key="style" data-val="Современный">Современный</button>
+          <button class="lq-option" data-key="style" data-val="Классика">Классика</button>
+          <button class="lq-option" data-key="style" data-val="Минимализм">Минимализм</button>
+          <button class="lq-option" data-key="style" data-val="Лофт">Лофт</button>
+          <button class="lq-option" data-key="style" data-val="Пока не определился">Пока не определился</button>
+        </div>
+      </div>
+
+      <!-- Шаг 4: Бюджет -->
+      <div class="lq-step" data-step="4" style="display:none">
+        <p class="lq-step-label">Шаг 4 из 6</p>
+        <p class="lq-question">Ориентировочный бюджет?</p>
+        <div class="lq-options">
+          <button class="lq-option" data-key="budget" data-val="До 200 000 ₽">До 200 000 ₽</button>
+          <button class="lq-option" data-key="budget" data-val="200–400 000 ₽">200–400 000 ₽</button>
+          <button class="lq-option" data-key="budget" data-val="400–700 000 ₽">400–700 000 ₽</button>
+          <button class="lq-option" data-key="budget" data-val="Более 700 000 ₽">Более 700 000 ₽</button>
+        </div>
+      </div>
+
+      <!-- Шаг 5: Сроки -->
+      <div class="lq-step" data-step="5" style="display:none">
+        <p class="lq-step-label">Шаг 5 из 6</p>
+        <p class="lq-question">Когда планируете заказать?</p>
+        <div class="lq-options">
+          <button class="lq-option" data-key="timing" data-val="Уже сейчас">Уже сейчас</button>
+          <button class="lq-option" data-key="timing" data-val="Через 1–2 месяца">Через 1–2 месяца</button>
+          <button class="lq-option" data-key="timing" data-val="Пока присматриваюсь">Пока присматриваюсь</button>
+        </div>
+      </div>
+
+      <!-- Шаг 6: Контакт -->
+      <div class="lq-step" data-step="6" style="display:none">
+        <p class="lq-step-label">Шаг 6 из 6</p>
+        <p class="lq-question">Как с вами связаться?</p>
+        <p class="lq-contact-hint">Выберите удобный способ — ответим там, где вам комфортно.</p>
+        <div class="lq-contact-form">
+          <input class="lq-input" type="text" id="quizName" placeholder="Введите имя" autocomplete="given-name">
+          <span class="lq-err" id="quizNameErr" style="display:none">Введите имя</span>
+          <div class="lq-contact-methods">
+            <button class="lq-method" data-method="phone" onclick="selectMethod('phone')"><span class="lq-method-icon">📞</span> Телефон</button>
+            <button class="lq-method" data-method="telegram" onclick="selectMethod('telegram')"><span class="lq-method-icon">✈️</span> Telegram</button>
+            <button class="lq-method" data-method="vk" onclick="selectMethod('vk')"><span class="lq-method-icon">📘</span> ВКонтакте</button>
+            <button class="lq-method" data-method="max" onclick="selectMethod('max')"><span class="lq-method-icon">📱</span> Макс</button>
+            <button class="lq-method" data-method="email" onclick="selectMethod('email')"><span class="lq-method-icon">📧</span> Email</button>
           </div>
-        </div>
-
-        <!-- ШАГ 2: Площадь -->
-        <div class="lq-step" data-step="2" style="display:none">
-          <p class="lq-step-label">Шаг 2 из 6</p>
-          <h3 class="lq-question">Какой метраж помещения?</h3>
-          <div class="lq-options">
-            <button class="lq-option" data-key="area" data-val="До 8 м²">До 8 м²</button>
-            <button class="lq-option" data-key="area" data-val="8–12 м²">8–12 м²</button>
-            <button class="lq-option" data-key="area" data-val="12–18 м²">12–18 м²</button>
-            <button class="lq-option" data-key="area" data-val="Больше 18 м²">Больше 18 м²</button>
+          <div id="quizContactFields" style="display:none">
+            <input class="lq-input" type="tel"   id="quizPhone"    placeholder="+7 (___) ___-__-__" style="display:none" autocomplete="tel">
+            <input class="lq-input" type="text"  id="quizTelegram" placeholder="@username"          style="display:none" autocomplete="off">
+            <input class="lq-input" type="text"  id="quizVk"       placeholder="vk.com/..."         style="display:none" autocomplete="off">
+            <input class="lq-input" type="tel"   id="quizMax"      placeholder="+7 (___) ___-__-__" style="display:none" autocomplete="tel">
+            <input class="lq-input" type="email" id="quizEmail"    placeholder="email@example.com"  style="display:none" autocomplete="email">
           </div>
+          <span class="lq-err" id="quizContactErr" style="display:none">Выберите способ связи</span>
+          <button class="lq-submit" id="quizSubmitBtn" onclick="submitQuiz()">Получить расчёт</button>
         </div>
+      </div>
 
-        <!-- ШАГ 3: Стиль -->
-        <div class="lq-step" data-step="3" style="display:none">
-          <p class="lq-step-label">Шаг 3 из 6</p>
-          <h3 class="lq-question">Какой стиль вам ближе?</h3>
-          <div class="lq-options">
-            <button class="lq-option" data-key="style" data-val="Современный">Современный</button>
-            <button class="lq-option" data-key="style" data-val="Классика">Классика</button>
-            <button class="lq-option" data-key="style" data-val="Минимализм">Минимализм</button>
-            <button class="lq-option" data-key="style" data-val="Лофт">Лофт</button>
-            <button class="lq-option" data-key="style" data-val="Пока не определился">Пока не определился</button>
-          </div>
-        </div>
+      <!-- Шаг 7: Спасибо -->
+      <div class="lq-step lq-success" data-step="7" style="display:none">
+        <div class="lq-success-icon">✓</div>
+        <p class="lq-success-title">Спасибо, заявка получена!</p>
+        <p class="lq-success-text">Свяжемся с вами в течение 2 часов в рабочее время. Пока ждёте — посмотрите наши работы.</p>
+        <a href="catalog.php" class="lq-success-link">Смотреть галерею работ →</a>
+      </div>
 
-        <!-- ШАГ 4: Бюджет -->
-        <div class="lq-step" data-step="4" style="display:none">
-          <p class="lq-step-label">Шаг 4 из 6</p>
-          <h3 class="lq-question">Ориентировочный бюджет?</h3>
-          <div class="lq-options">
-            <button class="lq-option" data-key="budget" data-val="До 200 000 ₽">До 200 000 ₽</button>
-            <button class="lq-option" data-key="budget" data-val="200–400 000 ₽">200–400 000 ₽</button>
-            <button class="lq-option" data-key="budget" data-val="400–700 000 ₽">400–700 000 ₽</button>
-            <button class="lq-option" data-key="budget" data-val="Более 700 000 ₽">Более 700 000 ₽</button>
-          </div>
-        </div>
-
-        <!-- ШАГ 5: Сроки -->
-        <div class="lq-step" data-step="5" style="display:none">
-          <p class="lq-step-label">Шаг 5 из 6</p>
-          <h3 class="lq-question">Когда планируете заказать?</h3>
-          <div class="lq-options">
-            <button class="lq-option" data-key="timing" data-val="Уже сейчас">Уже сейчас</button>
-            <button class="lq-option" data-key="timing" data-val="Через 1–2 месяца">Через 1–2 месяца</button>
-            <button class="lq-option" data-key="timing" data-val="Пока присматриваюсь">Пока присматриваюсь</button>
-          </div>
-        </div>
-
-        <!-- ШАГ 6: Контакт -->
-        <div class="lq-step" data-step="6" style="display:none">
-          <p class="lq-step-label">Шаг 6 из 6</p>
-          <h3 class="lq-question">Как с вами связаться?</h3>
-          <p class="lq-contact-hint">Выберите удобный способ — ответим там, где вам комфортно.</p>
-          <div class="lq-contact-form">
-            <input class="lq-input" id="quizName" type="text" placeholder="Ваше имя" autocomplete="name">
-            <p class="lq-err" id="quizNameErr" style="display:none">Введите имя</p>
-
-            <!-- Способы связи -->
-            <div class="lq-contact-methods">
-              <button class="lq-method" data-method="phone" onclick="selectMethod('phone')">
-                <span class="lq-method-icon">📞</span> Телефон
-              </button>
-              <button class="lq-method" data-method="telegram" onclick="selectMethod('telegram')">
-                <span class="lq-method-icon">✈️</span> Telegram
-              </button>
-              <button class="lq-method" data-method="vk" onclick="selectMethod('vk')">
-                <span class="lq-method-icon">📘</span> ВКонтакте
-              </button>
-              <button class="lq-method" data-method="max" onclick="selectMethod('max')">
-                <span class="lq-method-icon">📱</span> Макс
-              </button>
-              <button class="lq-method" data-method="email" onclick="selectMethod('email')">
-                <span class="lq-method-icon">📧</span> Email
-              </button>
-            </div>
-
-            <!-- Поля ввода — показывается только выбранное -->
-            <div id="quizContactFields" style="display:none">
-              <input class="lq-input" id="quizPhone"    type="tel"   placeholder="+7 (___) ___-__-__" autocomplete="tel"   style="display:none">
-              <input class="lq-input" id="quizTelegram" type="text"  placeholder="@username или номер" autocomplete="off"   style="display:none">
-              <input class="lq-input" id="quizVk"       type="text"  placeholder="vk.com/id или @nickname" autocomplete="off" style="display:none">
-              <input class="lq-input" id="quizMax"      type="tel"   placeholder="Номер телефона для Макс" autocomplete="tel" style="display:none">
-              <input class="lq-input" id="quizEmail"    type="email" placeholder="example@mail.ru"     autocomplete="email" style="display:none">
-              <p class="lq-err" id="quizContactErr" style="display:none">Заполните поле</p>
-            </div>
-
-            <button class="lq-submit" id="quizSubmitBtn" onclick="submitQuiz()">Получить расчёт</button>
-          </div>
-        </div>
-
-        <!-- ФИНАЛ -->
-        <div class="lq-step lq-success" data-step="7" style="display:none">
-          <div class="lq-success-icon">✓</div>
-          <h3 class="lq-success-title">Спасибо, заявка получена!</h3>
-          <p class="lq-success-text">Свяжемся с вами в течение 2 часов в рабочее время. Пока ждёте — посмотрите наши работы.</p>
-          <a href="catalog.php" class="lq-success-link">Смотреть галерею работ →</a>
-        </div>
-
-      </div><!-- /lq-body -->
-
-      <!-- Кнопка назад -->
       <button class="lq-back" id="quizBack" onclick="quizBack()" style="display:none">← Назад</button>
-
     </div>
   </div>
 
   <script>
+  // ── Видео Станислава ──
+  function playAboutVideo() {
+    var v = document.getElementById('aboutVideo');
+    var btn = document.getElementById('aboutPlayBtn');
+    btn.style.display = 'none';
+    v.controls = true;
+    v.play();
+  }
+
   (function() {
     var answers = {};
     var current = 1;
@@ -347,32 +384,24 @@ include 'header.php';
 
     window.quizBack = function() { if (current > 1) showStep(current - 1); };
 
-    // Клик по варианту ответа — запись и автопереход
     document.querySelectorAll('.lq-option').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var key = this.dataset.key;
         var val = this.dataset.val;
         answers[key] = val;
-        // Подсветить выбранный
         var siblings = this.closest('.lq-options').querySelectorAll('.lq-option');
         siblings.forEach(function(b){ b.classList.remove('lq-option--selected'); });
         this.classList.add('lq-option--selected');
-        // Трекинг шага 3+
         if (current >= 3 && typeof ymGoal === 'function') ymGoal('quiz_step_' + current);
-        // Пауза для визуального отклика, потом переход
-        var self = this;
         setTimeout(function() { showStep(current + 1); }, 220);
       });
     });
 
-    // selectMethod — переключение способа связи
     window.selectMethod = function(method) {
       selectedMethod = method;
-      // Кнопки
       document.querySelectorAll('.lq-method').forEach(function(b){
         b.classList.toggle('lq-method--active', b.dataset.method === method);
       });
-      // Поля
       Object.keys(methodFields).forEach(function(m){
         var el = document.getElementById(methodFields[m].id);
         el.style.display = m === method ? '' : 'none';
@@ -382,7 +411,6 @@ include 'header.php';
       document.getElementById(methodFields[method].id).focus();
     };
 
-    // Маска телефона для phone и max
     ['quizPhone', 'quizMax'].forEach(function(id) {
       document.getElementById(id).addEventListener('input', function() {
         if (typeof window.formatPhone === 'function') window.formatPhone(this);
@@ -400,7 +428,6 @@ include 'header.php';
 
       if (!name) { nameErr.style.display = ''; ok = false; }
 
-      // Валидация способа связи
       var contactValue = '';
       if (!selectedMethod) {
         if (contactErr) contactErr.style.display = '';
@@ -434,15 +461,14 @@ include 'header.php';
       if (answers.timing) comment.push('Срок: ' + answers.timing);
       comment.push('Способ связи: ' + methodFields[selectedMethod].label + ' — ' + contactValue);
 
-      // phone передаём отдельно если выбран телефон или макс
       var phoneVal = (selectedMethod === 'phone' || selectedMethod === 'max') ? contactValue : '';
 
-      fetch('<?php echo $basePath; ?>send.php', {
+      fetch('send.php', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           name: name,
-          phone: phoneVal || contactValue, // send.php требует phone, передаём что есть
+          phone: phoneVal || contactValue,
           type: answers.type || '',
           comment: comment.join(' / '),
           source: 'quiz'
@@ -465,8 +491,6 @@ include 'header.php';
         btn.textContent = 'Попробовать ещё раз';
       });
     };
-
-    // Закрытие по Escape обрабатывается в footer.php (общий обработчик сайта)
 
   })();
   </script>
