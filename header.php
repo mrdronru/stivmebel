@@ -60,11 +60,13 @@ $basePath = $basePath ?? '';
   <?php if (isset($extra_css)): foreach ($extra_css as $css): ?>
   <link rel="stylesheet" href="<?php echo $basePath; ?><?php echo $css; ?>">
   <?php endforeach; endif; ?>
+  <link rel="icon" href="<?php echo $basePath; ?>favicon.svg" type="image/svg+xml">
   <link rel="icon" href="<?php echo $basePath; ?>favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $basePath; ?>favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $basePath; ?>favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $basePath; ?>apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="<?php echo $basePath; ?>favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="120x120" href="<?php echo $basePath; ?>favicon-120x120.png">
 
   <!-- Schema.org: LocalBusiness -->
   <script type="application/ld+json">

@@ -40,6 +40,15 @@ soglasie.php       — страница «Согласие на обработк
 politika.php       — страница «Политика конфиденциальности»
 script.js          — общий JS (scroll reveal, nav, burger, carousel, форма index)
 style.css          — базовые стили (подключается первым на всех страницах)
+favicon.svg, favicon.ico, favicon-16x16.png, favicon-32x32.png,
+favicon-120x120.png, favicon-192x192.png,
+apple-touch-icon.png — фавиконки в корне, подключаются в header.php.
+                     06.07.2026: favicon.svg вырезан из исходника Logo_Stivinteriors.ai
+                     (page 4, квадратный значок SV), перекрашен в бренд-коричневый #5C2E00
+                     из оригинального синего #1224d3. favicon.svg — источник правок;
+                     все PNG и ICO рендерятся из него (rsvg-convert, 4× суперсэмплинг),
+                     растровые версии не ресайзить. Исходник вектора: assets/logo.ai
+                     (на сервере) — источник для правок иконок и графики.
 aboutstyle.css     — стили только about.php
 gallerystyle.css   — стили только gallery.php
 videostyle.css     — стили только video.php
