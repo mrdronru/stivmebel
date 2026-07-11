@@ -12,7 +12,7 @@ include 'header.php';
 
 <!-- ── ШАПКА ЛЕНДИНГА (упрощённая) ── -->
 <header class="ln-nav" id="lnNav">
-  <a href="index.php" class="ln-nav-logo">Стив <span>Интерьеры</span></a>
+  <a href="/" class="ln-nav-logo">Стив <span>Интерьеры</span></a>
   <div class="ln-nav-right">
     <a href="tel:<?php echo SITE_PHONE_HREF; ?>" class="ln-nav-phone" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
     <button class="ln-nav-btn" onclick="openContactPopup()">Бесплатный замер</button>
@@ -168,7 +168,7 @@ include 'header.php';
         </div>
       </div>
       <div class="l-works-cta">
-        <a href="catalog.php" class="btn-secondary" target="_blank" rel="noopener">Все работы в галерее</a>
+        <a href="catalog" class="btn-secondary" target="_blank" rel="noopener">Все работы в галерее</a>
       </div>
     </div>
   </section>
@@ -319,7 +319,7 @@ include 'header.php';
         <div class="lq-success-icon">✓</div>
         <p class="lq-success-title">Спасибо, заявка получена!</p>
         <p class="lq-success-text">Свяжемся с вами в течение 2 часов в рабочее время. Пока ждёте — посмотрите наши работы.</p>
-        <a href="catalog.php" class="lq-success-link">Смотреть галерею работ →</a>
+        <a href="catalog" class="lq-success-link">Смотреть галерею работ →</a>
       </div>
 
       <button class="lq-back" id="quizBack" onclick="quizBack()" style="display:none">← Назад</button>

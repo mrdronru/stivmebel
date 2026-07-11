@@ -95,20 +95,20 @@ $basePath = $basePath ?? '';
 
 <?php
 $nav_links = [
-  'about'     => ['href' => $basePath . 'about.php',        'label' => 'Подробнее о нас'],
-  'gallery'   => ['href' => $basePath . 'catalog.php',       'label' => 'Каталог'],
-  'video'     => ['href' => $basePath . 'video.php',         'label' => 'Видео'],
-  'favorites' => ['href' => $basePath . 'favorites.php',     'label' => 'Мне понравилось', 'fav' => true],
-  'abc'       => ['href' => $basePath . 'abcd.php',           'label' => 'Азбука'],
-  'price'     => ['href' => $basePath . 'price.php',         'label' => 'Цены'],
-  'contact'   => ['href' => $basePath . 'index.php#contact', 'label' => 'Контакты'],
+  'about'     => ['href' => $basePath . 'about',        'label' => 'Подробнее о нас'],
+  'gallery'   => ['href' => $basePath . 'catalog',       'label' => 'Каталог'],
+  'video'     => ['href' => $basePath . 'video',         'label' => 'Видео'],
+  'favorites' => ['href' => $basePath . 'favorites',     'label' => 'Мне понравилось', 'fav' => true],
+  'abc'       => ['href' => $basePath . 'abcd',           'label' => 'Азбука'],
+  'price'     => ['href' => $basePath . 'price',         'label' => 'Цены'],
+  'contact'   => ['href' => ($basePath ?: '/') . '#contact', 'label' => 'Контакты'],
 ];
 $current = isset($page) ? $page : '';
 ?>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="<?php echo $basePath; ?>index.php" class="nav-logo">Стив <span>Интерьеры</span></a>
+  <a href="<?php echo $basePath ?: '/'; ?>" class="nav-logo">Стив <span>Интерьеры</span></a>
 
   <ul class="nav-links">
     <?php foreach ($nav_links as $key => $link): ?>

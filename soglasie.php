@@ -8,7 +8,7 @@ include 'header.php';
 
 <div class="legal-wrap">
   <div class="legal-back">
-    <a href="index.php" class="nav-back">
+    <a href="/" class="nav-back">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       На главную
     </a>
@@ -65,7 +65,7 @@ include 'header.php';
     </div>
 
     <div class="legal-related">
-      <a href="politika.php" class="legal-related-link">Политика конфиденциальности →</a>
+      <a href="politika" class="legal-related-link">Политика конфиденциальности →</a>
     </div>
   </article>
 </div>

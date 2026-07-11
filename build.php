@@ -32,8 +32,8 @@ function renderArticlePage(array $meta, string $bodyHtml, array $allTerms): stri
     $prev  = $pos > 0                    ? $allTerms[$pos - 1] : null;
     $next  = $pos < count($slugs) - 1   ? $allTerms[$pos + 1] : null;
 
-    $prevLink = $prev ? "<a href=\"{$prev['slug']}.html\" class=\"abc-nav-link abc-nav-prev\">← {$prev['title']}</a>" : '<span></span>';
-    $nextLink = $next ? "<a href=\"{$next['slug']}.html\" class=\"abc-nav-link abc-nav-next\">{$next['title']} →</a>" : '<span></span>';
+    $prevLink = $prev ? "<a href=\"{$prev['slug']}\" class=\"abc-nav-link abc-nav-prev\">← {$prev['title']}</a>" : '<span></span>';
+    $nextLink = $next ? "<a href=\"{$next['slug']}\" class=\"abc-nav-link abc-nav-next\">{$next['title']} →</a>" : '<span></span>';
 
     // Переменные, которые ожидают header.php/footer.php.
     // $title здесь — НЕэкранированная строка: header.php сам применяет
@@ -44,10 +44,10 @@ function renderArticlePage(array $meta, string $bodyHtml, array $allTerms): stri
     // из CLI $_SERVER['REQUEST_URI'] не определён (см. PROJECT.md).
     $basePath       = '../';
     $page           = 'abc';
-    $title          = $titleRaw . ' · Азбука';
+    $title          = $titleRaw . ' · Азбука мебельщика';
     $description    = $meta['short'] ?? '';
     $extra_css      = ['abcstyle.css'];
-    $canonical_path = 'abc/' . $slug . '.html';
+    $canonical_path = 'abc/' . $slug;
 
     ob_start();
     include TEMPLATE_DIR . '/header.php';
@@ -55,7 +55,7 @@ function renderArticlePage(array $meta, string $bodyHtml, array $allTerms): stri
 
 <div class="abc-article-wrap">
   <div class="abc-article-back">
-    <a href="../abcd.php" class="nav-back">
+    <a href="../abcd" class="nav-back">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       Азбука
     </a>
@@ -79,7 +79,7 @@ function renderArticlePage(array $meta, string $bodyHtml, array $allTerms): stri
     </div>
     <div class="abc-cta-actions">
       <button class="btn-primary" onclick="openContactPopup()">Записаться на замер</button>
-      <a href="../catalog.php" class="btn-secondary">Смотреть галерею →</a>
+      <a href="../catalog" class="btn-secondary">Смотреть галерею →</a>
     </div>
   </div>
 
@@ -109,11 +109,11 @@ function generateSitemap(array $terms): string {
     // страницы Азбуки — низкий приоритет, меняются редко
     $staticPages = [
         ['loc' => '',           'changefreq' => 'weekly',  'priority' => '1.0'],
-        ['loc' => 'about.php',  'changefreq' => 'monthly', 'priority' => '0.8'],
-        ['loc' => 'catalog.php','changefreq' => 'weekly',  'priority' => '0.9'],
-        ['loc' => 'video.php',  'changefreq' => 'weekly',  'priority' => '0.7'],
-        ['loc' => 'price.php',  'changefreq' => 'monthly', 'priority' => '0.8'],
-        ['loc' => 'abcd.php',   'changefreq' => 'weekly',  'priority' => '0.7'],
+        ['loc' => 'about',   'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => 'catalog', 'changefreq' => 'weekly',  'priority' => '0.9'],
+        ['loc' => 'video',   'changefreq' => 'weekly',  'priority' => '0.7'],
+        ['loc' => 'price',   'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => 'abcd',    'changefreq' => 'weekly',  'priority' => '0.7'],
     ];
 
     $baseUrl = rtrim(SITE_URL, '/');
@@ -135,7 +135,7 @@ function generateSitemap(array $terms): string {
 
     // Страницы Азбуки
     foreach ($terms as $term) {
-        $loc = $baseUrl . '/abc/' . $term['slug'] . '.html';
+        $loc = $baseUrl . '/abc/' . $term['slug'];
         $xml .= "  <url>\n";
         $xml .= "    <loc>" . htmlspecialchars($loc, ENT_XML1) . "</loc>\n";
         $xml .= "    <lastmod>{$today}</lastmod>\n";

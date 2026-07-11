@@ -2,9 +2,11 @@
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/markdown-helpers.php';
 $page        = 'video';
-$title       = 'Видео';
+$title       = 'Видео наших работ: монтаж кухонь и шкафов';
 $description = 'Видео о процессе создания корпусной мебели: монтаж кухонь, шкафов, гардеробных. Смотрите, как мы работаем — от замера до финальной приёмки.';
 $extra_css   = ['videostyle.css'];
+$canonical_path = 'video'; // страница делит имя с папкой video/ и доступна
+                           // и как /video, и как /video/ — canonical всегда без слеша
 
 // Автоматически собираем список видео из папки video/.
 // Для каждого NNNN.mp4 ищем одноимённый NNNN.md с описанием (title + текст).
@@ -33,6 +35,8 @@ foreach ($video_files as $file) {
 }
 include 'header.php';
 ?>
+
+<h1 class="sr-only">Видео наших работ: монтаж кухонь, шкафов и гардеробных</h1>
 
 <!-- FEED -->
 <div class="video-feed" id="videoFeed">

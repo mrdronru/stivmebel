@@ -12,7 +12,7 @@ include 'header.php';
 
 <!-- ── ШАПКА ЛЕНДИНГА ── -->
 <header class="ln-nav" id="lnNav">
-  <a href="index.php" class="ln-nav-logo">Стив <span>Интерьеры</span></a>
+  <a href="/" class="ln-nav-logo">Стив <span>Интерьеры</span></a>
   <div class="ln-nav-right">
     <a href="tel:<?php echo SITE_PHONE_HREF; ?>" class="ln-nav-phone" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
     <button class="ln-nav-btn" onclick="openContactPopup()">Обсудить проект</button>
@@ -103,7 +103,7 @@ include 'header.php';
         </div>
       </div>
       <div class="l-works-cta" style="margin-top:3rem;">
-        <a href="catalog.php" class="btn-secondary" target="_blank" rel="noopener">Все работы в галерее</a>
+        <a href="catalog" class="btn-secondary" target="_blank" rel="noopener">Все работы в галерее</a>
       </div>
     </div>
   </section>

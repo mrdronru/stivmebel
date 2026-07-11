@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/config.php';
 $page        = 'gallery';
-$title       = 'Наши работы';
+$title       = 'Каталог: кухни, шкафы и гардеробные на заказ';
 $description = 'Фотогалерея выполненных работ Стив Интерьеры: кухни, шкафы-купе, гардеробные, прихожие, детские на заказ. Отметьте понравившиеся — обсудим детали.';
 $extra_css   = ['gallerystyle.css'];
 
@@ -134,7 +134,7 @@ include 'header.php';
         <textarea id="mComment" placeholder="Расскажите о вашем пространстве, пожеланиях или сроках — любые детали помогут нам подготовиться к разговору"></textarea>
       </div>
       <button id="mSubmitBtn" class="btn-send" style="width:100%;margin-top:0.5rem;" onclick="submitModal()">Отправить</button>
-      <p class="modal-note">Нажимая «Отправить», вы соглашаетесь с <a href="soglasie.php" target="_blank" rel="noopener">обработкой персональных данных</a> для связи по вашему запросу.</p>
+      <p class="modal-note">Нажимая «Отправить», вы соглашаетесь с <a href="soglasie" target="_blank" rel="noopener">обработкой персональных данных</a> для связи по вашему запросу.</p>
     </div>
     <div class="modal-success" id="modalSuccess" style="display:none">
       <div class="modal-success-icon">

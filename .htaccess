@@ -11,25 +11,72 @@
 # Кастомная страница 404
 ErrorDocument 404 /404.php
 
-# ── Чистые URL (без расширений) ──
 RewriteEngine On
 
-# Убираем .php из URL: /gallery → /gallery.php
+# Отключаем авто-добавление слеша к директориям (mod_dir). Нужно из-за
+# конфликта /video (страница) с папкой video/ (ролики): иначе Apache
+# 301-ит /video → /video/ и получается либо 403, либо петля редиректов.
+# Если хостинг вернёт 500 на эту директиву — просто удалить строку:
+# правила ниже написаны так, что работают и без неё (один лишний редирект,
+# но без петли).
+DirectorySlash Off
+
+# ══ 301-редиректы: старые адреса → чистые URL ══
+# Порядок важен: сначала специальные случаи, затем общие правила,
+# затем внутренние рерайты. THE_REQUEST (а не REQUEST_URI) используется,
+# чтобы редиректить только прямые запросы браузера и не зациклиться
+# с внутренними рерайтами ниже.
+
+# Переименованные страницы (специальные случаи — раньше общего правила)
+RewriteCond %{THE_REQUEST} \s/+abc\.php[?\s]
+RewriteRule ^ /abcd [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+gallery\.php[?\s]
+RewriteRule ^ /catalog [R=301,L]
+
+# /index.php → /
+RewriteCond %{THE_REQUEST} \s/+index\.php[?\s]
+RewriteRule ^ / [R=301,L]
+
+# /страница.php → /страница
+# Исключения: send.php (вызывается формами POST'ом, редирект сломает отправку)
+RewriteCond %{THE_REQUEST} \s/+([a-z0-9-]+)\.php[?\s]
+RewriteCond %1 !^(send|index|abc|gallery)$
+RewriteRule ^ /%1 [R=301,L]
+
+# /abc/термин.html → /abc/термин
+RewriteCond %{THE_REQUEST} \s/+abc/([a-z0-9-]+)\.html[?\s]
+RewriteRule ^ /abc/%1 [R=301,L]
+
+# Убираем хвостовой слеш у не-директорий: /about/ → /about
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{THE_REQUEST} \s/+[^?\s]+/+[?\s]
+RewriteRule ^(.+?)/+$ /$1 [R=301,L]
+
+# ══ Внутренние рерайты чистых URL на реальные файлы ══
+
+# /video конфликтует с одноимённой папкой video/ (там лежат ролики):
+# общее правило ниже требует «не директория» и потому /video не ловит.
+# Страницу отдаём и по /video, и по /video/ БЕЗ редиректа между ними —
+# любой 301 здесь рискует петлёй с mod_dir. Каноничность обеспечивает
+# явный $canonical_path='video' в самом video.php.
+# Файлы /video/NNNN.mp4 и /video/NNNN.jpg не затрагиваются: правило
+# матчит только голый /video или /video/ без имени файла.
+RewriteRule ^video/?$ video.php [L]
+
+# /gallery — тоже папка (фото); сама страница переименована в /catalog.
+# Паттерн ловит и /gallery, и /gallery/ — петли нет в обоих режимах
+# DirectorySlash, потому что цель редиректа (/catalog) не директория.
+RewriteCond %{THE_REQUEST} \s/+gallery/?[?\s]
+RewriteRule ^ /catalog [R=301,L]
+
+# /страница → страница.php (для страниц в корне)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/]+)$ $1.php [L]
 
-# Убираем .html из URL в подпапках: /abc/alvic → /abc/alvic.html
+# /abc/alvic → abc/alvic.html (для статей в подпапках)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^/]+/[^/]+)$ $1.html [L]
-
-# Редирект 301: abc.php → abcd (со старого адреса на новый чистый)
-RewriteCond %{REQUEST_URI} ^/abc\.php$
-RewriteRule ^ /abcd [R=301,L]
-
-# Редирект 301: gallery.php → catalog
-RewriteCond %{REQUEST_URI} ^/gallery\.php$
-RewriteRule ^ /catalog [R=301,L]

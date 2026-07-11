@@ -17,10 +17,10 @@ $basePath = $basePath ?? '';
   <div class="footer-top">
     <div class="footer-logo">Стив <span>Интерьеры</span></div>
     <ul class="footer-nav">
-      <li><a href="<?php echo $basePath; ?>about.php">Подробнее о нас</a></li>
-      <li><a href="<?php echo $basePath; ?>catalog.php">Каталог</a></li>
-      <li><a href="<?php echo $basePath; ?>video.php">Видео</a></li>
-      <li><a href="<?php echo $basePath; ?>index.php#contact">Контакты</a></li>
+      <li><a href="<?php echo $basePath; ?>about">Подробнее о нас</a></li>
+      <li><a href="<?php echo $basePath; ?>catalog">Каталог</a></li>
+      <li><a href="<?php echo $basePath; ?>video">Видео</a></li>
+      <li><a href="<?php echo $basePath ?: '/'; ?>#contact">Контакты</a></li>
     </ul>
     <div class="footer-right">
       <div class="footer-socials">
@@ -47,8 +47,8 @@ $basePath = $basePath ?? '';
   <div class="footer-bottom">
     <div class="footer-copy"><?php echo SITE_TAGLINE; ?> · © <?php echo date('Y'); ?></div>
     <div class="footer-legal">
-      <a href="<?php echo $basePath; ?>politika.php">Политика конфиденциальности</a>
-      <a href="<?php echo $basePath; ?>soglasie.php">Согласие на обработку данных</a>
+      <a href="<?php echo $basePath; ?>politika">Политика конфиденциальности</a>
+      <a href="<?php echo $basePath; ?>soglasie">Согласие на обработку данных</a>
     </div>
   </div>
 </footer>
@@ -91,7 +91,7 @@ $basePath = $basePath ?? '';
         <textarea id="pfcomment" placeholder="Планировка, сроки, особые пожелания..."></textarea>
       </div>
       <button id="pfsubmit" class="btn-primary" style="width:100%;margin-top:1rem;" onclick="submitPopupForm()">Отправить заявку</button>
-      <p class="form-note">Нажимая «Отправить», вы соглашаетесь с <a href="<?php echo $basePath; ?>soglasie.php" target="_blank" rel="noopener">обработкой персональных данных</a> для связи по вашему запросу.</p>
+      <p class="form-note">Нажимая «Отправить», вы соглашаетесь с <a href="<?php echo $basePath; ?>soglasie" target="_blank" rel="noopener">обработкой персональных данных</a> для связи по вашему запросу.</p>
     </div>
     <div id="popupSuccess" class="form-success" style="display:none;">
       <div class="form-success-icon">

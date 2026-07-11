@@ -21,15 +21,15 @@ include __DIR__ . '/header.php';
     <div class="e404-num">404</div>
     <h1 class="e404-title">Страница не найдена</h1>
     <p class="e404-sub">Возможно, адрес изменился или страница была удалена.<br>Но мебель мы всё равно сделаем.</p>
-    <a href="<?php echo $basePath; ?>index.php" class="btn-primary e404-home">На главную</a>
+    <a href="<?php echo $basePath ?: '/'; ?>" class="btn-primary e404-home">На главную</a>
 
     <div class="e404-nav">
-      <a href="<?php echo $basePath; ?>catalog.php" class="e404-link">Каталог работ</a>
-      <a href="<?php echo $basePath; ?>price.php" class="e404-link">Цены</a>
-      <a href="<?php echo $basePath; ?>video.php" class="e404-link">Видео</a>
-      <a href="<?php echo $basePath; ?>abcd.php" class="e404-link">Азбука</a>
-      <a href="<?php echo $basePath; ?>about.php" class="e404-link">О нас</a>
-      <a href="<?php echo $basePath; ?>index.php#contact" class="e404-link">Контакты</a>
+      <a href="<?php echo $basePath; ?>catalog" class="e404-link">Каталог работ</a>
+      <a href="<?php echo $basePath; ?>price" class="e404-link">Цены</a>
+      <a href="<?php echo $basePath; ?>video" class="e404-link">Видео</a>
+      <a href="<?php echo $basePath; ?>abcd" class="e404-link">Азбука</a>
+      <a href="<?php echo $basePath; ?>about" class="e404-link">О нас</a>
+      <a href="<?php echo $basePath ?: '/'; ?>#contact" class="e404-link">Контакты</a>
     </div>
   </div>
 </main>

@@ -74,7 +74,7 @@ include 'header.php';
     <p class="services-desc">Работаем с любыми планировками — угловыми, нестандартными, со скошенными потолками и нишами. Разработаем оптимальное решение под ваше пространство.</p>
   </div>
   <div class="services-grid reveal" style="transition-delay: 0.2s;">
-    <a href="catalog.php" class="service-item">
+    <a href="catalog" class="service-item">
       <img src="images/m01.jpg" alt="Кухня на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Кухни</div>
@@ -82,7 +82,7 @@ include 'header.php';
         <span class="service-btn">Посмотреть работы</span>
       </div>
     </a>
-    <a href="catalog.php" class="service-item">
+    <a href="catalog" class="service-item">
       <img src="images/m02.jpg" alt="Шкаф-купе на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Шкафы-купе</div>
@@ -90,7 +90,7 @@ include 'header.php';
         <span class="service-btn">Посмотреть работы</span>
       </div>
     </a>
-    <a href="catalog.php" class="service-item">
+    <a href="catalog" class="service-item">
       <img src="images/m03.jpg" alt="Гардеробная на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Гардеробные</div>
@@ -98,7 +98,7 @@ include 'header.php';
         <span class="service-btn">Посмотреть работы</span>
       </div>
     </a>
-    <a href="catalog.php" class="service-item">
+    <a href="catalog" class="service-item">
       <img src="images/m04.jpg" alt="Детская комната на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Детские комнаты</div>
@@ -106,7 +106,7 @@ include 'header.php';
         <span class="service-btn">Посмотреть работы</span>
       </div>
     </a>
-    <a href="catalog.php" class="service-item">
+    <a href="catalog" class="service-item">
       <img src="images/m05.jpg" alt="Столы и стеллажи на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Столы и стеллажи</div>
@@ -114,7 +114,7 @@ include 'header.php';
         <span class="service-btn">Посмотреть работы</span>
       </div>
     </a>
-    <a href="catalog.php" class="service-item">
+    <a href="catalog" class="service-item">
       <img src="images/m06.jpg" alt="Прихожая на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Прихожие</div>
@@ -277,7 +277,7 @@ include 'header.php';
   <div class="pricing-text reveal">
     <p class="section-label">Цены</p>
     <h2 class="section-title">Наши <em>цены</em></h2>
-    <p>Подробные цены и ответы на частые вопросы — на странице <a href="price.php" style="color: var(--gold);">«Цены»</a>.</p>
+    <p>Подробные цены и ответы на частые вопросы — на странице <a href="price" style="color: var(--gold);">«Цены»</a>.</p>
     <p>Если кратко, то стоимость рассчитывается индивидуально с учётом размеров, материалов и наполнения.</p>
     <div class="pricing-from">
       <div class="pricing-from-item">
@@ -290,7 +290,7 @@ include 'header.php';
       </div>
     </div>
     <p>Мы подберём оптимальное решение под ваш бюджет — с использованием надёжной фурнитуры, продуманной эргономики и материалов, рассчитанных на долгий срок службы.</p>
-    <a href="price.php" class="btn-secondary">Подробнее о ценах</a>
+    <a href="price" class="btn-secondary">Подробнее о ценах</a>
   </div>
   <div class="pricing-collage reveal" style="transition-delay: 0.15s;">
     <div class="pricing-collage-item">
@@ -374,7 +374,7 @@ include 'header.php';
         <textarea id="fcomment" placeholder="Планировка, сроки, особые пожелания..."></textarea>
       </div>
       <button id="fsubmit" class="btn-primary" style="width:100%;margin-top:1rem;" onclick="submitForm()">Отправить заявку</button>
-      <p class="form-note">Нажимая «Отправить», вы соглашаетесь с <a href="soglasie.php" target="_blank" rel="noopener">обработкой персональных данных</a> для связи по вашему запросу.</p>
+      <p class="form-note">Нажимая «Отправить», вы соглашаетесь с <a href="soglasie" target="_blank" rel="noopener">обработкой персональных данных</a> для связи по вашему запросу.</p>
     </div>
     <div id="formSuccess" class="form-success" style="display:none">
       <div class="form-success-icon">

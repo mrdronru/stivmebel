@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/config.php';
 $page        = 'abc';
-$title       = 'Азбука мебельщика';
-$description = 'Что такое ЛДСП, МДФ, Blum, синхропора — объясняем просто, чтобы вы понимали, за что платите.';
+$title       = 'Азбука мебельщика: материалы, фурнитура, термины';
+$description = 'Словарь заказчика мебели: что такое ЛДСП, МДФ, эмаль, фурнитура Blum, доводчики и десятки других терминов. Объясняем просто, чтобы вы понимали, из чего состоит ваша мебель и за что платите.';
 $extra_css   = ['abcstyle.css'];
 include 'header.php';
 
@@ -61,7 +61,7 @@ foreach ($byLetter as $letter => $group):
     <div class="abc-group-letter" id="letter-<?php echo htmlspecialchars($letter); ?>"><?php echo htmlspecialchars($letter); ?></div>
     <div class="abc-group-items">
       <?php foreach ($group as $term): ?>
-      <a href="abc/<?php echo htmlspecialchars($term['slug']); ?>.html" class="abc-item">
+      <a href="abc/<?php echo htmlspecialchars($term['slug']); ?>" class="abc-item">
         <span class="abc-item-title"><?php echo htmlspecialchars($term['title']); ?></span>
         <span class="abc-item-short"><?php echo htmlspecialchars($term['short']); ?></span>
       </a>

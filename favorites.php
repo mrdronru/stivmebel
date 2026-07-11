@@ -13,7 +13,7 @@ include 'header.php';
     <h1 class="gallery-title">Мне <em>понравилось</em></h1>
     <p class="gallery-hint" style="text-align:left;max-width:400px;">Фотографии которые вы отметили в каталоге. Отправьте их нам — обсудим детали.</p>
   </div>
-  <a href="catalog.php" class="btn-secondary fav-to-catalog">← Вернуться в каталог</a>
+  <a href="catalog" class="btn-secondary fav-to-catalog">← Вернуться в каталог</a>
 </div>
 
 <!-- ПУСТОЕ СОСТОЯНИЕ -->
@@ -27,7 +27,7 @@ include 'header.php';
     </div>
     <p class="fav-empty-title">Вы ещё ничего не отметили</p>
     <p class="fav-empty-sub">Откройте каталог, выберите понравившиеся работы — они появятся здесь</p>
-    <a href="catalog.php" class="btn-primary" style="display:inline-block;margin-top:2rem;">Перейти в каталог</a>
+    <a href="catalog" class="btn-primary" style="display:inline-block;margin-top:2rem;">Перейти в каталог</a>
   </div>
 </div>
 
@@ -94,7 +94,7 @@ include 'header.php';
         <textarea id="mComment" placeholder="Размеры, материалы, пожелания..."></textarea>
       </div>
       <button id="mSubmitBtn" class="btn-send" style="width:100%;margin-top:0.5rem;" onclick="submitFavModal()">Отправить</button>
-      <p class="modal-note">Нажимая «Отправить», вы соглашаетесь с <a href="soglasie.php" target="_blank" rel="noopener">обработкой персональных данных</a> для связи по вашему запросу.</p>
+      <p class="modal-note">Нажимая «Отправить», вы соглашаетесь с <a href="soglasie" target="_blank" rel="noopener">обработкой персональных данных</a> для связи по вашему запросу.</p>
     </div>
     <div class="modal-success" id="modalSuccess" style="display:none">
       <div class="modal-success-icon">

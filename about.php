@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/config.php';
 $page        = 'about';
-$title       = 'О нас';
+$title       = 'О нас: производство мебели на заказ в Москве';
 $description = 'Станислав — основатель Стив Интерьеры. С 2012 года делаем корпусную мебель на заказ в Москве и МО: кухни, шкафы, гардеробные. 300+ проектов, гарантия 2 года.';
 $extra_css   = ['aboutstyle.css'];
 include 'header.php';
@@ -18,7 +18,7 @@ include 'header.php';
     </p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="openContactPopup()">Обсудить проект</button>
-      <a href="catalog.php" class="btn-secondary">Посмотреть работы</a>
+      <a href="catalog" class="btn-secondary">Посмотреть работы</a>
     </div>
   </div>
   <div class="about-hero-right">
