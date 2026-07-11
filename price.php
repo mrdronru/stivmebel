@@ -44,14 +44,14 @@ $faqItems = file_exists(__DIR__ . '/faq.md')
         <div>
           <div class="price-row-name">Кухни</div>
         </div>
-        <div class="price-row-value">от 99 500 ₽ / п.м.</div>
+        <div class="price-row-value">от 59 500 ₽ / п.м.</div>
       </div>
       <div class="price-row">
         <div>
           <div class="price-row-name">Гардеробные</div>
           <span class="price-row-desc">Система хранения под ваши вещи и привычки</span>
         </div>
-        <div class="price-row-value">от 62 000 ₽ / п.м.</div>
+        <div class="price-row-value">от 20 900 ₽ / п.м.</div>
       </div>
       <div class="price-row">
         <div>
@@ -61,9 +61,9 @@ $faqItems = file_exists(__DIR__ . '/faq.md')
       </div>
       <div class="price-row">
         <div>
-          <div class="price-row-name">Прихожие</div>
+          <div class="price-row-name">Прихожие, шкафы</div>
         </div>
-        <div class="price-row-value">от 89 000 ₽ / п.м.</div>
+        <div class="price-row-value">от 44 900 ₽ / п.м.</div>
       </div>
     </div>
 

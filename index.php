@@ -281,11 +281,11 @@ include 'header.php';
     <p>Если кратко, то стоимость рассчитывается индивидуально с учётом размеров, материалов и наполнения.</p>
     <div class="pricing-from">
       <div class="pricing-from-item">
-        <span class="pricing-from-num">от 89 000 ₽</span>
+        <span class="pricing-from-num">от 44 900 ₽</span>
         <span class="pricing-from-label">за п.м. — шкафы</span>
       </div>
       <div class="pricing-from-item">
-        <span class="pricing-from-num">от 99 500 ₽</span>
+        <span class="pricing-from-num">от 59 500 ₽</span>
         <span class="pricing-from-label">за п.м. — кухни</span>
       </div>
     </div>
