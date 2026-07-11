@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стив Интерьеры — презентация</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .slide-wrapper {
+            max-width: 1280px;
+            width: 100%;
+            margin-bottom: 48px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            position: relative;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            padding: 48px 56px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: #ffffff;
+        }
+
+        /* Typography */
+        .sans { font-family: 'Inter', sans-serif; }
+        .label-upper {
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #3c3c3c;
+        }
+        .h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #000000;
+        }
+        .h2 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: #000000;
+        }
+        .h3 {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #000000;
+        }
+        .h4 {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #000000;
+        }
+        .body-text {
+            font-size: 17px;
+            line-height: 1.6;
+            font-weight: 400;
+            color: #1f1f1f;
+        }
+        .body-sm {
+            font-size: 15px;
+            line-height: 1.5;
+            font-weight: 400;
+            color: #2b2b2b;
+        }
+        .caption {
+            font-size: 12px;
+            line-height: 1.4;
+            font-weight: 400;
+            color: #6b6b6b;
+            letter-spacing: 0.02em;
+        }
+        .meta-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #6b6b6b;
+        }
+
+        .flex-row { display: flex; gap: 40px; flex: 1; }
+        .flex-col { display: flex; flex-direction: column; }
+        .flex-1 { flex: 1; }
+        .gap-8 { gap: 8px; }
+        .gap-12 { gap: 12px; }
+        .gap-16 { gap: 16px; }
+        .gap-20 { gap: 20px; }
+        .gap-24 { gap: 24px; }
+        .gap-32 { gap: 32px; }
+        .mt-auto { margin-top: auto; }
+        .mb-auto { margin-bottom: auto; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+
+        /* Photo placeholder */
+        .photo {
+            background: #f0f1f3;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0a0a0;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .photo-placeholder {
+            background: #f0f1f3;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0a0a0;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Cards */
+        .card {
+            background: #f7f8fa;
+            border-radius: 16px;
+            padding: 24px 28px;
+            flex: 1;
+        }
+        .card-white {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 16px;
+            padding: 24px 28px;
+        }
+
+        /* Grid for slide 3 */
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 0 12px 0;
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #d0d0d0;
+            transform: translateY(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            background: #fff;
+            padding: 0 8px;
+        }
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #2b2b2b;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px #2b2b2b;
+        }
+        .timeline-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #000;
+            letter-spacing: 0.02em;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .slide { padding: 32px 28px; }
+            .h1 { font-size: 34px; }
+            .h2 { font-size: 28px; }
+            .flex-row { flex-direction: column; gap: 20px; }
+            .grid-4 { grid-template-columns: 1fr 1fr; }
+            .slide-wrapper { aspect-ratio: auto; min-height: 600px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1 — ОБЛОЖКА -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <div class="flex-row" style="height:100%; gap:48px;">
+                <div class="flex-col flex-1" style="justify-content:center; gap:24px; padding-right:8px;">
+                    <div style="display:flex; flex-direction:column; gap:6px;">
+                        <span class="label-upper">Производственный партнёр</span>
+                        <span class="h1" style="font-size:52px;">для дизайнеров<br/>интерьера</span>
+                    </div>
+                    <p class="body-text" style="max-width:90%; color:#1f1f1f; font-size:18px; line-height:1.5;">
+                        Корпусная, встроенная и нестандартная мебель по дизайн-проектам.
+                    </p>
+                    <div style="margin-top:12px; border-left:4px solid #2b2b2b; padding-left:24px;">
+                        <p style="font-size:22px; font-weight:600; letter-spacing:-0.01em; color:#000;">
+                            Реализуем проекты так, как они задуманы.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-1 photo" style="border-radius:20px; background:#d9d9d9;">
+                    <span style="color:#8a8a8a; font-size:15px;">Фото интерьера</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2 — ПОЧЕМУ МЫ -->
+    <div class="slide-wrapper">
+        <div class="slide" style="gap:20px;">
+            <div style="display:flex; flex-direction:column; gap:4px;">
+                <span class="h2">Почему дизайнеры работают с нами</span>
+                <p class="body-text" style="font-size:18px; color:#2b2b2b; max-width:80%;">
+                    Понимаем: мебельный подрядчик становится частью вашей репутации перед клиентом.
+                </p>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; flex:1; align-content:center;">
+                <div class="card" style="display:flex; flex-direction:column; gap:8px; justify-content:center;">
+                    <div style="font-size:24px; font-weight:700; letter-spacing:-0.02em;">Работаем по договору</div>
+                    <p class="body-sm" style="color:#3a3a3a;">Предсказуемые сроки. Письменные гарантии.</p>
+                </div>
+                <div class="card" style="display:flex; flex-direction:column; gap:8px; justify-content:center;">
+                    <div style="font-size:24px; font-weight:700; letter-spacing:-0.02em;">Работаем по вашему процессу</div>
+                    <p class="body-sm" style="color:#3a3a3a;">Не заставляем менять привычную схему работы.</p>
+                </div>
+                <div class="card" style="display:flex; flex-direction:column; gap:8px; justify-content:center;">
+                    <div style="font-size:24px; font-weight:700; letter-spacing:-0.02em;">Нестандартные решения</div>
+                    <p class="body-sm" style="color:#3a3a3a;">Размеры. Материалы. Конструкции.</p>
+                </div>
+                <div class="card" style="display:flex; flex-direction:column; gap:8px; justify-content:center;">
+                    <div style="font-size:24px; font-weight:700; letter-spacing:-0.02em;">Один ответственный</div>
+                    <p class="body-sm" style="color:#3a3a3a;">Берём на себя координацию производства и смежных исполнителей.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3 — МАТЕРИАЛЫ -->
+    <div class="slide-wrapper">
+        <div class="slide" style="gap:20px;">
+            <div style="display:flex; flex-direction:column; gap:4px;">
+                <span class="h2">Что можем реализовать</span>
+                <p class="body-text" style="font-size:17px; color:#2b2b2b; max-width:75%;">
+                    Изготавливаем мебель по индивидуальным проектам — от стандартных изделий до сложных нестандартных решений.
+                </p>
+            </div>
+            <div class="grid-4" style="flex:1; align-content:center;">
+                <div><span class="h4" style="font-size:18px;">Корпуса</span><div class="body-sm" style="margin-top:10px; color:#2b2b2b; display:flex; flex-direction:column; gap:4px;"><span>ЛДСП</span><span>МДФ</span><span>Шпон</span></div></div>
+                <div><span class="h4" style="font-size:18px;">Фасады</span><div class="body-sm" style="margin-top:10px; color:#2b2b2b; display:flex; flex-direction:column; gap:4px;"><span>ЛДСП</span><span>ПВХ</span><span>Эмаль</span><span>Пластик</span><span>Шпон</span><span>Массив</span></div></div>
+                <div><span class="h4" style="font-size:18px;">Дополнительно</span><div class="body-sm" style="margin-top:10px; color:#2b2b2b; display:flex; flex-direction:column; gap:4px;"><span>Металл</span><span>Стекло</span><span>Подсветка</span></div></div>
+                <div><span class="h4" style="font-size:18px;">Производство</span><div class="body-sm" style="margin-top:10px; color:#2b2b2b; display:flex; flex-direction:column; gap:4px;"><span>Собственный покрасочный цех</span><span>Собственный сборочный участок</span><span>Партнёры по ЧПУ</span></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4 — КЕЙС 1 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <div class="flex-row" style="height:100%; gap:40px;">
+                <div class="flex-col flex-1" style="justify-content:center; gap:16px;">
+                    <span class="meta-label">Кейс</span>
+                    <span class="h2" style="font-size:34px;">Название объекта</span>
+                    <div class="body-sm" style="display:flex; flex-wrap:wrap; gap:8px 20px; color:#3a3a3a; margin-top:4px;">
+                        <span>Город</span>
+                        <span>•</span>
+                        <span>120 м²</span>
+                        <span>•</span>
+                        <span>Кухня · Гардеробная · ТВ-зона</span>
+                    </div>
+                    <div style="display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:4px;">
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">Шпон</span>
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">Эмаль</span>
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">Металл</span>
+                    </div>
+                    <div class="body-sm" style="margin-top:8px; color:#3a3a3a;">Срок изготовления: 4 недели</div>
+                    <div class="body-sm" style="color:#3a3a3a;">Монтаж: 5 дней</div>
+                    <p class="caption" style="margin-top:12px; max-width:90%;">Особенность проекта: сложная геометрия кухонного острова</p>
+                </div>
+                <div class="flex-1 photo" style="border-radius:20px; background:#d9d9d9;">
+                    <span style="color:#8a8a8a; font-size:15px;">Фото проекта</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5 — КЕЙС 2 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <div class="flex-row" style="height:100%; gap:40px;">
+                <div class="flex-col flex-1" style="justify-content:center; gap:16px;">
+                    <span class="meta-label">Кейс</span>
+                    <span class="h2" style="font-size:34px;">Название объекта</span>
+                    <div class="body-sm" style="display:flex; flex-wrap:wrap; gap:8px 20px; color:#3a3a3a; margin-top:4px;">
+                        <span>Город</span>
+                        <span>•</span>
+                        <span>95 м²</span>
+                        <span>•</span>
+                        <span>Гостиная · Спальня · Прихожая</span>
+                    </div>
+                    <div style="display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:4px;">
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">МДФ эмаль</span>
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">Пластик</span>
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">Blum</span>
+                    </div>
+                    <div class="body-sm" style="margin-top:8px; color:#3a3a3a;">Срок изготовления: 3 недели</div>
+                    <div class="body-sm" style="color:#3a3a3a;">Монтаж: 4 дня</div>
+                    <p class="caption" style="margin-top:12px; max-width:90%;">Особенность: встроенные системы хранения</p>
+                </div>
+                <div class="flex-1 photo" style="border-radius:20px; background:#d9d9d9;">
+                    <span style="color:#8a8a8a; font-size:15px;">Фото проекта</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6 — КЕЙС 3 -->
+    <div class="slide-wrapper">
+        <div class="slide">
+            <div class="flex-row" style="height:100%; gap:40px;">
+                <div class="flex-col flex-1" style="justify-content:center; gap:16px;">
+                    <span class="meta-label">Кейс</span>
+                    <span class="h2" style="font-size:34px;">Название объекта</span>
+                    <div class="body-sm" style="display:flex; flex-wrap:wrap; gap:8px 20px; color:#3a3a3a; margin-top:4px;">
+                        <span>Город</span>
+                        <span>•</span>
+                        <span>150 м²</span>
+                        <span>•</span>
+                        <span>Кухня · Детская · Кабинет</span>
+                    </div>
+                    <div style="display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:4px;">
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">Массив</span>
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">HPL</span>
+                        <span class="caption" style="background:#f0f1f3; padding:4px 14px; border-radius:40px;">Стекло</span>
+                    </div>
+                    <div class="body-sm" style="margin-top:8px; color:#3a3a3a;">Срок изготовления: 5 недель</div>
+                    <div class="body-sm" style="color:#3a3a3a;">Монтаж: 6 дней</div>
+                    <p class="caption" style="margin-top:12px; max-width:90%;">Особенность: комбинирование материалов</p>
+                </div>
+                <div class="flex-1 photo" style="border-radius:20px; background:#d9d9d9;">
+                    <span style="color:#8a8a8a; font-size:15px;">Фото проекта</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7 — ПРОЦЕСС -->
+    <div class="slide-wrapper">
+        <div class="slide" style="justify-content:center; gap:28px;">
+            <span class="h2" style="font-size:40px;">Как строится работа</span>
+            <div class="timeline">
+                <div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-label">Проект</span></div>
+                <div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-label">Расчёт</span></div>
+                <div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-label">Замеры</span></div>
+                <div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-label">Спецификация</span></div>
+                <div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-label">Производство</span></div>
+                <div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-label">Монтаж</span></div>
+                <div class="timeline-item"><span class="timeline-dot"></span><span class="timeline-label">Сдача</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8 — ОТЗЫВЫ -->
+    <div class="slide-wrapper">
+        <div class="slide" style="gap:20px;">
+            <span class="h2" style="font-size:36px;">Что говорят наши клиенты</span>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; flex:1; align-content:center;">
+                <div class="card-white" style="display:flex; flex-direction:column; gap:12px; justify-content:center; padding:28px;">
+                    <p class="body-text" style="font-size:18px; line-height:1.5;">«Изготовление и сборка мебели прошла в срок. Я рада, что заказала именно у вас.»</p>
+                    <span class="caption">— Клиент</span>
+                </div>
+                <div class="card-white" style="display:flex; flex-direction:column; gap:12px; justify-content:center; padding:28px;">
+                    <p class="body-text" style="font-size:18px; line-height:1.5;">«От замера до установки фирма работала слаженно и максимально комфортно для клиента.»</p>
+                    <span class="caption">— Клиент</span>
+                </div>
+                <div class="card-white" style="display:flex; flex-direction:column; gap:12px; justify-content:center; padding:28px;">
+                    <p class="body-text" style="font-size:18px; line-height:1.5;">«Профессионализм и умение слышать клиента, что сейчас редкость.»</p>
+                    <span class="caption">— Клиент</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9 — КОМАНДА -->
+    <div class="slide-wrapper">
+        <div class="slide" style="gap:24px;">
+            <span class="h2" style="font-size:36px;">Команда</span>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; flex:1; align-content:center;">
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                    <div class="photo" style="border-radius:20px; height:220px; background:#d9d9d9;">
+                        <span style="color:#8a8a8a;">Фото</span>
+                    </div>
+                    <span class="h3" style="font-size:24px;">Станислав</span>
+                    <p class="body-sm" style="color:#3a3a3a;">Производство и реализация проектов. 10+ лет в изготовлении мебели.</p>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                    <div class="photo" style="border-radius:20px; height:220px; background:#d9d9d9;">
+                        <span style="color:#8a8a8a;">Фото</span>
+                    </div>
+                    <span class="h3" style="font-size:24px;">Александр</span>
+                    <p class="body-sm" style="color:#3a3a3a;">Работа с дизайнерами и сопровождение проектов. Договорная работа, коммуникация.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10 — КОНТАКТЫ -->
+    <div class="slide-wrapper">
+        <div class="slide" style="justify-content:center; gap:28px;">
+            <span class="h2" style="font-size:40px; letter-spacing:-0.02em;">Будем рады подключиться<br/>к вашему следующему проекту</span>
+            <div style="display:flex; flex-wrap:wrap; gap:24px 56px; margin-top:8px;">
+                <div><span class="caption" style="display:block;">Телефон</span><span class="body-text" style="font-weight:600; font-size:20px;">+7 (969) 256 23 23</span></div>
+                <div><span class="caption" style="display:block;">Telegram</span><span class="body-text" style="font-weight:600; font-size:20px;">@stiv_interiors</span></div>
+                <div><span class="caption" style="display:block;">Почта</span><span class="body-text" style="font-weight:600; font-size:20px;">alex@stivinteriors.ru</span></div>
+                <div><span class="caption" style="display:block;">Сайт</span><span class="body-text" style="font-weight:600; font-size:20px;">stivmebel.ru</span></div>
+            </div>
+            <div style="margin-top:12px; display:flex; gap:16px;">
+                <span class="caption" style="background:#f0f1f3; padding:6px 18px; border-radius:40px;">t.me/stiv_interiors</span>
+                <span class="caption" style="background:#f0f1f3; padding:6px 18px; border-radius:40px;">vk.com/stivinteriors</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

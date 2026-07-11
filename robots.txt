@@ -5,5 +5,9 @@ Disallow: /send.php
 Disallow: /config.php
 Disallow: /build.php
 Disallow: /abc/*.md
+Disallow: /favorites
+Disallow: /404
+Disallow: /soglasie
+Disallow: /politika
 
 Sitemap: https://stivmebel.ru/sitemap.xml
