@@ -4,7 +4,7 @@ require_once __DIR__ . '/markdown-helpers.php';
 
 $page        = 'price';
 $title       = 'Цены на кухни и шкафы на заказ в Москве';
-$description = 'Цены на корпусную мебель на заказ: кухни от 59 500 ₽/п.м., шкафы-купе от 89 000 ₽/п.м., гардеробные от 20 900 ₽/п.м. Точный расчёт после бесплатного замера. Ответы на частые вопросы.';
+$description = 'Цены на корпусную мебель на заказ: кухни ' . price_from('kitchens') . '/п.м., шкафы-купе ' . price_from('wardrobes') . '/п.м., гардеробные ' . price_from('closets') . '/п.м. Точный расчёт после бесплатного замера. Ответы на частые вопросы.';
 $extra_css   = ['pricestyle.css'];
 include 'header.php';
 
@@ -33,38 +33,22 @@ $faqItems = file_exists(__DIR__ . '/faq.md')
 
     <p class="price-intro-budget-label">Для понимания уровня бюджета:</p>
     <div class="price-rows">
+      <?php // Строки генерируются из PRICES в config.php — цены менять там ?>
+      <?php foreach (PRICES as $priceKey => $priceItem): ?>
       <div class="price-row">
         <div>
-          <div class="price-row-name">Шкафы и шкафы-купе</div>
-          <span class="price-row-desc">Встроенные и корпусные, любые системы дверей</span>
+          <div class="price-row-name"><?php echo htmlspecialchars($priceItem['name']); ?></div>
+          <?php if ($priceItem['desc'] !== ''): ?>
+          <span class="price-row-desc"><?php echo htmlspecialchars($priceItem['desc']); ?></span>
+          <?php endif; ?>
         </div>
-        <div class="price-row-value">от 89 000 ₽ / п.м.</div>
+        <div class="price-row-value"><?php
+          echo $priceItem['from'] === null
+              ? 'расчёт после замера'
+              : price_from($priceKey) . ' / п.м.';
+        ?></div>
       </div>
-      <div class="price-row">
-        <div>
-          <div class="price-row-name">Кухни</div>
-        </div>
-        <div class="price-row-value">от 59 500 ₽ / п.м.</div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="price-row-name">Гардеробные</div>
-          <span class="price-row-desc">Система хранения под ваши вещи и привычки</span>
-        </div>
-        <div class="price-row-value">от 20 900 ₽ / п.м.</div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="price-row-name">Детские комнаты, столы и стеллажи</div>
-        </div>
-        <div class="price-row-value">расчёт после замера</div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="price-row-name">Прихожие, шкафы</div>
-        </div>
-        <div class="price-row-value">от 44 900 ₽ / п.м.</div>
-      </div>
+      <?php endforeach; ?>
     </div>
 
     <p>Это ориентиры для проектов с использованием качественных материалов, надёжной фурнитуры и аккуратной сборки. В зависимости от задач, уровня оснащения и дизайнерских решений стоимость может быть выше.</p>
