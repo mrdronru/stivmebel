@@ -255,7 +255,7 @@ $testimonials = array_map(function($f) {
         </p>
         <div class="cta-actions">
           <button class="btn-primary" onclick="openContactPopup()">Оставить заявку</button>
-          <a href="<?php echo SITE_PHONE_HREF; ?>" class="btn-secondary" onclick="ymGoal(\'click_phone\')"><?php echo SITE_PHONE; ?></a>
+          <a href="<?php echo SITE_PHONE_HREF; ?>" class="btn-secondary" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
         </div>
       </div>
     </div>

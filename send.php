@@ -86,6 +86,7 @@ if ($source === 'gallery')       $sourceLabel = 'Галерея';
 elseif ($source === 'popup')     $sourceLabel = 'Попап';
 elseif ($source === 'favorites') $sourceLabel = 'Избранное';
 elseif ($source === 'quiz')      $sourceLabel = 'Квиз';
+elseif ($source === 'project-cc') $sourceLabel = 'Страница проекта (Сердце Столицы)';
 else                             $sourceLabel = 'Сайт';
 
 $text  = "{$icon} Новая заявка — {$sourceLabel}\n\n";

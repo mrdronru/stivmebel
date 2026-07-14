@@ -130,7 +130,7 @@ $faqItems = file_exists(__DIR__ . '/faq.md')
   </p>
   <div class="price-cta-actions">
     <button class="btn-primary" onclick="openContactPopup()">Бесплатный замер</button>
-    <a href="<?php echo SITE_PHONE_HREF; ?>" class="btn-secondary" onclick="ymGoal(\'click_phone\')"><?php echo SITE_PHONE; ?></a>
+    <a href="<?php echo SITE_PHONE_HREF; ?>" class="btn-secondary" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
   </div>
 </section>
 

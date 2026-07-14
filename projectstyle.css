@@ -1,0 +1,265 @@
+/* ── Страницы раздела «Наши проекты» (шаблон: project-cc.php) ──
+   Живёт в палитре сайта: --cream / --ink / --gold, шрифты --serif / --sans.
+   Классы с префиксом .project- , чтобы не пересекаться с другими страницами. */
+
+/* HERO — светлый и компактный: тёмный акцент на странице один, финальный CTA */
+.project-hero {
+  background: var(--cream);
+  color: var(--ink);
+  padding: calc(80px + 2.5rem) 1.5rem 2.5rem;
+  border-bottom: 1px solid var(--ink-10);
+}
+.project-hero-inner { max-width: 900px; margin: 0 auto; }
+.project-eyebrow {
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+.project-title {
+  font-family: var(--serif);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  line-height: 1.12;
+  margin-bottom: 0.5rem;
+}
+.project-sub {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  color: var(--ink-60);
+  margin-bottom: 1.6rem;
+}
+.project-intro {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  line-height: 1.65;
+  max-width: 640px;
+  margin-bottom: 1.8rem;
+}
+.project-hero-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+.project-hero-num {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  line-height: 1;
+  color: var(--gold);
+}
+.project-hero-label {
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  color: var(--ink-60);
+  max-width: 340px;
+  line-height: 1.45;
+}
+
+/* СЕКЦИИ */
+.project-section { padding: 4rem 1.5rem; background: var(--warm-white); }
+.project-section-alt { background: var(--cream); }
+.project-inner { max-width: 900px; margin: 0 auto; }
+.project-h2 {
+  font-family: var(--serif);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.project-section p {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.project-list li {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  line-height: 1.6;
+  padding: 0.55rem 0 0.55rem 1.6rem;
+  position: relative;
+}
+.project-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.15em;
+  width: 0.7rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ЧЕРТЕЖИ: на десктопе два столбца, на мобильном в столбик */
+.project-plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; align-items: start; }
+.project-plan { margin: 0; }
+.project-plans img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #fff;
+  border: 1px solid var(--ink-10);
+}
+.project-plan figcaption {
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  color: var(--ink-60);
+  line-height: 1.5;
+  padding-top: 0.7rem;
+}
+.project-plan figcaption strong { color: var(--ink); font-weight: 500; }
+
+/* КАРТОЧКИ РЕШЕНИЙ: один блок = одна мысль, максимум два предложения */
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.project-card {
+  background: var(--cream);
+  padding: 1.5rem 1.5rem 1.4rem;
+}
+.project-section-alt .project-card { background: var(--warm-white); }
+.project-card h3 {
+  font-family: var(--serif);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.project-card p {
+  font-size: var(--fs-xs);
+  color: var(--ink-60);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ХАРАКТЕРИСТИКИ: считываются за несколько секунд */
+.project-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0;
+}
+.project-facts > div {
+  border-top: 1px solid var(--ink-10);
+  padding-top: 0.8rem;
+}
+.project-facts dt {
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  margin-bottom: 0.3rem;
+}
+.project-facts dd {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.project-h2-second { margin-top: 2.5rem; }
+
+/* ВИДЕО — ролик вертикальный (9:16): плеер сужен под пропорцию и
+   отцентрован, чёрных полей нет, фон вокруг — фон страницы */
+.project-video {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  background: var(--cream);
+  border-radius: 4px;
+}
+
+/* ФОТО: единая сетка, «до» — первая плитка. Колонки 3 → 2 → 1 */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.project-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 3 / 4;
+}
+.project-tile { position: relative; }
+.project-tile img { aspect-ratio: 3 / 4; }
+.project-tag {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--warm-white);
+  color: var(--ink);
+  padding: 0.25rem 0.7rem;
+}
+
+/* CTA */
+.project-cta {
+  background: var(--ink);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+.project-cta-title {
+  font-family: var(--serif);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  color: var(--warm-white);
+  margin-bottom: 1rem;
+}
+.project-cta-text {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  color: rgba(250, 249, 246, 0.65);
+  margin-bottom: 2.5rem;
+}
+/* Правило кнопок: на тёмном фоне — золотая заливка с чернильным текстом.
+   Стандартный .btn-primary (чернила на светлом) здесь сливался бы с фоном. */
+.project-cta-btn {
+  font-size: var(--fs-md);
+  padding: 1rem 2.5rem;
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+.project-cta-btn:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  color: var(--ink);
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 900px) {
+  .project-section { padding: 3rem 1.25rem; }
+  .project-gallery { grid-template-columns: repeat(2, 1fr); }
+  .project-plans { grid-template-columns: 1fr; }
+  .project-cards { grid-template-columns: 1fr; }
+  .project-facts { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .project-hero { padding: calc(70px + 2.5rem) 1.25rem 2.5rem; }
+  .project-hero-stat { gap: 1rem; }
+  .project-gallery { grid-template-columns: 1fr; }
+  .project-facts { grid-template-columns: 1fr; }
+  .project-section { padding: 2.5rem 1rem; }
+}

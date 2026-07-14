@@ -107,6 +107,10 @@ $basePath = $basePath ?? '';
 <script>
 function openContactPopup() {
   document.getElementById('contactPopup').style.display = 'flex';
+  // Страница может предзаполнить комментарий (window.popupComment) —
+  // подставляем только в пустое поле, чтобы не затирать текст пользователя
+  var pc = document.getElementById('pfcomment');
+  if (window.popupComment && pc && !pc.value) pc.value = window.popupComment;
   document.body.style.overflow = 'hidden';
 }
 function closeContactPopup() {
@@ -167,7 +171,7 @@ function submitPopupForm() {
   fetch('<?php echo $basePath; ?>send.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, phone: phone, type: type, comment: comment, source: 'popup' })
+    body: JSON.stringify({ name: name, phone: phone, type: type, comment: comment, source: window.popupSource || 'popup' })
   }).then(function(r) {
     if (!r.ok) throw new Error();
     document.getElementById('popupForm').style.display = 'none';

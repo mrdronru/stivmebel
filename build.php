@@ -114,6 +114,7 @@ function generateSitemap(array $terms): string {
         ['loc' => 'video',   'changefreq' => 'weekly',  'priority' => '0.7'],
         ['loc' => 'price',   'changefreq' => 'monthly', 'priority' => '0.8'],
         ['loc' => 'abcd',    'changefreq' => 'weekly',  'priority' => '0.7'],
+    ['loc' => 'project-cc', 'changefreq' => 'monthly', 'priority' => '0.7'],
     ];
 
     $baseUrl = rtrim(SITE_URL, '/');

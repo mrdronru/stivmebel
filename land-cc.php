@@ -14,7 +14,7 @@ include 'header.php';
 <header class="ln-nav" id="lnNav">
   <a href="/" class="ln-nav-logo">Стив <span>Интерьеры</span></a>
   <div class="ln-nav-right">
-    <a href="tel:<?php echo SITE_PHONE_HREF; ?>" class="ln-nav-phone" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
+    <a href="<?php echo SITE_PHONE_HREF; ?>" class="ln-nav-phone" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
     <button class="ln-nav-btn" onclick="openContactPopup()">Обсудить проект</button>
   </div>
 </header>
@@ -191,7 +191,7 @@ include 'header.php';
       <h2 class="l-cta-title">Обсудим ваш проект</h2>
       <p class="l-cta-sub">Привезём образцы, сделаем замер, предложим решение. Бесплатно и без обязательств.</p>
       <button class="l-cta-btn" onclick="openContactPopup()">Обсудить проект</button>
-      <a href="tel:<?php echo SITE_PHONE_HREF; ?>" class="l-cta-phone" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
+      <a href="<?php echo SITE_PHONE_HREF; ?>" class="l-cta-phone" onclick="ymGoal('click_phone')"><?php echo SITE_PHONE; ?></a>
     </div>
   </section>
 
