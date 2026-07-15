@@ -38,6 +38,9 @@
   --gold: #B8975A;
   --gold-light: #D4B07A;
   --error: #C0392B;
+  --white: #fff;
+  --black: #000;
+  --video-bg: #111;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Jost', system-ui, sans-serif;
   --fs-xs: 0.875rem;
@@ -372,6 +375,7 @@ section { padding: 7rem 4rem; }
 }
 .hero-right {
   height: 100vh;
+  height: 100dvh;
   background: var(--cream);
   position: relative;
   overflow: hidden;

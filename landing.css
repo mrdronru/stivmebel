@@ -11,6 +11,7 @@
 .l-hero {
   position: relative;
   height: calc(100vh - 4.5rem);
+  height: calc(100dvh - 4.5rem);
   min-height: 560px;
   display: flex;
   flex-direction: column;
@@ -123,6 +124,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   animation: l-bounce 2s ease-in-out infinite;
+  will-change: transform;
 }
 @keyframes l-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -645,7 +647,7 @@
 .lq-err {
   font-family: var(--sans);
   font-size: 0.75rem;
-  color: #c0392b;
+  color: var(--error);
   margin: -0.25rem 0 0;
 }
 
@@ -1133,7 +1135,7 @@ body:has(.ln-nav) .l-wrap {
   height: 100%;
   max-height: 88vh;
   display: block;
-  background: #000;
+  background: var(--black);
 }
 
 .lcc-video-close {

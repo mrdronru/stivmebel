@@ -107,7 +107,7 @@
   width: 100%;
   height: auto;
   display: block;
-  background: #fff;
+  background: var(--white);
   border: 1px solid var(--ink-10);
 }
 .project-plan figcaption {

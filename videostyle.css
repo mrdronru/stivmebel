@@ -1,7 +1,7 @@
 /* ── VIDEO: только специфичные стили страницы ── */
 
 /* Тёмный фон */
-body { background: #111; overflow: hidden; }
+body { background: var(--video-bg); overflow: hidden; }
 
 /* Nav переопределения для тёмного фона */
 nav {
@@ -17,7 +17,7 @@ nav {
 .nav-cta { color: var(--warm-white); border-color: rgba(250,249,246,0.25); }
 .nav-cta:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 .nav-burger span { background: var(--warm-white); }
-.nav-drawer { background: #111; }
+.nav-drawer { background: var(--video-bg); }
 .nav-drawer ul a { color: var(--warm-white); }
 
 /* Лента */
@@ -27,6 +27,7 @@ nav {
   align-items: center;
   overflow-y: scroll;
   height: calc(100vh - 4.5rem);
+  height: calc(100dvh - 4.5rem);
   margin-top: 4.5rem;
   scroll-behavior: smooth;
   gap: 0;
@@ -37,8 +38,10 @@ nav {
   position: relative;
   width: 100%;
   max-width: calc((100vh - 4.5rem) * 9 / 16);
+  max-width: calc((100dvh - 4.5rem) * 9 / 16);
   height: calc(100vh - 4.5rem);
-  background: #000;
+  height: calc(100dvh - 4.5rem);
+  background: var(--black);
   cursor: pointer;
   flex-shrink: 0;
 }

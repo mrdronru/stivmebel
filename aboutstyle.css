@@ -50,6 +50,7 @@
 /* Кружок центрируем flex'ом внутри */
 .about-hero-right {
   height: 100vh;
+  height: 100dvh;
   background: var(--cream);
   position: relative;
   overflow: hidden;
