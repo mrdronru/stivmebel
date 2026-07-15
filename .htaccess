@@ -8,10 +8,32 @@
     Require all denied
 </FilesMatch>
 
+# Служебные файлы, не предназначенные для отдачи по HTTP (добавлено 15.07.2026):
+# все .md (PROJECT.md с внутренними заметками, faq.md, abc/*.md, video/*.md —
+# читаются только сервером/CLI), .gitignore и прочие dot-файлы.
+<FilesMatch "\.(md|gitignore)$">
+    Require all denied
+</FilesMatch>
+
+# Каталог .git недоступен по HTTP (если попадёт на сервер при деплое).
+RedirectMatch 404 (?i)/\.git
+
+# Запрет листинга каталогов (gallery/, images/, video/ и т.д.).
+Options -Indexes
+
 # Кастомная страница 404
 ErrorDocument 404 /404.php
 
 RewriteEngine On
+
+# Редирект http -> https (добавлено 15.07.2026).
+# Вторая строка-условие защищает от петли на хостингах, где SSL
+# терминируется на прокси и Apache видит %{HTTPS}=off, но получает
+# заголовок X-Forwarded-Proto: https. Если после включения возникнет
+# петля редиректов — закомментировать этот блок.
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # Отключаем авто-добавление слеша к директориям (mod_dir). Нужно из-за
 # конфликта /video (страница) с папкой video/ (ролики): иначе Apache
@@ -80,3 +102,55 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^/]+/[^/]+)$ $1.html [L]
+
+
+# ═══════════════════════════════════════════════════════════════
+# Производительность и безопасность (добавлено 15.07.2026)
+# Каждый блок обёрнут в <IfModule>: если модуль на хостинге
+# недоступен, директивы игнорируются и 500 не возникает.
+# ═══════════════════════════════════════════════════════════════
+
+AddDefaultCharset utf-8
+
+# ── Сжатие (gzip) ──
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ── Кэширование статики в браузере ──
+<IfModule mod_expires.c>
+    ExpiresActive On
+    # Картинки, видео, шрифты — надолго (файлы неизменяемы, при замене
+    # меняется имя: gallery/NNNN, images/kNN и т.д.)
+    ExpiresByType image/jpeg          "access plus 1 year"
+    ExpiresByType image/png           "access plus 1 year"
+    ExpiresByType image/svg+xml       "access plus 1 year"
+    ExpiresByType image/x-icon        "access plus 1 year"
+    ExpiresByType image/webp          "access plus 1 year"
+    ExpiresByType video/mp4           "access plus 1 year"
+    # CSS/JS — на месяц. При правках стоит добавлять ?v=… к подключению,
+    # чтобы посетители получили новую версию сразу (см. TODO по кэш-бастингу).
+    ExpiresByType text/css            "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    # HTML (PHP-страницы) — не кэшировать: контент динамический (цены,
+    # списки из glob(), избранное).
+    ExpiresByType text/html           "access plus 0 seconds"
+</IfModule>
+
+# ── Заголовки безопасности ──
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # HSTS — включать ТОЛЬКО когда https стабильно работает на всём сайте
+    # (иначе можно заблокировать доступ по http на год). Раскомментировать
+    # после проверки https:
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # CSP — не включаем «вслепую»: на сайте есть inline-скрипты и внешние
+    # ресурсы (Яндекс.Метрика, карты). Требует отдельной настройки, иначе
+    # сломает Метрику и часть JS. Черновик — согласовать и протестировать:
+    # Header always set Content-Security-Policy "default-src 'self'; ..."
+</IfModule>
