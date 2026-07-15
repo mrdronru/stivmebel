@@ -350,3 +350,18 @@
     text-align: center;
   }
 }
+
+/* ── Картинки внутри статей Азбуки ──
+   15.07.2026: см. PROJECT.md, раздел «Азбука мебельщика», и
+   markdown-helpers.php — добавлена поддержка ![alt](путь) в inlineMarkdown().
+   Картинка рендерится парсером как <p><img></p> — .abc-article-body p уже
+   даёт margin-bottom: 1.2rem, поэтому здесь только верхний отступ и рамка,
+   без нижнего (не задваивать). */
+.abc-article-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0.5rem 0 0;
+  border: 1px solid var(--ink-10);
+  border-radius: 4px;
+}

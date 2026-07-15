@@ -1,5 +1,6 @@
 abc/*.html
 abc/*.json
+abc/images/
 bbooks/
 gallery/
 video/*.mp4
@@ -8,3 +9,4 @@ sitemap*.xml
 *.log
 .env
 config.php
+send.php
