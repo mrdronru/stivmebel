@@ -53,7 +53,7 @@ $basePath = $basePath ?? '';
   </div>
 </footer>
 
-<script src="<?php echo $basePath; ?>script.js"></script>
+<script src="<?php echo $basePath; ?>script.js?v=<?php echo @filemtime(__DIR__ . '/script.js'); ?>"></script>
 
 <!-- POPUP FORM (общий для всех страниц) -->
 <div id="contactPopup" class="popup-overlay" style="display:none;" onclick="closePopupOnBg(event)">
@@ -66,6 +66,7 @@ $basePath = $basePath ?? '';
       <div class="form-sub">Перезвоним в течение 2 часов в рабочее время</div>
       <div class="form-group">
         <label>Имя</label>
+        <input type="text" class="hp-field" id="pfwebsite" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="text" placeholder="Как к вам обращаться" id="pfname">
         <span class="field-error" id="pfname-error">Заполните поле</span>
       </div>
@@ -161,8 +162,10 @@ function submitPopupForm() {
 
   if (!name)  { nameEl.style.borderBottomColor  = '#C0392B'; document.getElementById('pfname-error').classList.add('visible');  valid = false; }
   else        { nameEl.style.borderBottomColor  = '';         document.getElementById('pfname-error').classList.remove('visible'); }
-  if (!phone) { phoneEl.style.borderBottomColor = '#C0392B'; document.getElementById('pfphone-error').classList.add('visible'); valid = false; }
-  else        { phoneEl.style.borderBottomColor = '';         document.getElementById('pfphone-error').classList.remove('visible'); }
+  var pfphoneErr = document.getElementById('pfphone-error');
+  if (!phone)                                   { pfphoneErr.textContent = 'Заполните поле';          phoneEl.style.borderBottomColor = '#C0392B'; pfphoneErr.classList.add('visible'); valid = false; }
+  else if (phone.replace(/\D/g,'').length < 10) { pfphoneErr.textContent = 'Введите номер полностью'; phoneEl.style.borderBottomColor = '#C0392B'; pfphoneErr.classList.add('visible'); valid = false; }
+  else                                          { phoneEl.style.borderBottomColor = '';         pfphoneErr.classList.remove('visible'); }
   if (!valid) return;
 
   var btn = document.getElementById('pfsubmit');
@@ -171,7 +174,7 @@ function submitPopupForm() {
   fetch('<?php echo $basePath; ?>send.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, phone: phone, type: type, comment: comment, source: window.popupSource || 'popup' })
+    body: JSON.stringify({ name: name, phone: phone, type: type, comment: comment, source: window.popupSource || 'popup', website: (document.getElementById('pfwebsite')||{}).value || '' })
   }).then(function(r) {
     if (!r.ok) throw new Error();
     document.getElementById('popupForm').style.display = 'none';

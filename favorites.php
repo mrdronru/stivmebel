@@ -81,6 +81,7 @@ include 'header.php';
       <div class="modal-selected-imgs" id="modalSelectedImgs"></div>
       <div class="modal-field">
         <label>Имя</label>
+        <input type="text" class="hp-field" id="mWebsite" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="text" id="mName" placeholder="Как к вам обращаться">
         <span class="field-error" id="mNameError">Заполните поле</span>
       </div>
@@ -130,7 +131,7 @@ include 'header.php';
       div.className = 'gallery-item selected';
       div.dataset.img = src;
       div.innerHTML = `
-        <img src="${src}" alt="Мебель на заказ" loading="lazy">
+        <img src="${src}" width="1200" height="900" alt="Мебель на заказ" loading="lazy">
         <div class="gallery-item-overlay">
           <button class="gallery-item-action" type="button">${ICON_REMOVE} Убрать</button>
         </div>`;
@@ -253,8 +254,10 @@ include 'header.php';
 
     if (!name)  { nameEl.style.borderBottomColor  = '#C0392B'; document.getElementById('mNameError').classList.add('visible');  valid = false; }
     else        { nameEl.style.borderBottomColor  = ''; document.getElementById('mNameError').classList.remove('visible'); }
-    if (!phone) { phoneEl.style.borderBottomColor = '#C0392B'; document.getElementById('mPhoneError').classList.add('visible'); valid = false; }
-    else        { phoneEl.style.borderBottomColor = ''; document.getElementById('mPhoneError').classList.remove('visible'); }
+    var mPhoneErr = document.getElementById('mPhoneError');
+    if (!phone)                                   { mPhoneErr.textContent = 'Заполните поле';          phoneEl.style.borderBottomColor = '#C0392B'; mPhoneErr.classList.add('visible'); valid = false; }
+    else if (phone.replace(/\D/g,'').length < 10) { mPhoneErr.textContent = 'Введите номер полностью'; phoneEl.style.borderBottomColor = '#C0392B'; mPhoneErr.classList.add('visible'); valid = false; }
+    else        { phoneEl.style.borderBottomColor = ''; mPhoneErr.classList.remove('visible'); }
     if (!valid) return;
 
     const btn = document.getElementById('mSubmitBtn');
@@ -270,7 +273,8 @@ include 'header.php';
           name, phone,
           comment: document.getElementById('mComment').value.trim(),
           photos: [...favSet],
-          source: 'favorites'
+          source: 'favorites',
+          website: (document.getElementById('mWebsite') || {}).value || ''
         })
       });
       if (!r.ok) throw new Error();

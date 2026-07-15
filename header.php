@@ -50,15 +50,19 @@ $basePath = $basePath ?? '';
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:site_name" content="<?php echo SITE_NAME; ?>">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title, ENT_QUOTES); ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($page_description, ENT_QUOTES); ?>">
+  <meta name="twitter:image" content="<?php echo SITE_URL; ?>/og-image.jpg">
   <meta name="robots" content="<?php echo isset($robots) ? $robots : 'index, follow'; ?>">
   <link rel="canonical" href="<?php echo rtrim(SITE_URL, '/') . '/' . ltrim($canonical_path ?? strtok($_SERVER['REQUEST_URI'] ?? '/', '?'), '/'); ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <script src="<?php echo $basePath; ?>favorites-storage.js"></script>
-  <link rel="stylesheet" href="<?php echo $basePath; ?>style.css">
+  <script src="<?php echo $basePath; ?>favorites-storage.js?v=<?php echo @filemtime(__DIR__ . '/favorites-storage.js'); ?>"></script>
+  <link rel="stylesheet" href="<?php echo $basePath; ?>style.css?v=<?php echo @filemtime(__DIR__ . '/style.css'); ?>">
   <?php if (isset($extra_css)): foreach ($extra_css as $css): ?>
-  <link rel="stylesheet" href="<?php echo $basePath; ?><?php echo $css; ?>">
+  <link rel="stylesheet" href="<?php echo $basePath; ?><?php echo $css; ?>?v=<?php echo @filemtime(__DIR__ . '/' . $css); ?>">
   <?php endforeach; endif; ?>
   <link rel="icon" href="<?php echo $basePath; ?>favicon.svg" type="image/svg+xml">
   <link rel="icon" href="<?php echo $basePath; ?>favicon.ico" type="image/x-icon">
@@ -67,6 +71,8 @@ $basePath = $basePath ?? '';
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $basePath; ?>apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="<?php echo $basePath; ?>favicon-192x192.png">
   <link rel="icon" type="image/png" sizes="120x120" href="<?php echo $basePath; ?>favicon-120x120.png">
+  <link rel="manifest" href="<?php echo $basePath; ?>manifest.json">
+  <meta name="theme-color" content="#FAF9F6">
 
   <!-- Schema.org: LocalBusiness -->
   <script type="application/ld+json">

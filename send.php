@@ -1,6 +1,6 @@
 <?php
 /**
- * send.php — обработчик форм сайта Стив Мебель
+ * send.php — обработчик форм сайта Стив Интерьеры
  * Отправляет заявки в Telegram-бот
  */
 
@@ -44,6 +44,15 @@ $data = json_decode($raw, true);
 if (!$data) {
     http_response_code(400);
     echo json_encode(['ok' => false, 'error' => 'Invalid JSON']);
+    exit;
+}
+
+// ── Honeypot ──
+// Скрытое поле `website` в формах не видно человеку и всегда должно быть пустым.
+// Если оно заполнено — заявку прислал бот. Возвращаем «успех», чтобы не
+// подсказывать боту о срабатывании ловушки, но ничего не отправляем.
+if (!empty($data['website'])) {
+    echo json_encode(['ok' => true]);
     exit;
 }
 

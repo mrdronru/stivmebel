@@ -79,25 +79,25 @@ include 'header.php';
       <div class="lcc-photo-grid">
         <div class="lcc-photo-item">
           <div class="l-pf-img">
-            <img src="gallery/0044-wardrobe.jpg" alt="Три метра без компромиссов" loading="lazy">
+            <img src="gallery/0044-wardrobe.jpg" width="1200" height="1600" alt="Три метра без компромиссов" loading="lazy">
           </div>
           <p class="l-pf-cap">Три метра без компромиссов</p>
         </div>
         <div class="lcc-photo-item">
           <div class="l-pf-img">
-            <img src="gallery/0043-wardrobe.jpg" alt="Создан точно под это пространство" loading="lazy">
+            <img src="gallery/0043-wardrobe.jpg" width="1200" height="1600" alt="Создан точно под это пространство" loading="lazy">
           </div>
           <p class="l-pf-cap">Создан точно под это пространство</p>
         </div>
         <div class="lcc-photo-item">
           <div class="l-pf-img">
-            <img src="gallery/0045-wardrobe.jpg" alt="Продумано до каждой детали" loading="lazy">
+            <img src="gallery/0045-wardrobe.jpg" width="1200" height="1600" alt="Продумано до каждой детали" loading="lazy">
           </div>
           <p class="l-pf-cap">Продумано до каждой детали</p>
         </div>
         <div class="lcc-photo-item">
           <div class="l-pf-img">
-            <img src="gallery/0046-wardrobe.jpg" alt="Даже то, что почти незаметно" loading="lazy">
+            <img src="gallery/0046-wardrobe.jpg" width="1200" height="1600" alt="Даже то, что почти незаметно" loading="lazy">
           </div>
           <p class="l-pf-cap">Даже то, что почти незаметно</p>
         </div>
@@ -124,7 +124,7 @@ include 'header.php';
   <section class="l-about">
     <div class="l-about-inner">
       <div class="l-about-video-wrap lcc-about-photo">
-        <img src="images/stas01.png" alt="Станислав — основатель Стив Интерьеры">
+        <img src="images/stas01.png" width="600" height="900" alt="Станислав — основатель Стив Интерьеры">
       </div>
       <div class="l-about-text">
         <p class="l-label">Кто за этим стоит</p>
@@ -184,7 +184,7 @@ include 'header.php';
   <!-- ── ФИНАЛЬНЫЙ CTA ── -->
   <section class="l-cta">
     <div class="l-cta-bg">
-      <img src="gallery/0044-wardrobe.jpg" alt="" loading="lazy" aria-hidden="true">
+      <img src="gallery/0044-wardrobe.jpg" width="1200" height="1600" alt="" loading="lazy" aria-hidden="true">
       <div class="l-cta-overlay"></div>
     </div>
     <div class="l-cta-content">

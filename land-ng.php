@@ -23,7 +23,7 @@ include 'header.php';
 
   <!-- ── HERO ── -->
   <section class="l-hero">
-    <img class="l-hero-bg" src="images/k03.jpg" alt="Кухня на заказ в новостройке" loading="eager">
+    <img class="l-hero-bg" src="images/k03.jpg" width="1200" height="1600" alt="Кухня на заказ в новостройке" loading="eager">
     <div class="l-hero-overlay"></div>
     <div class="l-hero-content">
       <p class="l-eyebrow">ЖК Среда · ЖК Аквилон Бисайд · ЖК Профит</p>
@@ -138,31 +138,31 @@ include 'header.php';
       <div class="l-portfolio-grid">
         <div class="l-pf-item">
           <div class="l-pf-img">
-            <img src="gallery/0002-kitchen.jpg" alt="Кухня в неудобной планировке" loading="lazy">
+            <img src="gallery/0002-kitchen.jpg" width="1600" height="1067" alt="Кухня в неудобной планировке" loading="lazy">
           </div>
           <p class="l-pf-cap">Кухня в неудобной планировке: вписали так, что не осталось ни сантиметра впустую</p>
         </div>
         <div class="l-pf-item">
           <div class="l-pf-img">
-            <img src="gallery/0073-hallway.jpg" alt="Шкаф в прихожую" loading="lazy">
+            <img src="gallery/0073-hallway.jpg" width="1600" height="1280" alt="Шкаф в прихожую" loading="lazy">
           </div>
           <p class="l-pf-cap">Шкаф в прихожую: максимум вместимости при минимуме площади</p>
         </div>
         <div class="l-pf-item">
           <div class="l-pf-img">
-            <img src="gallery/0091-kitchen.jpg" alt="Угловая кухня с витринным шкафом" loading="lazy">
+            <img src="gallery/0091-kitchen.jpg" width="1280" height="1600" alt="Угловая кухня с витринным шкафом" loading="lazy">
           </div>
           <p class="l-pf-cap">Угловая кухня с витринным шкафом: классика, которая не надоедает</p>
         </div>
         <div class="l-pf-item">
           <div class="l-pf-img">
-            <img src="gallery/0109-kitchen.jpg" alt="Кухня по дизайн-проекту" loading="lazy">
+            <img src="gallery/0109-kitchen.jpg" width="1600" height="1067" alt="Кухня по дизайн-проекту" loading="lazy">
           </div>
           <p class="l-pf-cap">Кухня по дизайн-проекту: воплотили точно по чертежам дизайнера</p>
         </div>
         <div class="l-pf-item">
           <div class="l-pf-img">
-            <img src="gallery/0147-other.jpg" alt="ТВ-тумба со скрытой проводкой" loading="lazy">
+            <img src="gallery/0147-other.jpg" width="1600" height="1067" alt="ТВ-тумба со скрытой проводкой" loading="lazy">
           </div>
           <p class="l-pf-cap">ТВ-тумба со скрытой проводкой: никаких проводов, всё внутри</p>
         </div>
@@ -206,7 +206,7 @@ include 'header.php';
   <!-- ── CTA ФИНАЛЬНЫЙ ── -->
   <section class="l-cta">
     <div class="l-cta-bg">
-      <img src="images/m01.jpg" alt="" loading="lazy" aria-hidden="true">
+      <img src="images/m01.jpg" width="800" height="1067" alt="" loading="lazy" aria-hidden="true">
       <div class="l-cta-overlay"></div>
     </div>
     <div class="l-cta-content">
@@ -293,6 +293,7 @@ include 'header.php';
         <p class="lq-question">Как с вами связаться?</p>
         <p class="lq-contact-hint">Выберите удобный способ — ответим там, где вам комфортно.</p>
         <div class="lq-contact-form">
+          <input type="text" class="hp-field" id="quizWebsite" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input class="lq-input" type="text" id="quizName" placeholder="Введите имя" autocomplete="given-name">
           <span class="lq-err" id="quizNameErr" style="display:none">Введите имя</span>
           <div class="lq-contact-methods">
@@ -471,7 +472,8 @@ include 'header.php';
           phone: phoneVal || contactValue,
           type: answers.type || '',
           comment: comment.join(' / '),
-          source: 'quiz'
+          source: 'quiz',
+          website: (document.getElementById('quizWebsite') || {}).value || ''
         })
       })
       .then(function(r){ return r.json(); })

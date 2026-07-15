@@ -25,14 +25,14 @@ include 'header.php';
   <div class="hero-right">
     <div class="carousel" id="heroCarousel">
       <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide"><img src="images/k01.jpg" alt="Кухня на заказ" loading="eager"></div>
-        <div class="carousel-slide"><img src="images/k02.jpg" alt="Современная кухня" loading="lazy"></div>
-        <div class="carousel-slide"><img src="images/k03.jpg" alt="Гардеробная" loading="lazy"></div>
-        <div class="carousel-slide"><img src="images/k04.jpg" alt="Шкаф на заказ" loading="lazy"></div>
-        <div class="carousel-slide"><img src="images/k05.jpg" alt="Спальня" loading="lazy"></div>
-        <div class="carousel-slide"><img src="images/k06.jpg" alt="Гостиная" loading="lazy"></div>
-        <div class="carousel-slide"><img src="images/k07.jpg" alt="Детская" loading="lazy"></div>
-        <div class="carousel-slide"><img src="images/k08.jpg" alt="Прихожая" loading="lazy"></div>
+        <div class="carousel-slide"><img src="images/k01.jpg" width="1200" height="1600" alt="Кухня на заказ" loading="eager"></div>
+        <div class="carousel-slide"><img src="images/k02.jpg" width="1200" height="1600" alt="Современная кухня" loading="lazy"></div>
+        <div class="carousel-slide"><img src="images/k03.jpg" width="1200" height="1600" alt="Гардеробная" loading="lazy"></div>
+        <div class="carousel-slide"><img src="images/k04.jpg" width="1200" height="1600" alt="Шкаф на заказ" loading="lazy"></div>
+        <div class="carousel-slide"><img src="images/k05.jpg" width="1200" height="1600" alt="Спальня" loading="lazy"></div>
+        <div class="carousel-slide"><img src="images/k06.jpg" width="1200" height="1600" alt="Гостиная" loading="lazy"></div>
+        <div class="carousel-slide"><img src="images/k07.jpg" width="1200" height="1600" alt="Детская" loading="lazy"></div>
+        <div class="carousel-slide"><img src="images/k08.jpg" width="1200" height="1600" alt="Прихожая" loading="lazy"></div>
       </div>
       <button class="carousel-arrow carousel-prev" onclick="carouselMove(-1)" aria-label="Предыдущий слайд">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -75,7 +75,7 @@ include 'header.php';
   </div>
   <div class="services-grid reveal" style="transition-delay: 0.2s;">
     <a href="catalog" class="service-item">
-      <img src="images/m01.jpg" alt="Кухня на заказ" loading="lazy">
+      <img src="images/m01.jpg" width="800" height="1067" alt="Кухня на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Кухни</div>
         <div class="service-desc">Под ключ: проект, производство, монтаж, подключение техники.</div>
@@ -83,7 +83,7 @@ include 'header.php';
       </div>
     </a>
     <a href="catalog" class="service-item">
-      <img src="images/m02.jpg" alt="Шкаф-купе на заказ" loading="lazy">
+      <img src="images/m02.jpg" width="800" height="1067" alt="Шкаф-купе на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Шкафы-купе</div>
         <div class="service-desc">Встроенные и корпусные, любые системы раздвижных дверей.</div>
@@ -91,7 +91,7 @@ include 'header.php';
       </div>
     </a>
     <a href="catalog" class="service-item">
-      <img src="images/m03.jpg" alt="Гардеробная на заказ" loading="lazy">
+      <img src="images/m03.jpg" width="800" height="1067" alt="Гардеробная на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Гардеробные</div>
         <div class="service-desc">Проектируем систему хранения с учётом ваших вещей и привычек.</div>
@@ -99,7 +99,7 @@ include 'header.php';
       </div>
     </a>
     <a href="catalog" class="service-item">
-      <img src="images/m04.jpg" alt="Детская комната на заказ" loading="lazy">
+      <img src="images/m04.jpg" width="800" height="1067" alt="Детская комната на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Детские комнаты</div>
         <div class="service-desc">Шкафы, стеллажи, рабочие зоны — растём вместе с ребёнком.</div>
@@ -107,7 +107,7 @@ include 'header.php';
       </div>
     </a>
     <a href="catalog" class="service-item">
-      <img src="images/m05.jpg" alt="Столы и стеллажи на заказ" loading="lazy">
+      <img src="images/m05.jpg" width="800" height="1067" alt="Столы и стеллажи на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Столы и стеллажи</div>
         <div class="service-desc">Рабочие места, обеденные группы, библиотеки, детская мебель.</div>
@@ -115,7 +115,7 @@ include 'header.php';
       </div>
     </a>
     <a href="catalog" class="service-item">
-      <img src="images/m06.jpg" alt="Прихожая на заказ" loading="lazy">
+      <img src="images/m06.jpg" width="800" height="1067" alt="Прихожая на заказ" loading="lazy">
       <div class="service-overlay">
         <div class="service-name">Прихожие</div>
         <div class="service-desc">Комбинируем хранение, зеркала и освещение в единую систему.</div>
@@ -294,13 +294,13 @@ include 'header.php';
   </div>
   <div class="pricing-collage reveal" style="transition-delay: 0.15s;">
     <div class="pricing-collage-item">
-      <img src="images/m01.jpg" alt="Кухня на заказ — пример работы" loading="lazy">
+      <img src="images/m01.jpg" width="800" height="1067" alt="Кухня на заказ — пример работы" loading="lazy">
     </div>
     <div class="pricing-collage-item">
-      <img src="images/m02.jpg" alt="Шкаф-купе на заказ — пример работы" loading="lazy">
+      <img src="images/m02.jpg" width="800" height="1067" alt="Шкаф-купе на заказ — пример работы" loading="lazy">
     </div>
     <div class="pricing-collage-item">
-      <img src="images/m04.jpg" alt="Детская комната на заказ — пример работы" loading="lazy">
+      <img src="images/m04.jpg" width="800" height="1067" alt="Детская комната на заказ — пример работы" loading="lazy">
     </div>
   </div>
 </section>
@@ -349,6 +349,7 @@ include 'header.php';
       <div class="form-sub">Перезвоним в течение 2 часов в рабочее время</div>
       <div class="form-group">
         <label>Имя</label>
+        <input type="text" class="hp-field" id="fwebsite" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="text" placeholder="Как к вам обращаться" id="fname">
         <span class="field-error" id="fname-error">Заполните поле</span>
       </div>

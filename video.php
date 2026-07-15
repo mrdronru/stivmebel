@@ -47,8 +47,8 @@ include 'header.php';
     $hasMeta  = $v['title'] !== '' || $v['desc'] !== '';
     ?>
     <div class="video-item" data-src="<?php echo htmlspecialchars($src); ?>">
-      <img class="video-poster lazy-poster" data-src="<?php echo htmlspecialchars($poster); ?>" alt="<?php echo htmlspecialchars($v['title']); ?>">
-      <noscript><img class="video-poster" src="<?php echo htmlspecialchars($poster); ?>" alt="<?php echo htmlspecialchars($v['title']); ?>"></noscript>
+      <img class="video-poster lazy-poster" width="1080" height="1920" data-src="<?php echo htmlspecialchars($poster); ?>" alt="<?php echo htmlspecialchars($v['title']); ?>">
+      <noscript><img class="video-poster" width="1080" height="1920" src="<?php echo htmlspecialchars($poster); ?>" alt="<?php echo htmlspecialchars($v['title']); ?>"></noscript>
       <video class="video-player" preload="none" playsinline muted loop></video>
       <div class="video-gradient"></div>
       <?php if ($hasMeta): ?>

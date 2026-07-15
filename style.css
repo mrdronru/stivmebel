@@ -1,5 +1,25 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Honeypot-поле форм: скрыто от людей, но заполняется ботами.
+   Не display:none — часть ботов пропускает такие поля. Уводим за экран. */
+.hp-field { position: absolute !important; left: -9999px !important; top: auto; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+
+/* Уважение к системной настройке «уменьшить движение» (добавлено 15.07.2026).
+   Анимации делаем мгновенными (не убираем совсем — иначе элементы с
+   `animation ... forwards`, стартующие с opacity:0, остались бы невидимыми:
+   при duration ~0 они мгновенно доходят до конечного кадра и видны).
+   scroll-reveal форсируем в видимое состояние на случай, если наблюдатель
+   не успел добавить .visible. Автопрокрутка карусели глушится в script.js. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
 /*
  * ТИПОГРАФИЧЕСКАЯ ШКАЛА (4 размера):
  * --fs-xs   : 0.875rem — подписи, лейблы, метки, мелкие кнопки

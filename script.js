@@ -124,7 +124,7 @@ if (carouselEl) {
   }
 
   window.carouselMove = function(dir) { clearInterval(autoTimer); goToSlide(currentSlide + dir); startAuto(); };
-  function startAuto() { autoTimer = setInterval(() => goToSlide(currentSlide + 1), 4500); }
+  function startAuto() { if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; autoTimer = setInterval(() => goToSlide(currentSlide + 1), 4500); }
   startAuto();
   carouselEl.addEventListener('mouseenter', () => clearInterval(autoTimer));
   carouselEl.addEventListener('mouseleave', startAuto);
@@ -150,14 +150,16 @@ if (fname) {
 
     if (!name)  { document.getElementById('fname').style.borderBottomColor = '#C0392B'; document.getElementById('fname-error').classList.add('visible'); valid = false; }
     else        { document.getElementById('fname').style.borderBottomColor = ''; document.getElementById('fname-error').classList.remove('visible'); }
-    if (!phone) { document.getElementById('fphone').style.borderBottomColor = '#C0392B'; document.getElementById('fphone-error').classList.add('visible'); valid = false; }
-    else        { document.getElementById('fphone').style.borderBottomColor = ''; document.getElementById('fphone-error').classList.remove('visible'); }
+    var fphoneErr = document.getElementById('fphone-error');
+    if (!phone)                                   { fphoneErr.textContent = 'Заполните поле';          document.getElementById('fphone').style.borderBottomColor = '#C0392B'; fphoneErr.classList.add('visible'); valid = false; }
+    else if (phone.replace(/\D/g,'').length < 10) { fphoneErr.textContent = 'Введите номер полностью'; document.getElementById('fphone').style.borderBottomColor = '#C0392B'; fphoneErr.classList.add('visible'); valid = false; }
+    else                                          { document.getElementById('fphone').style.borderBottomColor = ''; fphoneErr.classList.remove('visible'); }
     if (!valid) return;
 
     const btn = document.getElementById('fsubmit');
     btn.textContent = 'Отправляем...'; btn.disabled = true;
     try {
-      const r = await fetch('send.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,phone,type,comment,source:'main'}) });
+      const r = await fetch('send.php', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,phone,type,comment,source:'main',website:(document.getElementById('fwebsite')||{}).value||''}) });
       if (!r.ok) throw new Error();
       document.getElementById('contactForm').style.display = 'none';
       if (typeof ymGoal === 'function') ymGoal('form_submit');

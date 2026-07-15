@@ -52,11 +52,11 @@ include 'header.php';
     <p>Перед изготовлением была разработана конструкция шкафа и внутреннее наполнение. На чертежах показано расположение секций, фасадов и внутренних элементов.</p>
     <div class="project-plans">
       <figure class="project-plan">
-        <img src="projects/cc-plan-1.png" alt="Чертёж фасадов шкафа" loading="lazy">
+        <img src="projects/cc-plan-1.png" width="937" height="746" alt="Чертёж фасадов шкафа" loading="lazy">
         <figcaption><strong>Чертёж фасадов.</strong> Интегрированная ручка по всей длине фасадов.</figcaption>
       </figure>
       <figure class="project-plan">
-        <img src="projects/cc-plan-2.png" alt="Чертёж наполнения шкафа" loading="lazy">
+        <img src="projects/cc-plan-2.png" width="972" height="782" alt="Чертёж наполнения шкафа" loading="lazy">
         <figcaption><strong>Чертёж наполнения.</strong> Организация внутренних секций.</figcaption>
       </figure>
     </div>
@@ -112,11 +112,11 @@ include 'header.php';
     <p>Ниже - фотографии готового проекта после установки.</p>
     <div class="project-gallery">
       <div class="project-tile">
-        <img src="projects/cc-before.jpg" alt="Спальня до установки шкафа" loading="lazy">
+        <img src="projects/cc-before.jpg" width="963" height="1400" alt="Спальня до установки шкафа" loading="lazy">
         <span class="project-tag">до</span>
       </div>
       <?php for ($i = 1; $i <= 7; $i++): $n = str_pad($i, 2, '0', STR_PAD_LEFT); ?>
-      <img src="projects/cc-<?php echo $n; ?>.jpg" alt="Готовый шкаф с трёхметровыми фасадами, фото <?php echo $i; ?>" loading="lazy">
+      <img src="projects/cc-<?php echo $n; ?>.jpg" width="1200" height="1600" alt="Готовый шкаф с трёхметровыми фасадами, фото <?php echo $i; ?>" loading="lazy">
       <?php endfor; ?>
     </div>
   </div>

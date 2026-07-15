@@ -6,13 +6,75 @@ $page        = 'price';
 $title       = 'Цены на кухни и шкафы на заказ в Москве';
 $description = 'Цены на корпусную мебель на заказ: кухни ' . price_from('kitchens') . '/п.м., шкафы-купе ' . price_from('wardrobes') . '/п.м., гардеробные ' . price_from('closets') . '/п.м. Точный расчёт после бесплатного замера. Ответы на частые вопросы.';
 $extra_css   = ['pricestyle.css'];
-include 'header.php';
 
 // FAQ грузится и парсится из faq.md на каждый заход — редактировать вопросы
 // можно прямо в этом файле текстом, без пересборки и без правки PHP/HTML.
 $faqItems = file_exists(__DIR__ . '/faq.md')
     ? parseFaqMarkdown(file_get_contents(__DIR__ . '/faq.md'))
     : [];
+
+// ── Микроразметка Schema.org для этой страницы (через $extra_head) ──
+$ld = [];
+
+// FAQPage — из faq.md
+if ($faqItems) {
+    $ld[] = [
+        '@context'   => 'https://schema.org',
+        '@type'      => 'FAQPage',
+        'mainEntity' => array_map(function ($it) {
+            // убираем HTML из ответа, сохраняя пробелы между блоками
+            $answer = strip_tags(str_replace(['</p>', '<br>', '<br/>', '<br />', '</li>'], ' ', $it['answer_html']));
+            $answer = trim(preg_replace('/\s+/', ' ', $answer));
+            return [
+                '@type'          => 'Question',
+                'name'           => trim(strip_tags($it['question'])),
+                'acceptedAnswer' => ['@type' => 'Answer', 'text' => $answer],
+            ];
+        }, $faqItems),
+    ];
+}
+
+// Product + Offer — из PRICES (позиции без цены, from=null, пропускаем)
+$priceItems = [];
+$pos = 1;
+foreach (PRICES as $p) {
+    if ($p['from'] === null) continue;
+    $product = ['@type' => 'Product', 'name' => $p['name'], 'category' => 'Корпусная мебель на заказ'];
+    if (!empty($p['desc'])) $product['description'] = $p['desc'];
+    $product['offers'] = [
+        '@type'              => 'Offer',
+        'priceCurrency'      => 'RUB',
+        'price'              => (string) $p['from'],
+        'availability'       => 'https://schema.org/InStock',
+        'url'                => rtrim(SITE_URL, '/') . '/price',
+        'priceSpecification' => [
+            '@type'         => 'UnitPriceSpecification',
+            'price'         => (string) $p['from'],
+            'priceCurrency' => 'RUB',
+            'unitText'      => 'погонный метр',
+        ],
+    ];
+    $priceItems[] = ['@type' => 'ListItem', 'position' => $pos++, 'item' => $product];
+}
+if ($priceItems) {
+    $ld[] = [
+        '@context'        => 'https://schema.org',
+        '@type'           => 'ItemList',
+        'name'            => 'Цены на мебель на заказ',
+        'itemListElement' => $priceItems,
+    ];
+}
+
+if ($ld) {
+    $extra_head = '';
+    foreach ($ld as $block) {
+        $extra_head .= '<script type="application/ld+json">'
+            . json_encode($block, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
+            . "</script>\n";
+    }
+}
+
+include 'header.php';
 ?>
 
 <!-- ── HERO ── -->
@@ -60,13 +122,13 @@ $faqItems = file_exists(__DIR__ . '/faq.md')
 
   <div class="price-photos reveal" style="transition-delay: 0.15s;">
     <div class="price-photo-placeholder">
-      <img src="images/p01.jpg" alt="Мебель на заказ — пример работы">
+      <img src="images/p01.jpg" width="1002" height="1200" alt="Мебель на заказ — пример работы">
     </div>
     <div class="price-photo-placeholder">
-      <img src="images/p02.jpg" alt="Мебель на заказ — пример работы">
+      <img src="images/p02.jpg" width="1000" height="750" alt="Мебель на заказ — пример работы">
     </div>
     <div class="price-photo-placeholder">
-      <img src="images/p03.jpg" alt="Мебель на заказ — пример работы">
+      <img src="images/p03.jpg" width="1000" height="750" alt="Мебель на заказ — пример работы">
     </div>
   </div>
 </section>

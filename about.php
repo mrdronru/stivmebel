@@ -135,7 +135,7 @@ $testimonials = array_map(function($f) {
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4l9 6-9 6V4z" fill="currentColor"/></svg>
         </div>
         <?php else: ?>
-        <img class="testimonial-media" src="testimonials/<?php echo htmlspecialchars($t['file']); ?>" alt="Отзыв клиента" loading="lazy">
+        <img class="testimonial-media" width="220" height="280" src="testimonials/<?php echo htmlspecialchars($t['file']); ?>" alt="Отзыв клиента" loading="lazy">
         <?php endif; ?>
       </div>
       <?php endforeach; ?>

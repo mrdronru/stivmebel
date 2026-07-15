@@ -60,7 +60,7 @@ include 'header.php';
     $alt      = $category_labels[$category] ?? 'Мебель на заказ';
     ?>
     <div class="gallery-item" data-category="<?php echo htmlspecialchars($category); ?>" data-img="gallery/<?php echo htmlspecialchars($filename); ?>">
-      <img src="gallery/<?php echo htmlspecialchars($filename); ?>" alt="<?php echo htmlspecialchars($alt); ?>" loading="lazy">
+      <img src="gallery/<?php echo htmlspecialchars($filename); ?>" width="1200" height="900" alt="<?php echo htmlspecialchars($alt); ?>" loading="lazy">
       <div class="gallery-item-overlay">
         <button class="gallery-item-action" type="button">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.8 5.1L13.3 5.5L10 8.4L11 12.8L7 10.4L3 12.8L4 8.4L0.7 5.5L5.2 5.1L7 1Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
@@ -121,6 +121,7 @@ include 'header.php';
       <div class="modal-selected-imgs" id="modalSelectedImgs"></div>
       <div class="modal-field">
         <label>Имя</label>
+        <input type="text" class="hp-field" id="mWebsite" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="text" id="mName" placeholder="Как к вам обращаться">
         <span class="field-error" id="mNameError">Заполните поле</span>
       </div>
@@ -347,6 +348,7 @@ include 'header.php';
 
   // ── Отправка данных на сервер ──
   async function sendForm(data) {
+    data.website = (document.getElementById('mWebsite') || {}).value || '';
     const response = await fetch('send.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -371,6 +373,12 @@ include 'header.php';
       document.getElementById('mNameError').classList.remove('visible');
     }
     if (!phone) {
+      document.getElementById('mPhoneError').textContent = 'Заполните поле';
+      document.getElementById('mPhone').style.borderBottomColor = '#C0392B';
+      document.getElementById('mPhoneError').classList.add('visible');
+      valid = false;
+    } else if (phone.replace(/\D/g,'').length < 10) {
+      document.getElementById('mPhoneError').textContent = 'Введите номер полностью';
       document.getElementById('mPhone').style.borderBottomColor = '#C0392B';
       document.getElementById('mPhoneError').classList.add('visible');
       valid = false;
