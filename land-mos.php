@@ -45,10 +45,12 @@ include 'header.php';
     <div class="l-district-inner">
       <p class="l-label">Из чего складывается хороший результат</p>
       <h2 class="l-h2">Хорошая мебель начинается не с красивого фасада,<br><em>а с правильной конструкции.</em></h2>
+      <p class="l-manifesto">Мы считаем, что хорошая мебель должна не только красиво выглядеть на фотографии, но и быть удобной каждый день. Поэтому мы всегда объясняем, почему предлагаем именно такое решение.</p>
+      <p class="l-district-text">Красивые материалы важны, но сначала мы продумываем конструкцию: как будут открываться дверцы, где хранить вещи, удобно ли пользоваться мебелью каждый день. Только после этого выбираем материалы и внешний вид.</p>
       <p class="l-district-text">Не стремимся сделать мебель максимально дешёвой — выбираем материалы и фурнитуру, которые служат долго: плиты Egger, фасады Alvic и Cleaf, фурнитура Blum и Hettich с плавным закрыванием. Перед производством согласовываем проект до мелочей.</p>
 
       <p class="l-district-text" style="margin-top:0.5rem;">
-        Кухни — <?php echo price_from('kitchens'); ?> за п.м., шкафы — <?php echo price_from('wardrobes'); ?> за п.м., гардеробные — <?php echo price_from('closets'); ?> за п.м. Точная цена — после согласования размеров и материалов; фиксируется в договоре и не меняется.
+        Мы работаем для тех, кому важна не самая низкая цена, а мебель, которая служит долго и удобна каждый день. Ориентир по цене такой: кухни — <?php echo price_from('kitchens'); ?> за п.м., шкафы — <?php echo price_from('wardrobes'); ?> за п.м., гардеробные — <?php echo price_from('closets'); ?> за п.м. Точная цена — после согласования размеров и материалов; фиксируется в договоре и не меняется.
       </p>
 
       <div class="l-jk-list">
@@ -92,45 +94,18 @@ include 'header.php';
     </div>
   </section>
 
-  <!-- ── ПОЧЕМУ ВЫБИРАЮТ НАС ── -->
+  <!-- ── ПОЧЕМУ С НАМИ СПОКОЙНО РАБОТАТЬ (выгоды, а не характеристики) ── -->
   <section class="l-utp">
     <div class="l-utp-inner">
-      <p class="l-label">Почему с нами спокойно заказывать мебель</p>
+      <p class="l-label">Почему с нами спокойно работать</p>
       <div class="l-utp-grid">
         <div class="l-utp-item">
           <div class="l-utp-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">Цена известна заранее</div>
-            <div class="l-utp-text">После согласования проекта фиксируем стоимость в договоре. Вам не придётся узнавать о дополнительных расходах уже после начала работы.</div>
-          </div>
-        </div>
-        <div class="l-utp-item">
-          <div class="l-utp-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM12 12v.01M8 12v.01M16 12v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 3h6M10 3v4M14 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <div class="l-utp-body">
-            <div class="l-utp-title">Один ответственный человек</div>
-            <div class="l-utp-text">Вы общаетесь напрямую с нашей командой. Станислав контролирует проект и отвечает за результат на всех этапах.</div>
-          </div>
-        </div>
-        <div class="l-utp-item">
-          <div class="l-utp-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="l-utp-body">
-            <div class="l-utp-title">Образцы материалов у вас дома</div>
-            <div class="l-utp-text">Привозим фасады, образцы плит и варианты фурнитуры, чтобы вы могли выбрать материалы в своём интерьере.</div>
-          </div>
-        </div>
-        <div class="l-utp-item">
-          <div class="l-utp-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <div class="l-utp-body">
-            <div class="l-utp-title">Точный замер перед производством</div>
-            <div class="l-utp-text">Проверяем размеры помещения, особенности стен, ниш и коммуникаций перед созданием мебели.</div>
+            <div class="l-utp-title">Цена не изменится после подписания договора</div>
+            <div class="l-utp-text">Стоимость фиксируется заранее. Если в процессе не меняется сам проект, цена остаётся такой же.</div>
           </div>
         </div>
         <div class="l-utp-item">
@@ -138,8 +113,35 @@ include 'header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">Вы видите результат заранее</div>
-            <div class="l-utp-text">Создаём 3D-проект до начала производства. Вы понимаете, как будет выглядеть мебель, и можете внести изменения заранее.</div>
+            <div class="l-utp-title">До производства вы увидите будущую мебель</div>
+            <div class="l-utp-text">Делаем подробный 3D-проект, чтобы заранее проверить размеры, расположение и внешний вид. Исправить всё на экране гораздо проще, чем после изготовления.</div>
+          </div>
+        </div>
+        <div class="l-utp-item">
+          <div class="l-utp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM12 12v.01M8 12v.01M16 12v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 3h6M10 3v4M14 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="l-utp-body">
+            <div class="l-utp-title">Не нужно искать нескольких подрядчиков</div>
+            <div class="l-utp-text">Замер, проектирование, производство и монтаж — одна команда. Все этапы согласованы между собой, поэтому меньше ошибок и недопонимания.</div>
+          </div>
+        </div>
+        <div class="l-utp-item">
+          <div class="l-utp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="l-utp-body">
+            <div class="l-utp-title">Мебель проектируется именно под ваше помещение</div>
+            <div class="l-utp-text">Учитываем размеры, ниши, коммуникации и особенности планировки. Не подгоняем готовые решения под квартиру — проектируем мебель под неё.</div>
+          </div>
+        </div>
+        <div class="l-utp-item">
+          <div class="l-utp-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="l-utp-body">
+            <div class="l-utp-title">После установки мы остаёмся на связи</div>
+            <div class="l-utp-text">Если возникнут вопросы по эксплуатации или потребуется регулировка, вы знаете, к кому обратиться.</div>
           </div>
         </div>
       </div>
@@ -149,42 +151,47 @@ include 'header.php';
     </div>
   </section>
 
-  <!-- ── ПОРТФОЛИО (те же 5 работ, что на land-msk) ── -->
-  <section class="l-portfolio">
+  <!-- ── ПОРТФОЛИО — истории проектов (карточки: фото + заголовок + история) ── -->
+  <section class="l-portfolio l-portfolio--stories">
     <div class="l-portfolio-inner">
       <p class="l-label" style="text-align:center; margin-bottom:1rem;">Наши работы</p>
       <h2 class="l-h2" style="text-align:center; margin-bottom:1rem;">Реальные проекты<br><em>для реальных квартир</em></h2>
-      <p class="l-district-text" style="text-align:center; max-width:640px; margin:0 auto 3rem;">Каждая мебель начинается с особенностей конкретного помещения: нестандартной планировки, ограниченного пространства или желания сделать хранение удобнее. Показываем реальные проекты и решения, реализованные для наших клиентов.</p>
+      <p class="l-district-text" style="text-align:center; max-width:640px; margin:0 auto 3rem;">Мы показываем не только готовую мебель. По каждому проекту рассказываем, какая задача стояла перед помещением, какое решение выбрали и почему именно такое. Каждая работа начинается с особенностей конкретной квартиры: нестандартной планировки, ограниченного пространства или желания сделать хранение удобнее.</p>
       <div class="l-portfolio-grid">
         <div class="l-pf-item">
           <div class="l-pf-img">
             <img src="gallery/0002-kitchen.jpg" width="1600" height="1067" alt="Кухня в неудобной планировке" loading="lazy">
           </div>
-          <p class="l-pf-cap">Кухня в неудобной планировке: вписали так, что не осталось ни сантиметра впустую</p>
+          <p class="l-pf-cap">Кухня в неудобной планировке</p>
+          <p class="l-pf-story">Квартира в новостройке с сильно вытянутой планировкой — хотелось полноценную кухню, а стена под неё, по сути, одна. Кухню пустили вдоль стены, а холодильник вынесли за угол в прихожую и встроили за фасад: снаружи он выглядит обычным шкафом и не портит вид. Так поместилась вся техника и рабочие зоны, не съедая проход.</p>
         </div>
         <div class="l-pf-item">
           <div class="l-pf-img">
             <img src="gallery/0073-hallway.jpg" width="1600" height="1280" alt="Шкаф в прихожую" loading="lazy">
           </div>
           <p class="l-pf-cap">Шкаф в прихожую: максимум вместимости при минимуме площади</p>
+          <p class="l-pf-story">Решали две типичные боли прихожих. Электрощитки убрали внутрь шкафа за фасад, а там, где глубина меньше стандартных 60 см, поставили перпендикулярные вешала — вешать одежду можно даже в узкой секции. Наполнение из ящиков и полок собрали под задачи хозяев, а не по типовой схеме.</p>
         </div>
         <div class="l-pf-item">
           <div class="l-pf-img">
             <img src="gallery/0091-kitchen.jpg" width="1280" height="1600" alt="Угловая кухня с витринным шкафом" loading="lazy">
           </div>
           <p class="l-pf-cap">Угловая кухня с витринным шкафом: классика, которая не надоедает</p>
+          <p class="l-pf-story">Пожелание было простое — больше света и «эффекта», но без ухода от классики. Предложили стеклянную витрину с подсветкой: она добавляет глубины и вечером работает как мягкий акцент. Саму угловую кухню скомпоновали удобно и без лишнего.</p>
         </div>
         <div class="l-pf-item">
           <div class="l-pf-img">
             <img src="gallery/0109-kitchen.jpg" width="1600" height="1067" alt="Кухня по дизайн-проекту" loading="lazy">
           </div>
           <p class="l-pf-cap">Кухня по дизайн-проекту: воплотили точно по чертежам дизайнера</p>
+          <p class="l-pf-story">Слабое место любой угловой секции — ей неудобно пользоваться, а здесь рядом ещё стоял пенал. Не меняя внешний вид из проекта дизайнера, переработали конструкцию углового шкафа и добавили складную дверь — получилось полноценное место хранения. Столешницу смонтировали без пристеночного бортика, как и было задумано.</p>
         </div>
         <div class="l-pf-item">
           <div class="l-pf-img">
-            <img src="gallery/0056-wardrobe.jpg" width="1600" height="1067" alt="Встроенный шкаф-купе" loading="lazy">
+            <img src="gallery/0056-wardrobe.jpg" width="1600" height="1067" alt="Комплект мебели для комнаты со скрытыми удобствами" loading="lazy">
           </div>
-          <p class="l-pf-cap">Встроенный шкаф-купе: под нестандартную нишу, без зазоров</p>
+          <p class="l-pf-cap">Мебель для комнаты: удобства, которые замечаешь не сразу</p>
+          <p class="l-pf-story">Спрятали несколько решений, которые не бросаются в глаза, но выручают каждый день. Подсветка зеркала стоит на внутренней стороне дверцы и включается сама, когда шкаф открывается. Под основным столом прячется выдвижной мини-стол — второе рабочее место появляется за секунду; для принтера сделали отдельный выдвижной ящик.</p>
         </div>
       </div>
       <div class="l-works-cta">
@@ -231,6 +238,15 @@ include 'header.php';
       <div style="text-align:center; margin-top:2rem;">
         <button class="l-hero-btn" onclick="openQuiz()">Рассчитать мой проект</button>
       </div>
+    </div>
+  </section>
+
+  <!-- ── ЧЕСТНОСТЬ ОЖИДАНИЙ ── -->
+  <section class="l-district">
+    <div class="l-district-inner">
+      <p class="l-label">Как мы работаем</p>
+      <h2 class="l-h2">Не обещаем «идеально».<br><em>Объясняем, как будет на самом деле.</em></h2>
+      <p class="l-district-text">Если какая-то идея окажется неудобной или слишком дорогой, мы предложим альтернативу и объясним, почему. Нам важно, чтобы мебель была удобной в использовании, а не только красиво выглядела на визуализации.</p>
     </div>
   </section>
 

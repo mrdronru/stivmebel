@@ -183,6 +183,17 @@
   margin-bottom: 1.4rem;
 }
 
+/* Позиционирующее утверждение («мы объясняем решения») — сквозная идея лендингов */
+.l-manifesto {
+  font-family: var(--serif);
+  font-size: var(--fs-md);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+}
+
 .l-jk-list {
   display: flex;
   flex-direction: column;
@@ -1042,6 +1053,40 @@
   line-height: 1.55;
   padding: 0.85rem 0.1rem 0;
   text-decoration: none;
+}
+
+/* Вариант портфолио «истории проектов» — только land-mos (карточки с текстом).
+   Не трогает общую фото-мозаику land-ng/land-cc. */
+.l-portfolio--stories .l-portfolio-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 2.5rem;
+  align-items: start;
+}
+.l-portfolio--stories .l-portfolio-grid .l-pf-item {
+  grid-column: auto;
+}
+.l-portfolio--stories .l-pf-cap {
+  font-family: var(--serif);
+  font-size: var(--fs-md);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.3;
+  padding: 1.1rem 0 0;
+}
+.l-pf-story {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--ink-60);
+  line-height: 1.75;
+  padding: 0.55rem 0 0;
+}
+
+@media (max-width: 600px) {
+  .l-portfolio--stories .l-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
