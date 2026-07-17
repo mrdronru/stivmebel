@@ -79,8 +79,11 @@ if (!$name || !$phone) {
 }
 
 // Валидация телефона: минимум 10 цифр
-// Для квиза с нетелефонным способом связи — пропускаем проверку цифр
-$skipPhoneCheck = ($source === 'quiz' && mb_strlen(preg_replace('/\D/', '', $phone)) < 10);
+// Квиз может передавать source вида 'quiz', 'quiz-ng', 'quiz-mos' и т.д.
+// (по имени лендинга) — для любого из них, если выбран нетелефонный способ
+// связи, пропускаем проверку цифр.
+$isQuizSource  = (strpos($source, 'quiz') === 0);
+$skipPhoneCheck = ($isQuizSource && mb_strlen(preg_replace('/\D/', '', $phone)) < 10);
 if (!$skipPhoneCheck && mb_strlen(preg_replace('/\D/', '', $phone)) < 10) {
     http_response_code(422);
     echo json_encode(['ok' => false, 'error' => 'Invalid phone number']);
@@ -88,13 +91,20 @@ if (!$skipPhoneCheck && mb_strlen(preg_replace('/\D/', '', $phone)) < 10) {
 }
 
 // Формируем сообщение
+// Подписи для разных квизов — по одной на каждый лендинг с квизом.
+$quizSourceLabels = [
+    'quiz'     => 'Квиз',
+    'quiz-ng'  => 'Квиз (Рядом с домом)',
+    'quiz-mos' => 'Квиз (Вся Москва)',
+];
+
 if ($source === 'gallery' || $source === 'favorites') $icon = '🖼';
-elseif ($source === 'quiz') $icon = '🎯';
+elseif ($isQuizSource) $icon = '🎯';
 else $icon = '📋';
 if ($source === 'gallery')       $sourceLabel = 'Галерея';
 elseif ($source === 'popup')     $sourceLabel = 'Попап';
 elseif ($source === 'favorites') $sourceLabel = 'Избранное';
-elseif ($source === 'quiz')      $sourceLabel = 'Квиз';
+elseif ($isQuizSource)           $sourceLabel = $quizSourceLabels[$source] ?? 'Квиз';
 elseif ($source === 'project-cc') $sourceLabel = 'Страница проекта (Сердце Столицы)';
 else                             $sourceLabel = 'Сайт';
 

@@ -9,10 +9,15 @@
 
 /* ─── HERO: полный экран, фото за текстом ───────────────────────── */
 .l-hero {
+  /* min-height (не height!) — если контента в hero больше, чем помещается
+     на экран, секция должна вырасти вниз, а не обрезать/утаскивать контент
+     под фиксированную шапку (баг 16.07.2026: на land-mos с более длинным
+     текстом eyebrow оказывался «под шапкой» именно из-за фиксированной
+     height + overflow:hidden + центрирования). */
   position: relative;
-  height: calc(100vh - 4.5rem);
-  height: calc(100dvh - 4.5rem);
   min-height: 560px;
+  min-height: calc(100vh - 4.5rem);
+  min-height: calc(100dvh - 4.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,6 +59,9 @@
   max-width: 720px;
   padding: 0 2rem;
 }
+@media (max-width: 480px) {
+  .l-hero-content { padding: 0 1.25rem; }
+}
 
 .l-eyebrow {
   font-family: var(--sans);
@@ -68,9 +76,9 @@
 
 .l-h1 {
   font-family: var(--serif);
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(2.3rem, 6vw, 5.5rem);
   font-weight: 300;
-  line-height: 1.05;
+  line-height: 1.15;
   color: var(--warm-white);
   margin-bottom: 1.5rem;
 }
@@ -133,7 +141,7 @@
 
 /* ─── ЗНАЕМ РАЙОН ────────────────────────────────────────────────── */
 .l-district {
-  padding: 7rem 5vw;
+  padding: 5rem 5vw;
   background: var(--warm-white);
   text-align: center;
 }
@@ -172,7 +180,7 @@
   font-weight: 300;
   color: var(--ink-60);
   line-height: 1.8;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.4rem;
 }
 
 .l-jk-list {
@@ -204,7 +212,7 @@
 /* ─── УТП ───────────────────────────────────────────────────────── */
 .l-utp {
   background: var(--ink);
-  padding: 7rem 5vw;
+  padding: 5rem 5vw;
 }
 
 .l-utp-inner {
@@ -308,7 +316,7 @@
 /* ─── ПРОЦЕСС ────────────────────────────────────────────────────── */
 .l-process {
   background: var(--ink);
-  padding: 7rem 5vw;
+  padding: 5rem 5vw;
 }
 
 .l-process-inner {
@@ -451,7 +459,7 @@
   }
 
   .l-district {
-    padding: 5rem 1.5rem;
+    padding: 3.5rem 1.5rem;
   }
 
   .l-works {
@@ -459,7 +467,7 @@
   }
 
   .l-utp {
-    padding: 5rem 1.5rem;
+    padding: 3.5rem 1.5rem;
   }
 
   .l-utp-grid {
@@ -480,7 +488,7 @@
   }
 
   .l-process {
-    padding: 5rem 1.5rem;
+    padding: 3.5rem 1.5rem;
   }
 
   .l-step {
@@ -876,7 +884,7 @@
 /* ─── БЛОК О СТАНИСЛАВЕ ──────────────────────────────────────────── */
 .l-about {
   background: var(--warm-white);
-  padding: 7rem 5vw;
+  padding: 5rem 5vw;
 }
 
 .l-about-inner {
@@ -960,7 +968,7 @@
 
 @media (max-width: 900px) {
   .l-about {
-    padding: 5rem 1.5rem;
+    padding: 3.5rem 1.5rem;
   }
   .l-about-inner {
     grid-template-columns: 1fr;
@@ -975,7 +983,7 @@
 /* ─── ПОРТФОЛИО ──────────────────────────────────────────────────── */
 .l-portfolio {
   background: var(--cream);
-  padding: 7rem 5vw;
+  padding: 5rem 5vw;
 }
 
 .l-portfolio-inner {
@@ -1027,7 +1035,7 @@
 
 @media (max-width: 900px) {
   .l-portfolio {
-    padding: 5rem 1.5rem;
+    padding: 3.5rem 1.5rem;
   }
   .l-portfolio-grid {
     grid-template-columns: 1fr 1fr;
