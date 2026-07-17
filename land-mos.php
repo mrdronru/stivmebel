@@ -45,20 +45,25 @@ include 'header.php';
     <div class="l-district-inner">
       <p class="l-label">Из чего складывается хороший результат</p>
       <h2 class="l-h2">Хорошая мебель начинается не с красивого фасада,<br><em>а с правильной конструкции.</em></h2>
-      <p class="l-manifesto">Мы считаем, что хорошая мебель должна не только красиво выглядеть на фотографии, но и быть удобной каждый день. Поэтому мы всегда объясняем, почему предлагаем именно такое решение.</p>
-      <p class="l-district-text">Красивые материалы важны, но сначала мы продумываем конструкцию: как будут открываться дверцы, где хранить вещи, удобно ли пользоваться мебелью каждый день. Только после этого выбираем материалы и внешний вид.</p>
-      <p class="l-district-text">Не стремимся сделать мебель максимально дешёвой — выбираем материалы и фурнитуру, которые служат долго: плиты Egger, фасады Alvic и Cleaf, фурнитура Blum и Hettich с плавным закрыванием. Перед производством согласовываем проект до мелочей.</p>
+      <p class="l-district-text">Хорошая мебель должна не только красиво выглядеть, но и быть удобной каждый день. Поэтому мы начинаем не с выбора материалов, а с того, как мебель будет работать именно в вашем доме.</p>
+      <p class="l-district-text">Продумываем расположение хранения, открывание дверей и ящиков, удобство использования, особенности помещения и коммуникаций. Именно такие решения редко заметны на фотографиях, но именно они определяют, насколько комфортно пользоваться мебелью спустя годы.</p>
+      <p class="l-district-text">Для производства используем материалы и фурнитуру, которые хорошо зарекомендовали себя в ежедневной эксплуатации: плиты Egger, фасады Alvic и Cleaf, фурнитуру Blum и Hettich с плавным закрыванием. Перед запуском в производство согласовываем проект до мелочей, чтобы результат соответствовал ожиданиям.</p>
+      <p class="l-district-text">Мы работаем для тех, кому важна не самая низкая цена, а мебель, которая будет радовать каждый день и прослужит долгие годы.</p>
 
-      <p class="l-district-text" style="margin-top:0.5rem;">
-        Мы работаем для тех, кому важна не самая низкая цена, а мебель, которая служит долго и удобна каждый день. Ориентир по цене такой: кухни — <?php echo price_from('kitchens'); ?> за п.м., шкафы — <?php echo price_from('wardrobes'); ?> за п.м., гардеробные — <?php echo price_from('closets'); ?> за п.м. Точная цена — после согласования размеров и материалов; фиксируется в договоре и не меняется.
-      </p>
-
+      <p class="l-district-text" style="margin-bottom:0.6rem;"><strong>Ориентир по стоимости:</strong></p>
       <div class="l-jk-list">
+        <div class="l-jk-item"><span class="l-jk-dot"></span><span>Кухни — <strong><?php echo price_from('kitchens'); ?></strong> за погонный метр</span></div>
+        <div class="l-jk-item"><span class="l-jk-dot"></span><span>Шкафы — <strong><?php echo price_from('wardrobes'); ?></strong> за погонный метр</span></div>
+        <div class="l-jk-item"><span class="l-jk-dot"></span><span>Гардеробные — <strong><?php echo price_from('closets'); ?></strong> за погонный метр</span></div>
+      </div>
+      <p class="l-district-text" style="margin-top:1rem;">Точная стоимость рассчитывается после согласования проекта, фиксируется в договоре и не меняется.</p>
+
+      <div class="l-jk-list" style="margin-top:1.5rem;">
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>Бесплатный замер</span></div>
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>Бесплатный 3D-проект</span></div>
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>Цена фиксируется в договоре</span></div>
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>Гарантия 2 года</span></div>
-        <div class="l-jk-item"><span class="l-jk-dot"></span><span>300+ реализованных проектов</span></div>
+        <div class="l-jk-item"><span class="l-jk-dot"></span><span>Более 300 реализованных проектов</span></div>
       </div>
 
       <div style="margin-top:2rem;">
@@ -88,6 +93,7 @@ include 'header.php';
         <h2 class="l-h2">Здравствуйте!<br>Меня зовут <em>Станислав</em></h2>
         <p class="l-about-body">С 2012 года мы изготавливаем кухни, шкафы, гардеробные и другую корпусную мебель на заказ. Каждый проект начинается с разговора о том, как мебель должна работать именно в вашей квартире.</p>
         <p class="l-about-body">Я лично участвую в каждом проекте — от первых замеров до финальной установки. После заключения договора вы также общаетесь с нами напрямую — без передачи проекта между разными отделами и подрядчиками.</p>
+        <p class="l-about-body">Не обещаю «идеально» — рассказываю, как будет на самом деле. Если вижу, что какая-то идея будет неудобной или слишком дорогой, честно скажу об этом и предложу альтернативу, объясню, почему.</p>
         <p class="l-about-body">Вы всегда знаете, к кому обратиться и кто отвечает за результат.</p>
         <button class="l-about-cta" onclick="openQuiz()">Обсудить мой проект</button>
       </div>
@@ -104,8 +110,8 @@ include 'header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">Цена не изменится после подписания договора</div>
-            <div class="l-utp-text">Стоимость фиксируется заранее. Если в процессе не меняется сам проект, цена остаётся такой же.</div>
+            <div class="l-utp-title">Цена фиксируется в договоре</div>
+            <div class="l-utp-text">После согласования проекта стоимость фиксируется и не меняется. Если вы не вносите изменения в проект, цена остаётся прежней.</div>
           </div>
         </div>
         <div class="l-utp-item">
@@ -113,8 +119,8 @@ include 'header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">До производства вы увидите будущую мебель</div>
-            <div class="l-utp-text">Делаем подробный 3D-проект, чтобы заранее проверить размеры, расположение и внешний вид. Исправить всё на экране гораздо проще, чем после изготовления.</div>
+            <div class="l-utp-title">Вы увидите мебель до начала производства</div>
+            <div class="l-utp-text">Создаём подробный 3D-проект, чтобы заранее проверить размеры, расположение, материалы и внешний вид. Это позволяет избежать неприятных сюрпризов после изготовления.</div>
           </div>
         </div>
         <div class="l-utp-item">
@@ -122,8 +128,8 @@ include 'header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM12 12v.01M8 12v.01M16 12v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M9 3h6M10 3v4M14 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">Не нужно искать нескольких подрядчиков</div>
-            <div class="l-utp-text">Замер, проектирование, производство и монтаж — одна команда. Все этапы согласованы между собой, поэтому меньше ошибок и недопонимания.</div>
+            <div class="l-utp-title">Один подрядчик на всех этапах</div>
+            <div class="l-utp-text">Замер, проектирование, производство и монтаж выполняет одна команда. Не нужно координировать нескольких исполнителей и разбираться, кто отвечает за результат.</div>
           </div>
         </div>
         <div class="l-utp-item">
@@ -131,8 +137,8 @@ include 'header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">Мебель проектируется именно под ваше помещение</div>
-            <div class="l-utp-text">Учитываем размеры, ниши, коммуникации и особенности планировки. Не подгоняем готовые решения под квартиру — проектируем мебель под неё.</div>
+            <div class="l-utp-title">Проектируем под вашу квартиру, а не под типовые размеры</div>
+            <div class="l-utp-text">Учитываем планировку, ниши, коммуникации, особенности помещения и ваши привычки. Мебель создаётся под конкретное пространство, а не адаптируется из готовых решений.</div>
           </div>
         </div>
         <div class="l-utp-item">
@@ -140,8 +146,8 @@ include 'header.php';
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <div class="l-utp-body">
-            <div class="l-utp-title">После установки мы остаёмся на связи</div>
-            <div class="l-utp-text">Если возникнут вопросы по эксплуатации или потребуется регулировка, вы знаете, к кому обратиться.</div>
+            <div class="l-utp-title">Остаёмся на связи после установки</div>
+            <div class="l-utp-text">Если потребуется регулировка или возникнут вопросы по эксплуатации, вы всегда можете обратиться к нам. Мы не исчезаем после завершения монтажа.</div>
           </div>
         </div>
       </div>
@@ -238,15 +244,6 @@ include 'header.php';
       <div style="text-align:center; margin-top:2rem;">
         <button class="l-hero-btn" onclick="openQuiz()">Рассчитать мой проект</button>
       </div>
-    </div>
-  </section>
-
-  <!-- ── ЧЕСТНОСТЬ ОЖИДАНИЙ ── -->
-  <section class="l-district">
-    <div class="l-district-inner">
-      <p class="l-label">Как мы работаем</p>
-      <h2 class="l-h2">Не обещаем «идеально».<br><em>Объясняем, как будет на самом деле.</em></h2>
-      <p class="l-district-text">Если какая-то идея окажется неудобной или слишком дорогой, мы предложим альтернативу и объясним, почему. Нам важно, чтобы мебель была удобной в использовании, а не только красиво выглядела на визуализации.</p>
     </div>
   </section>
 
