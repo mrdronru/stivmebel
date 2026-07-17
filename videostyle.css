@@ -6,15 +6,15 @@ body { background: var(--video-bg); overflow: hidden; }
 /* Nav переопределения для тёмного фона */
 nav {
   background: rgba(17,17,17,0.94);
-  border-bottom-color: rgba(250,249,246,0.08);
+  border-bottom-color: var(--ww-10);
 }
 .nav-logo { color: var(--warm-white); }
-.nav-links a { color: rgba(250,249,246,0.5); }
+.nav-links a { color: var(--ww-50); }
 .nav-links a:hover,
 .nav-links a.nav-active { color: var(--warm-white); }
-.nav-social-btn { border-color: rgba(250,249,246,0.12); color: rgba(250,249,246,0.5); }
+.nav-social-btn { border-color: var(--ww-10); color: var(--ww-50); }
 .nav-social-btn:hover { border-color: var(--gold); color: var(--gold); }
-.nav-cta { color: var(--warm-white); border-color: rgba(250,249,246,0.25); }
+.nav-cta { color: var(--warm-white); border-color: var(--ww-20); }
 .nav-cta:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 .nav-burger span { background: var(--warm-white); }
 .nav-drawer { background: var(--video-bg); }
@@ -51,7 +51,7 @@ nav {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--dur) ease;
   z-index: 2;
 }
 .video-poster.hidden { opacity: 0; pointer-events: none; }
@@ -85,14 +85,14 @@ nav {
 .video-num {
   font-size: var(--fs-xs);
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--ls-lg);
   text-transform: uppercase;
   color: var(--gold-light);
   margin-bottom: 0.4rem;
 }
 .video-title {
   font-family: var(--serif);
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-size: var(--fs-sub);
   font-weight: 300;
   color: var(--warm-white);
   line-height: 1.2;
@@ -101,7 +101,7 @@ nav {
 .video-desc {
   font-size: var(--fs-xs);
   font-weight: 300;
-  color: rgba(250,249,246,0.65);
+  color: var(--ww-60);
   line-height: 1.6;
   max-width: 400px;
 }
@@ -116,14 +116,14 @@ nav {
 .ctrl-btn {
   width: 2.4rem; height: 2.4rem;
   background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(250,249,246,0.2);
+  border: 1px solid var(--ww-20);
   color: var(--warm-white);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  transition: background 0.2s, border-color 0.2s;
+  transition: background var(--dur-fast), border-color var(--dur-fast);
   border-radius: 2px;
 }
-.ctrl-btn:hover { background: rgba(184,151,90,0.5); border-color: var(--gold); }
+.ctrl-btn:hover { background: var(--gold-50); border-color: var(--gold); }
 .ctrl-btn svg { pointer-events: none; }
 
 /* Кнопка play по центру */
@@ -135,11 +135,11 @@ nav {
 .video-play-icon {
   width: 4rem; height: 4rem;
   background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(250,249,246,0.35);
+  border: 1px solid var(--ww-30);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   color: var(--warm-white);
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity var(--dur), transform var(--dur);
 }
 .video-item.playing .video-play-icon { opacity: 0; }
 .video-item:hover .video-play-icon { transform: scale(1.08); }
@@ -149,7 +149,7 @@ nav {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 6px;
-  background: rgba(250,249,246,0.2);
+  background: var(--ww-20);
   z-index: 6;
   cursor: pointer;
 }
@@ -171,10 +171,10 @@ nav {
   top: 1rem; left: 1rem;
   z-index: 5;
   background: rgba(0,0,0,0.5);
-  border: 1px solid rgba(250,249,246,0.2);
-  color: rgba(250,249,246,0.7);
+  border: 1px solid var(--ww-20);
+  color: var(--ww-75);
   font-size: var(--fs-xs);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--ls-md);
   text-transform: uppercase;
   padding: 0.3rem 0.7rem;
   display: none;

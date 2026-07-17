@@ -50,10 +50,10 @@
 #favGrid .gallery-item-action {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  border-color: rgba(250,249,246,0.5);
+  border-color: var(--ww-50);
 }
 #favGrid .gallery-item .gallery-item-overlay {
-  background: rgba(26,24,20,0.35);
+  background: var(--ink-30);
 }
 
 /* ── RESPONSIVE ── */

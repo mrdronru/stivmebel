@@ -16,7 +16,7 @@
 .about-eyebrow {
   font-size: var(--fs-xs);
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--ls-lg);
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 1.5rem;
@@ -87,27 +87,27 @@
   overflow: hidden;
   position: relative;
   border: 1px solid var(--ink-10);
-  box-shadow: 0 24px 64px rgba(26,24,20,0.12);
+  box-shadow: 0 24px 64px var(--ink-10);
 }
 .video-circle video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .video-circle-play {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(26,24,20,0.25);
+  background: var(--ink-20);
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background var(--dur);
   z-index: 2;
 }
-.video-circle-play:hover { background: rgba(26,24,20,0.15); }
+.video-circle-play:hover { background: var(--ink-15); }
 .video-circle-play.hidden { opacity: 0; pointer-events: none; }
 .play-icon-circle {
   width: 4.5rem; height: 4.5rem;
-  border: 2px solid rgba(250,249,246,0.9);
+  border: 2px solid var(--ww-90);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   color: var(--warm-white);
-  transition: transform 0.3s;
+  transition: transform var(--dur);
 }
 .video-circle-play:hover .play-icon-circle { transform: scale(1.08); }
 
@@ -115,7 +115,7 @@
 .video-circle-ring {
   position: absolute; inset: -12px;
   border-radius: 50%;
-  border: 1px solid rgba(184,151,90,0.3);
+  border: 1px solid var(--gold-30);
   pointer-events: none;
   animation: spin 20s linear infinite;
   will-change: transform;
@@ -152,7 +152,7 @@
   font-size: var(--fs-xs);
   font-weight: 300;
   color: var(--ink-60);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--ls-md);
   margin-top: 0.2rem;
 }
 
@@ -169,7 +169,7 @@
 .why-label { color: var(--gold-light); }
 .why-left p {
   font-size: var(--fs-xs);
-  color: rgba(250,249,246,0.55);
+  color: var(--ww-50);
   line-height: 1.8;
   max-width: 260px;
   margin-top: 1.5rem;
@@ -187,7 +187,7 @@
 .why-item-text {
   font-size: var(--fs-xs);
   font-weight: 300;
-  color: rgba(250,249,246,0.55);
+  color: var(--ww-50);
   line-height: 1.75;
 }
 
@@ -228,7 +228,7 @@
   color: var(--gold);
   position: relative; z-index: 1;
   flex-shrink: 0;
-  transition: all 0.3s;
+  transition: all var(--dur);
 }
 .timeline-item:hover .timeline-dot { background: var(--gold); color: var(--warm-white); border-color: var(--gold); }
 .timeline-content { padding-top: 0.4rem; }
@@ -239,7 +239,7 @@
 .cta-block { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
 .cta-quote {
   font-family: var(--serif);
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-size: var(--fs-sub);
   font-weight: 300;
   font-style: italic;
   color: var(--ink);
@@ -262,7 +262,7 @@
 .result-item { background: var(--cream); padding: 2.5rem 2rem; text-align: center; }
 .result-num {
   font-family: var(--serif);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: var(--fs-display);
   font-weight: 300;
   color: var(--gold);
   line-height: 1;
@@ -296,7 +296,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform var(--dur-slow) ease;
 }
 .testimonial-item:hover .testimonial-media { transform: scale(1.04); }
 .testimonial-play {
@@ -305,12 +305,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(26,24,20,0.18);
+  background: var(--ink-20);
   color: var(--warm-white);
   pointer-events: none;
 }
 .testimonial-play svg {
-  background: rgba(26,24,20,0.55);
+  background: var(--ink-50);
   border-radius: 50%;
   padding: 0.9rem;
   width: 2.6rem;
@@ -322,13 +322,13 @@
 .testimonial-lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(26,24,20,0.92);
+  background: var(--ink-90);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity var(--dur-fast) ease;
   z-index: 200;
   padding: 4rem;
 }
@@ -360,14 +360,14 @@
   right: 0;
   background: none;
   border: none;
-  color: rgba(250,249,246,0.6);
+  color: var(--ww-60);
   cursor: pointer;
   padding: 0.5rem;
 }
 .testimonial-lightbox .lightbox-close:hover { color: var(--warm-white); }
 .testimonial-lightbox-nav {
-  background: rgba(250,249,246,0.08);
-  border: 1px solid rgba(250,249,246,0.15);
+  background: var(--ww-10);
+  border: 1px solid var(--ww-15);
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -377,9 +377,9 @@
   color: var(--warm-white);
   cursor: pointer;
   flex-shrink: 0;
-  transition: background 0.2s ease;
+  transition: background var(--dur-fast) ease;
 }
-.testimonial-lightbox-nav:hover { background: rgba(250,249,246,0.2); }
+.testimonial-lightbox-nav:hover { background: var(--ww-20); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
@@ -420,7 +420,7 @@
 
   /* CTA */
   .cta-block { grid-template-columns: 1fr; gap: 2rem; }
-  .cta-quote { font-size: 1.3rem; }
+  .cta-quote { font-size: var(--fs-title); }
   .cta-actions { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .cta-actions .btn-primary,
   .cta-actions .btn-secondary { width: 100%; text-align: center; box-sizing: border-box; }

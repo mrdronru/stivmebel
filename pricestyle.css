@@ -118,10 +118,10 @@
   background: var(--warm-white);
   border: 1px solid var(--ink-10);
   padding: 2.5rem 1.5rem;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow var(--dur) ease, transform var(--dur) ease;
 }
 .factor-item:hover {
-  box-shadow: 0 1.2rem 2.4rem rgba(26,24,20,0.08);
+  box-shadow: 0 1.2rem 2.4rem var(--ink-10);
   transform: translateY(-3px);
 }
 .factor-num {
@@ -177,7 +177,7 @@
   content: '';
   position: absolute;
   background: var(--gold);
-  transition: transform 0.3s ease;
+  transition: transform var(--dur) ease;
 }
 .faq-icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
 .faq-icon::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
@@ -185,7 +185,7 @@
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  transition: max-height var(--dur) ease;
 }
 .faq-answer p {
   font-size: var(--fs-sm);
@@ -235,7 +235,7 @@
   max-width: 520px;
   margin: 0 auto 2rem;
   font-size: var(--fs-sm);
-  color: rgba(250,249,246,0.65);
+  color: var(--ww-60);
   line-height: 1.8;
 }
 .price-cta-actions {
@@ -243,7 +243,7 @@
   justify-content: center;
   gap: 1rem;
 }
-#price-cta .btn-secondary { color: var(--warm-white); border-color: rgba(250,249,246,0.3); }
+#price-cta .btn-secondary { color: var(--warm-white); border-color: var(--ww-30); }
 #price-cta .btn-secondary:hover { border-color: var(--warm-white); }
 
 /* ── RESPONSIVE ── */

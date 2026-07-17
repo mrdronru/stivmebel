@@ -13,7 +13,7 @@
 .project-eyebrow {
   font-family: var(--sans);
   font-size: var(--fs-xs);
-  letter-spacing: 0.25em;
+  letter-spacing: var(--ls-lg);
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0.8rem;
@@ -47,7 +47,7 @@
 }
 .project-hero-num {
   font-family: var(--serif);
-  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-size: var(--fs-display);
   line-height: 1;
   color: var(--gold);
 }
@@ -158,7 +158,7 @@
 .project-facts dt {
   font-family: var(--sans);
   font-size: var(--fs-xs);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--ls-md);
   text-transform: uppercase;
   color: var(--ink-60);
   margin-bottom: 0.3rem;
@@ -207,7 +207,7 @@
   left: 0.8rem;
   font-family: var(--sans);
   font-size: var(--fs-xs);
-  letter-spacing: 0.2em;
+  letter-spacing: var(--ls-lg);
   text-transform: uppercase;
   background: var(--warm-white);
   color: var(--ink);
@@ -230,7 +230,7 @@
 .project-cta-text {
   font-family: var(--sans);
   font-size: var(--fs-sm);
-  color: rgba(250, 249, 246, 0.65);
+  color: var(--ww-60);
   margin-bottom: 2.5rem;
 }
 /* Правило кнопок: на тёмном фоне — золотая заливка с чернильным текстом.

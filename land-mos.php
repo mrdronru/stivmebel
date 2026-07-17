@@ -30,13 +30,13 @@ include 'header.php';
     <div class="l-hero-overlay"></div>
     <div class="l-hero-content">
       <p class="l-eyebrow">Москва и Московская область · Собственное производство с 2012 года</p>
-      <h1 class="l-h1">Мебель, которая точно<br>вам <em>подходит.</em></h1>
-      <p class="l-lead">Кухни, шкафы и гардеробные по вашим размерам. Фиксируем цену в договоре и ведём проект до монтажа.</p>
+      <h1 class="l-h1">Мебель, которая точно вам <em>подходит.</em></h1>
+      <p class="l-lead">Кухни, шкафы, гардеробные по вашим размерам. Фиксируем цену в договоре и ведём проект от замера до монтажа.</p>
       <div class="l-hero-btns">
         <button class="l-hero-btn" onclick="openQuiz()">Рассчитать стоимость</button>
         <button class="l-hero-btn l-hero-btn--outline" onclick="openContactPopup()">Написать нам</button>
       </div>
-      <p class="l-hero-hint">Достаточно отправить размеры, план квартиры или фотографию помещения. Подскажем возможные решения и подготовим предварительный расчёт в течение суток. Если удобнее — ответим без телефонных звонков.</p>
+      <p class="l-hero-hint" style="color: var(--ww-60);">Достаточно отправить размеры, план квартиры или фотографию помещения. Подскажем возможные решения и подготовим предварительный расчёт в течение суток. Если удобнее — ответим без телефонных звонков.</p>
     </div>
   </section>
 
@@ -48,8 +48,7 @@ include 'header.php';
       <p class="l-district-text">Не стремимся сделать мебель максимально дешёвой — выбираем материалы и фурнитуру, которые служат долго: плиты Egger, фасады Alvic и Cleaf, фурнитура Blum и Hettich с плавным закрыванием. Перед производством согласовываем проект до мелочей.</p>
 
       <p class="l-district-text" style="margin-top:0.5rem;">
-        <strong>Кухня — от 300 000 ₽.</strong>
-        Шкафы — <?php echo price_from('wardrobes'); ?> за п.м., гардеробные — <?php echo price_from('closets'); ?> за п.м. Точная цена — после согласования размеров и материалов; фиксируется в договоре и не меняется.
+        Кухни — <?php echo price_from('kitchens'); ?> за п.м., шкафы — <?php echo price_from('wardrobes'); ?> за п.м., гардеробные — <?php echo price_from('closets'); ?> за п.м. Точная цена — после согласования размеров и материалов; фиксируется в договоре и не меняется.
       </p>
 
       <div class="l-jk-list">
@@ -229,7 +228,7 @@ include 'header.php';
         </div>
       </div>
       <p class="l-district-text" style="color:rgba(250,249,246,0.6); margin-top:2.5rem;">Вам не нужно искать разных специалистов и контролировать каждый этап самостоятельно. Мы берём процесс полностью на себя.</p>
-      <div style="margin-top:2rem;">
+      <div style="text-align:center; margin-top:2rem;">
         <button class="l-hero-btn" onclick="openQuiz()">Рассчитать мой проект</button>
       </div>
     </div>

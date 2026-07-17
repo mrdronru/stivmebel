@@ -44,7 +44,7 @@
   color: var(--ink);
   outline: none;
   -webkit-appearance: none;
-  transition: border-color 0.3s;
+  transition: border-color var(--dur);
   box-sizing: border-box;
 }
 .abc-search:focus { border-bottom-color: var(--gold); }
@@ -76,7 +76,7 @@
   color: var(--ink-60);
   text-decoration: none;
   border: 1px solid transparent;
-  transition: all 0.2s;
+  transition: all var(--dur-fast);
 }
 .abc-letter-btn:hover {
   color: var(--ink);
@@ -89,7 +89,7 @@
 .abc-group { margin-bottom: 3rem; }
 .abc-group-letter {
   font-family: var(--serif);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: var(--fs-display);
   font-weight: 300;
   color: var(--ink-10);
   line-height: 1;
@@ -112,7 +112,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  transition: background 0.2s;
+  transition: background var(--dur-fast);
   border-left: 2px solid transparent;
 }
 .abc-item:hover {
@@ -193,7 +193,7 @@
 /* Тело статьи */
 .abc-article-body h2 {
   font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-size: var(--fs-sub);
   font-weight: 300;
   color: var(--ink);
   margin: 2.5rem 0 1rem;
@@ -204,7 +204,7 @@
   font-size: var(--fs-sm);
   font-weight: 400;
   color: var(--ink);
-  letter-spacing: 0.05em;
+  letter-spacing: var(--ls-sm);
   margin: 2rem 0 0.75rem;
 }
 .abc-article-body p {
@@ -244,9 +244,9 @@
 .abc-article-body th {
   font-family: var(--sans);
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--ls-md);
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: var(--fs-2xs);
   color: var(--ink-60);
   padding: 0.7rem 1rem;
   border-bottom: 1px solid var(--ink-10);
@@ -275,7 +275,7 @@
 }
 .abc-cta-title {
   font-family: var(--serif);
-  font-size: 1.4rem;
+  font-size: var(--fs-title);
   font-weight: 400;
   color: var(--warm-white);
   margin-bottom: 0.5rem;
@@ -284,7 +284,7 @@
   font-family: var(--sans);
   font-size: var(--fs-sm);
   font-weight: 300;
-  color: rgba(250,249,246,0.5);
+  color: var(--ww-50);
   line-height: 1.65;
 }
 .abc-cta-actions {
@@ -304,7 +304,7 @@
 }
 .abc-article-cta .btn-secondary {
   color: var(--warm-white);
-  border-color: rgba(250,249,246,0.4);
+  border-color: var(--ww-40);
 }
 .abc-article-cta .btn-secondary:hover {
   border-color: var(--warm-white);
@@ -322,11 +322,11 @@
 .abc-nav-link {
   font-size: var(--fs-xs);
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--ls-md);
   text-transform: uppercase;
   color: var(--ink-60);
   text-decoration: none;
-  transition: color 0.25s;
+  transition: color var(--dur-fast);
 }
 .abc-nav-link:hover { color: var(--ink); }
 .abc-nav-next { margin-left: auto; }
