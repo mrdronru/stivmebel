@@ -321,7 +321,7 @@
 
 .l-works-cta {
   text-align: center;
-  padding-top: 3rem;
+  padding-top: 1.5rem;
 }
 
 /* ─── ПРОЦЕСС ────────────────────────────────────────────────────── */
@@ -1083,11 +1083,8 @@
   padding: 0.55rem 0 0;
 }
 
-@media (max-width: 600px) {
-  .l-portfolio--stories .l-portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* Горизонтальный свайп для «историй» на телефоне — см. блок LAND-MOS
+   в конце файла (заменяет прежнюю раскладку в одну колонку). */
 
 @media (max-width: 900px) {
   .l-portfolio {
@@ -1220,8 +1217,31 @@
 @media (max-width: 900px) {
   .testimonials-grid--quotes { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
 }
-@media (max-width: 560px) {
-  .testimonials-grid--quotes { grid-template-columns: 1fr; }
+/* На телефоне отзывы листаются вбок свайпом — тем же приёмом, что и
+   «Наши работы» (.l-portfolio--stories): горизонтальная лента с прилипанием
+   и «выглядывающей» следующей карточкой. Карточка уже (фото портретное),
+   поэтому flex-basis меньше, чем у работ. Брейкпоинт 600px — как у работ. */
+@media (max-width: 600px) {
+  .testimonials-grid--quotes {
+    display: flex;
+    grid-template-columns: none;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Без full-bleed: лента остаётся внутри отступов секции (1.5rem),
+       поэтому карточки не липнут к левому краю экрана. */
+    margin: 0;
+    padding: 0 0 0.75rem;
+    scrollbar-width: none;
+  }
+  .testimonials-grid--quotes::-webkit-scrollbar {
+    display: none;
+  }
+  .testimonials-grid--quotes .tq-card {
+    flex: 0 0 68%;
+    scroll-snap-align: start;
+  }
 }
 
 /* ─── Скрываем стандартный nav на лендинге ──────────────────────── */
@@ -1461,4 +1481,80 @@ body:has(.ln-nav) .l-wrap {
   height: 100%;
   max-width: 100%;
   object-fit: contain;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ДОРАБОТКА МОБИЛЬНОЙ ВЁРСТКИ ЛЕНДИНГОВ (июль 2026)
+   Правки размеров — общие для всех лендингов (единая дизайн-система,
+   см. PROJECT.md «Правила дизайна»). Размеры берутся только из токенов
+   --fs-*. Подсказка (.l-hero-hint) и «истории» (.l-portfolio--stories)
+   встречаются только на land-mos, отдельно их не оборачиваем.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* 1) Подсказка под кнопками героя: отодвинуть от кнопок и сделать мельче
+      (--fs-xs вместо унаследованного --fs-sm), чтобы фраза не липла к
+      кнопкам и не выглядела неряшливо. */
+.l-hero-hint {
+  font-family: var(--sans);
+  font-size: var(--fs-xs);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 2rem auto 0;
+}
+
+@media (max-width: 900px) {
+  /* Больше воздуха между кнопками (в столбик) и подсказкой на телефоне */
+  .l-hero-hint {
+    margin-top: 1.5rem;
+  }
+
+  /* 2) Заголовки секций = размеру hero-заголовка.
+        На мобиле .l-h1 уже уменьшается до --fs-lg, а .l-h2 оставался
+        на --fs-display (крупнее hero) — из-за этого секционные заголовки
+        выглядели крупнее героя. Приводим их к тому же токену. */
+  .l-h2 {
+    font-size: var(--fs-lg);
+  }
+
+  /* 3) Текст в блоках — мельче, вровень с подсказкой (--fs-xs).
+        Line-height у каждого блока остаётся свой (не заводим новых). */
+  .l-district-text,
+  .l-about-body,
+  .l-utp-text,
+  .l-step-text,
+  .l-pf-story,
+  .l-jk-item,
+  .l-cta-sub {
+    font-size: var(--fs-xs);
+  }
+}
+
+/* 4) «Наши работы» — горизонтальный свайп вместо вертикальной колонки.
+      Заменяет прежнее правило (grid в одну колонку на ≤600px) на
+      горизонтальную прокрутку с прилипанием и «выглядывающей» следующей
+      карточкой — так пользователь понимает, что проекты можно листать.
+      Брейкпоинт 600px — тот же, что был у заменённого правила. */
+@media (max-width: 600px) {
+  .l-portfolio--stories .l-portfolio-grid {
+    display: flex;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Без full-bleed: лента остаётся внутри отступов секции (1.5rem),
+       поэтому карточки не липнут к левому краю экрана. */
+    margin: 0 0 1.5rem;
+    padding: 0 0 0.75rem;
+    scrollbar-width: none;
+  }
+  .l-portfolio--stories .l-portfolio-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .l-portfolio--stories .l-portfolio-grid .l-pf-item {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
 }

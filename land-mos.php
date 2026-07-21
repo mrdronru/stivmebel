@@ -40,6 +40,116 @@ include 'header.php';
     </div>
   </section>
 
+  <!-- ── ПОРТФОЛИО — истории проектов (карточки: фото + заголовок + история) ── -->
+  <section class="l-portfolio l-portfolio--stories">
+    <div class="l-portfolio-inner">
+      <p class="l-label" style="text-align:center; margin-bottom:1rem;">Наши работы</p>
+      <h2 class="l-h2" style="text-align:center; margin-bottom:1rem;">Реальные проекты<br><em>для реальных квартир</em></h2>
+      <p class="l-district-text" style="text-align:center; max-width:640px; margin:0 auto 3rem;">Мы показываем не только готовую мебель. По каждому проекту рассказываем, какая задача стояла перед помещением, какое решение выбрали и почему именно такое. Каждая работа начинается с особенностей конкретной квартиры: нестандартной планировки, ограниченного пространства или желания сделать хранение удобнее.</p>
+      <div class="l-portfolio-grid">
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0002-kitchen.jpg" width="1600" height="1067" alt="Кухня в неудобной планировке" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Кухня в неудобной планировке</p>
+          <p class="l-pf-story">Квартира в новостройке с сильно вытянутой планировкой — хотелось полноценную кухню, а стена под неё, по сути, одна. Кухню пустили вдоль стены, а холодильник вынесли за угол в прихожую и встроили за фасад: снаружи он выглядит обычным шкафом и не портит вид. Так поместилась вся техника и рабочие зоны, не съедая проход.</p>
+        </div>
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0073-hallway.jpg" width="1600" height="1280" alt="Шкаф в прихожую" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Шкаф в прихожую: максимум вместимости при минимуме площади</p>
+          <p class="l-pf-story">Решали две типичные боли прихожих. Электрощитки убрали внутрь шкафа за фасад, а там, где глубина меньше стандартных 60 см, поставили перпендикулярные вешала — вешать одежду можно даже в узкой секции. Наполнение из ящиков и полок собрали под задачи хозяев, а не по типовой схеме.</p>
+        </div>
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0091-kitchen.jpg" width="1280" height="1600" alt="Угловая кухня с витринным шкафом" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Угловая кухня с витринным шкафом: классика, которая не надоедает</p>
+          <p class="l-pf-story">Пожелание было простое — больше света и «эффекта», но без ухода от классики. Предложили стеклянную витрину с подсветкой: она добавляет глубины и вечером работает как мягкий акцент. Саму угловую кухню скомпоновали удобно и без лишнего.</p>
+        </div>
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0109-kitchen.jpg" width="1600" height="1067" alt="Кухня по дизайн-проекту" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Кухня по дизайн-проекту: воплотили точно по чертежам дизайнера</p>
+          <p class="l-pf-story">Слабое место любой угловой секции — ей неудобно пользоваться, а здесь рядом ещё стоял пенал. Не меняя внешний вид из проекта дизайнера, переработали конструкцию углового шкафа и добавили складную дверь — получилось полноценное место хранения. Столешницу смонтировали без пристеночного бортика, как и было задумано.</p>
+        </div>
+        <div class="l-pf-item">
+          <div class="l-pf-img">
+            <img src="gallery/0056-wardrobe.jpg" width="1600" height="1067" alt="Комплект мебели для комнаты со скрытыми удобствами" loading="lazy">
+          </div>
+          <p class="l-pf-cap">Мебель для комнаты: удобства, которые замечаешь не сразу</p>
+          <p class="l-pf-story">Спрятали несколько решений, которые не бросаются в глаза, но выручают каждый день. Подсветка зеркала стоит на внутренней стороне дверцы и включается сама, когда шкаф открывается. Под основным столом прячется выдвижной мини-стол — второе рабочее место появляется за секунду; для принтера сделали отдельный выдвижной ящик.</p>
+        </div>
+      </div>
+      <div class="l-works-cta">
+        <a href="catalog" class="btn-secondary" target="_blank" rel="noopener">Посмотреть каталог работ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── СТАНИСЛАВ ── -->
+  <section class="l-about">
+    <div class="l-about-inner">
+      <div class="l-about-video-wrap">
+        <video
+          class="l-about-video"
+          src="hello.mp4"
+          poster="images/hello-poster.jpg"
+          playsinline
+          preload="none"
+          id="aboutVideo"
+        ></video>
+        <button class="l-about-play" id="aboutPlayBtn" onclick="playAboutVideo()" aria-label="Воспроизвести видео">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="1.2"/><path d="M11 9.5l9 4.5-9 4.5V9.5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+      <div class="l-about-text">
+        <p class="l-label">Кто будет заниматься вашим проектом</p>
+        <h2 class="l-h2">Здравствуйте!<br>Меня зовут <em>Станислав</em></h2>
+        <p class="l-about-body">С 2012 года мы изготавливаем кухни, шкафы, гардеробные и другую корпусную мебель на заказ. Каждый проект начинается с разговора о том, как мебель должна работать именно в вашей квартире.</p>
+        <p class="l-about-body">Я лично участвую в каждом проекте — от первых замеров до финальной установки. После заключения договора вы также общаетесь с нами напрямую — без передачи проекта между разными отделами и подрядчиками.</p>
+        <p class="l-about-body">Не обещаю «идеально» — рассказываю, как будет на самом деле. Если вижу, что какая-то идея будет неудобной или слишком дорогой, честно скажу об этом и предложу альтернативу, объясню, почему.</p>
+        <p class="l-about-body">Вы всегда знаете, к кому обратиться и кто отвечает за результат.</p>
+        <button class="l-about-cta" onclick="openQuiz()">Обсудить проект</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ОТЗЫВЫ (с реальными цитатами) ── -->
+  <?php
+  $quote_testimonials = [
+    ['file' => '002.png', 'type' => 'photo', 'quote' => '«Это идеальная кухня! Мы довольны на 1000 процентов! Огромное спасибо, Стас»', 'author' => 'Инна · ВКонтакте'],
+    ['file' => '004.jpg', 'type' => 'photo', 'quote' => '«За Андрея огромное спасибо! Профессионал! Я в восторге от его скрупулёзности»', 'author' => 'Ксения · WhatsApp'],
+    ['file' => '005.jpg', 'type' => 'photo', 'quote' => '«Как хозяйка представленной кухни подтверждаю, всё так и было! Результатом наслаждаемся уже третий год»', 'author' => 'Елена · Instagram'],
+    ['file' => '006.jpg', 'type' => 'photo', 'quote' => '«Очень довольна своей кухней! Учли все пожелания и сделали ещё лучше, чем я ожидала»', 'author' => 'Клиентка · Instagram'],
+    ['file' => '007.jpg', 'type' => 'photo', 'quote' => '«Кухня просто супер! Качество — высший пилотаж! Стас как всегда на высоте»', 'author' => 'Виктория · Telegram'],
+    ['file' => '008.png', 'type' => 'photo', 'quote' => '«Вместить в 5 м² всё необходимое и оставить максимум свободного места — задумка была утопичная, но всё получилось»', 'author' => 'Анна · ВКонтакте'],
+  ];
+  ?>
+  <section class="l-portfolio">
+    <div class="l-portfolio-inner">
+      <p class="l-label" style="text-align:center; margin-bottom:1rem;">Отзывы клиентов</p>
+      <h2 class="l-h2" style="text-align:center; margin-bottom:1rem;">Что говорят люди<br><em>после установки мебели</em></h2>
+      <p class="l-district-text" style="text-align:center; max-width:640px; margin:0 auto 3rem;">Для нас важно не только изготовить мебель, но и сделать так, чтобы весь процесс прошёл спокойно — от первой встречи до финальной установки.</p>
+      <div class="testimonials-grid testimonials-grid--quotes" id="testimonialsStrip">
+        <?php foreach ($quote_testimonials as $i => $t): ?>
+        <div class="tq-card">
+          <div class="testimonial-item" data-type="<?php echo $t['type']; ?>" data-src="testimonials/<?php echo htmlspecialchars($t['file']); ?>" data-index="<?php echo $i; ?>">
+            <img class="testimonial-media" width="220" height="280" src="testimonials/<?php echo htmlspecialchars($t['file']); ?>" alt="Отзыв клиента" loading="lazy">
+          </div>
+          <p class="testimonial-quote"><?php echo htmlspecialchars($t['quote']); ?></p>
+          <span class="testimonial-author"><?php echo htmlspecialchars($t['author']); ?></span>
+        </div>
+        <?php endforeach; ?>
+      </div>
+      <div class="l-works-cta">
+        <a href="catalog" class="btn-secondary" target="_blank" rel="noopener">Посмотреть каталог работ</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ── МАТЕРИАЛЫ И СТОИМОСТЬ ── -->
   <section class="l-district">
     <div class="l-district-inner">
@@ -68,34 +178,6 @@ include 'header.php';
 
       <div style="margin-top:2rem;">
         <button class="btn-primary" onclick="openQuiz()">Узнать стоимость проекта</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── СТАНИСЛАВ ── -->
-  <section class="l-about">
-    <div class="l-about-inner">
-      <div class="l-about-video-wrap">
-        <video
-          class="l-about-video"
-          src="hello.mp4"
-          poster="images/hello-poster.jpg"
-          playsinline
-          preload="none"
-          id="aboutVideo"
-        ></video>
-        <button class="l-about-play" id="aboutPlayBtn" onclick="playAboutVideo()" aria-label="Воспроизвести видео">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="1.2"/><path d="M11 9.5l9 4.5-9 4.5V9.5z" fill="currentColor"/></svg>
-        </button>
-      </div>
-      <div class="l-about-text">
-        <p class="l-label">Кто будет заниматься вашим проектом</p>
-        <h2 class="l-h2">Здравствуйте!<br>Меня зовут <em>Станислав</em></h2>
-        <p class="l-about-body">С 2012 года мы изготавливаем кухни, шкафы, гардеробные и другую корпусную мебель на заказ. Каждый проект начинается с разговора о том, как мебель должна работать именно в вашей квартире.</p>
-        <p class="l-about-body">Я лично участвую в каждом проекте — от первых замеров до финальной установки. После заключения договора вы также общаетесь с нами напрямую — без передачи проекта между разными отделами и подрядчиками.</p>
-        <p class="l-about-body">Не обещаю «идеально» — рассказываю, как будет на самом деле. Если вижу, что какая-то идея будет неудобной или слишком дорогой, честно скажу об этом и предложу альтернативу, объясню, почему.</p>
-        <p class="l-about-body">Вы всегда знаете, к кому обратиться и кто отвечает за результат.</p>
-        <button class="l-about-cta" onclick="openQuiz()">Обсудить мой проект</button>
       </div>
     </div>
   </section>
@@ -157,55 +239,6 @@ include 'header.php';
     </div>
   </section>
 
-  <!-- ── ПОРТФОЛИО — истории проектов (карточки: фото + заголовок + история) ── -->
-  <section class="l-portfolio l-portfolio--stories">
-    <div class="l-portfolio-inner">
-      <p class="l-label" style="text-align:center; margin-bottom:1rem;">Наши работы</p>
-      <h2 class="l-h2" style="text-align:center; margin-bottom:1rem;">Реальные проекты<br><em>для реальных квартир</em></h2>
-      <p class="l-district-text" style="text-align:center; max-width:640px; margin:0 auto 3rem;">Мы показываем не только готовую мебель. По каждому проекту рассказываем, какая задача стояла перед помещением, какое решение выбрали и почему именно такое. Каждая работа начинается с особенностей конкретной квартиры: нестандартной планировки, ограниченного пространства или желания сделать хранение удобнее.</p>
-      <div class="l-portfolio-grid">
-        <div class="l-pf-item">
-          <div class="l-pf-img">
-            <img src="gallery/0002-kitchen.jpg" width="1600" height="1067" alt="Кухня в неудобной планировке" loading="lazy">
-          </div>
-          <p class="l-pf-cap">Кухня в неудобной планировке</p>
-          <p class="l-pf-story">Квартира в новостройке с сильно вытянутой планировкой — хотелось полноценную кухню, а стена под неё, по сути, одна. Кухню пустили вдоль стены, а холодильник вынесли за угол в прихожую и встроили за фасад: снаружи он выглядит обычным шкафом и не портит вид. Так поместилась вся техника и рабочие зоны, не съедая проход.</p>
-        </div>
-        <div class="l-pf-item">
-          <div class="l-pf-img">
-            <img src="gallery/0073-hallway.jpg" width="1600" height="1280" alt="Шкаф в прихожую" loading="lazy">
-          </div>
-          <p class="l-pf-cap">Шкаф в прихожую: максимум вместимости при минимуме площади</p>
-          <p class="l-pf-story">Решали две типичные боли прихожих. Электрощитки убрали внутрь шкафа за фасад, а там, где глубина меньше стандартных 60 см, поставили перпендикулярные вешала — вешать одежду можно даже в узкой секции. Наполнение из ящиков и полок собрали под задачи хозяев, а не по типовой схеме.</p>
-        </div>
-        <div class="l-pf-item">
-          <div class="l-pf-img">
-            <img src="gallery/0091-kitchen.jpg" width="1280" height="1600" alt="Угловая кухня с витринным шкафом" loading="lazy">
-          </div>
-          <p class="l-pf-cap">Угловая кухня с витринным шкафом: классика, которая не надоедает</p>
-          <p class="l-pf-story">Пожелание было простое — больше света и «эффекта», но без ухода от классики. Предложили стеклянную витрину с подсветкой: она добавляет глубины и вечером работает как мягкий акцент. Саму угловую кухню скомпоновали удобно и без лишнего.</p>
-        </div>
-        <div class="l-pf-item">
-          <div class="l-pf-img">
-            <img src="gallery/0109-kitchen.jpg" width="1600" height="1067" alt="Кухня по дизайн-проекту" loading="lazy">
-          </div>
-          <p class="l-pf-cap">Кухня по дизайн-проекту: воплотили точно по чертежам дизайнера</p>
-          <p class="l-pf-story">Слабое место любой угловой секции — ей неудобно пользоваться, а здесь рядом ещё стоял пенал. Не меняя внешний вид из проекта дизайнера, переработали конструкцию углового шкафа и добавили складную дверь — получилось полноценное место хранения. Столешницу смонтировали без пристеночного бортика, как и было задумано.</p>
-        </div>
-        <div class="l-pf-item">
-          <div class="l-pf-img">
-            <img src="gallery/0056-wardrobe.jpg" width="1600" height="1067" alt="Комплект мебели для комнаты со скрытыми удобствами" loading="lazy">
-          </div>
-          <p class="l-pf-cap">Мебель для комнаты: удобства, которые замечаешь не сразу</p>
-          <p class="l-pf-story">Спрятали несколько решений, которые не бросаются в глаза, но выручают каждый день. Подсветка зеркала стоит на внутренней стороне дверцы и включается сама, когда шкаф открывается. Под основным столом прячется выдвижной мини-стол — второе рабочее место появляется за секунду; для принтера сделали отдельный выдвижной ящик.</p>
-        </div>
-      </div>
-      <div class="l-works-cta">
-        <a href="catalog" class="btn-secondary" target="_blank" rel="noopener">Посмотреть все проекты</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ── КАК ВСЁ ПРОИСХОДИТ ── -->
   <section class="l-process">
     <div class="l-process-inner">
@@ -243,39 +276,6 @@ include 'header.php';
       <p class="l-district-text" style="color:rgba(250,249,246,0.6); margin-top:2.5rem;">Вам не нужно искать разных специалистов и контролировать каждый этап самостоятельно. Мы берём процесс полностью на себя.</p>
       <div style="text-align:center; margin-top:2rem;">
         <button class="l-hero-btn" onclick="openQuiz()">Рассчитать мой проект</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ОТЗЫВЫ (с реальными цитатами) ── -->
-  <?php
-  $quote_testimonials = [
-    ['file' => '002.png', 'type' => 'photo', 'quote' => '«Это идеальная кухня! Мы довольны на 1000 процентов! Огромное спасибо, Стас»', 'author' => 'Инна · ВКонтакте'],
-    ['file' => '004.jpg', 'type' => 'photo', 'quote' => '«За Андрея огромное спасибо! Профессионал! Я в восторге от его скрупулёзности»', 'author' => 'Ксения · WhatsApp'],
-    ['file' => '005.jpg', 'type' => 'photo', 'quote' => '«Как хозяйка представленной кухни подтверждаю, всё так и было! Результатом наслаждаемся уже третий год»', 'author' => 'Елена · Instagram'],
-    ['file' => '006.jpg', 'type' => 'photo', 'quote' => '«Очень довольна своей кухней! Учли все пожелания и сделали ещё лучше, чем я ожидала»', 'author' => 'Клиентка · Instagram'],
-    ['file' => '007.jpg', 'type' => 'photo', 'quote' => '«Кухня просто супер! Качество — высший пилотаж! Стас как всегда на высоте»', 'author' => 'Виктория · Telegram'],
-    ['file' => '008.png', 'type' => 'photo', 'quote' => '«Вместить в 5 м² всё необходимое и оставить максимум свободного места — задумка была утопичная, но всё получилось»', 'author' => 'Анна · ВКонтакте'],
-  ];
-  ?>
-  <section class="l-portfolio">
-    <div class="l-portfolio-inner">
-      <p class="l-label" style="text-align:center; margin-bottom:1rem;">Отзывы клиентов</p>
-      <h2 class="l-h2" style="text-align:center; margin-bottom:1rem;">Что говорят люди<br><em>после установки мебели</em></h2>
-      <p class="l-district-text" style="text-align:center; max-width:640px; margin:0 auto 3rem;">Для нас важно не только изготовить мебель, но и сделать так, чтобы весь процесс прошёл спокойно — от первой встречи до финальной установки.</p>
-      <div class="testimonials-grid testimonials-grid--quotes" id="testimonialsStrip">
-        <?php foreach ($quote_testimonials as $i => $t): ?>
-        <div class="tq-card">
-          <div class="testimonial-item" data-type="<?php echo $t['type']; ?>" data-src="testimonials/<?php echo htmlspecialchars($t['file']); ?>" data-index="<?php echo $i; ?>">
-            <img class="testimonial-media" width="220" height="280" src="testimonials/<?php echo htmlspecialchars($t['file']); ?>" alt="Отзыв клиента" loading="lazy">
-          </div>
-          <p class="testimonial-quote"><?php echo htmlspecialchars($t['quote']); ?></p>
-          <span class="testimonial-author"><?php echo htmlspecialchars($t['author']); ?></span>
-        </div>
-        <?php endforeach; ?>
-      </div>
-      <div class="l-works-cta">
-        <a href="catalog" class="btn-secondary" target="_blank" rel="noopener">Посмотреть наши проекты</a>
       </div>
     </div>
   </section>
