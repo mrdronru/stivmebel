@@ -209,7 +209,7 @@ $testimonials = array_map(function($f) {
         <div class="timeline-dot">05</div>
         <div class="timeline-content">
           <div class="timeline-title">Производство — до 45 рабочих дней</div>
-          <div class="timeline-text">Заказ уходит в производство. Вы не занимаетесь ничем — мы контролируем каждый этап.</div>
+          <div class="timeline-text">Заказ уходит в производство. Вы спокойно занимаетесь своими делами, а мы контролируем каждый этап.</div>
         </div>
       </div>
       <div class="timeline-item">
