@@ -170,7 +170,7 @@ include 'header.php';
 
       <div class="l-jk-list" style="margin-top:1.5rem;">
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>Бесплатный замер</span></div>
-        <div class="l-jk-item"><span class="l-jk-dot"></span><span>Бесплатный 3D-проект</span></div>
+        <div class="l-jk-item"><span class="l-jk-dot"></span><span>Подробный 3D-проект</span></div>
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>Цена фиксируется в договоре</span></div>
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>Гарантия 2 года</span></div>
         <div class="l-jk-item"><span class="l-jk-dot"></span><span>Более 300 реализованных проектов</span></div>
@@ -288,7 +288,7 @@ include 'header.php';
     </div>
     <div class="l-cta-content">
       <h2 class="l-cta-title">Расскажите, какую мебель<br>хотите получить</h2>
-      <p class="l-cta-sub">Отправьте размеры, планировку или фотографию помещения. Мы посмотрим, что можно сделать, предложим варианты и рассчитаем стоимость проекта. Замер и 3D-проект — бесплатно. Стоимость фиксируется в договоре после согласования проекта.</p>
+      <p class="l-cta-sub">Отправьте размеры, планировку или фотографию помещения. Мы посмотрим, что можно сделать, предложим варианты и рассчитаем стоимость проекта. Замер — бесплатно. Стоимость фиксируется в договоре после согласования проекта.</p>
       <button class="l-cta-btn" onclick="openQuiz()">Получить расчёт проекта</button>
       <div class="l-hero-btns" style="margin-top:1.25rem;">
         <button class="l-hero-btn l-hero-btn--outline" onclick="openContactPopup()">Написать нам</button>

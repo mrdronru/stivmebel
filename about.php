@@ -61,7 +61,7 @@ include 'header.php';
         </div>
         <div class="why-item">
           <div class="why-item-line"></div>
-          <div class="why-item-title">3D-проект бесплатно</div>
+          <div class="why-item-title">Проект с 3D-визуализацией</div>
           <div class="why-item-text">Разработаем дизайн-проект с визуализацией до старта производства — вы увидите результат заранее.</div>
         </div>
         <div class="why-item">
@@ -187,8 +187,8 @@ $testimonials = array_map(function($f) {
       <div class="timeline-item">
         <div class="timeline-dot">02</div>
         <div class="timeline-content">
-          <div class="timeline-title">3D-модель на месте</div>
-          <div class="timeline-text">Создаём объёмную модель прямо во время визита — вы видите будущую мебель до того, как подпишете договор.</div>
+          <div class="timeline-title">Обсуждение и эскиз на замере</div>
+          <div class="timeline-text">Прямо на замере обсуждаем задачу и рисуем эскиз будущей мебели, чтобы договориться о составе и решениях. Подробную 3D-визуализацию готовим на этапе проекта.</div>
         </div>
       </div>
       <div class="timeline-item">
