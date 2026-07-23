@@ -94,7 +94,7 @@ sys.stderr = _Tee(sys.__stderr__, _log_file)
 # график не собьётся.
 
 # писем в день по дням прогрева начальный вариант [5, 5, 8, 8, 12, 12, 15, 18, 20, 20, 25, 25, 30]
-WARMUP_SCHEDULE = [23, 30, 40]
+WARMUP_SCHEDULE = [30, 40]
 
 DEFAULT_DAILY_CAP_AFTER_SCHEDULE = 40  # когда график прогрева закончился
 
@@ -105,6 +105,10 @@ SEND_WINDOW_START_HOUR = 10
 SEND_WINDOW_END_HOUR = 18
 SEND_ONLY_WEEKDAYS = True  # пн-пт
 
+# Резервный список колонок — используется только если у CSV почему-то нет
+# заголовка. В норме реальный порядок колонок берётся из самого файла
+# (reader.fieldnames), поэтому любые новые столбцы, например profile_url,
+# сохраняются при перезаписи и не ломают запись.
 FIELDNAMES = [
     "name", "email", "city", "phone", "website", "hook_source", "variant",
     "subject", "body", "sent_date", "replied", "reply_notes", "status", "qa_flag",
@@ -189,7 +193,11 @@ def main():
         sender_name = os.environ.get("SENDER_NAME", "Александр")
 
     with open(args.csv_path, encoding="utf-8-sig") as f:
-        rows = list(csv.DictReader(f))
+        reader = csv.DictReader(f)
+        rows = list(reader)
+        # Порядок и состав колонок берём из самого файла, чтобы новые поля
+        # (например profile_url) сохранялись при перезаписи прогресса.
+        fieldnames = reader.fieldnames or FIELDNAMES
 
     now = datetime.now()
     if not args.ignore_window and not args.dry_run:
@@ -253,7 +261,7 @@ def main():
             # упадёт или его прервут, уже отправленные письма не потеряются
             # и не уйдут повторно при следующем запуске.
             with open(args.csv_path, "w", newline="", encoding="utf-8-sig") as f:
-                writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
+                writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
                 writer.writeheader()
                 writer.writerows(rows)
 
